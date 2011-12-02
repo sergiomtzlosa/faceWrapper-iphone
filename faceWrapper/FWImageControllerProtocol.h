@@ -11,6 +11,6 @@
 @protocol FWImageControllerDelegate <NSObject>
 @required
 
-- (void)controllerDidFindFaceItemWithObject:(NSDictionary *)faces;
+- (void)controllerDidFindFaceItemWithObject:(NSDictionary *)faces postImageTag:(int)tag;
 
 @end

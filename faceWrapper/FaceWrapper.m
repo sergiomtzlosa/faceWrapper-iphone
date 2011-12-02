@@ -81,7 +81,7 @@
 
 - (void)detectFaceWithFWObject:(FWObject *)object 
                runInBackground:(BOOL)background 
-                completionData:(void (^)(NSDictionary *))block
+                completionData:(void (^)(NSDictionary *, int))block
 {
     [FaceWrapper checkAPIKeys:kFaceAPI secret:kFaceSecretAPI];
  
@@ -234,17 +234,17 @@
                             
                             if ((![NSJSONSerialization isValidJSONObject:parsedJSON]) || (jsonParsingError != nil))
                             {
-                                block(nil);
+                                block(nil, -1);
                             }
                             else
                             {
-                                block(parsedJSON);
+                                block(parsedJSON, -1);
                             }
                         }
                         else
                         {
                             //XML 
-                            block([FaceWrapper parseFaceXML:data]); 
+                            block([FaceWrapper parseFaceXML:data], -1); 
                         }
                     }
                 }];
@@ -269,17 +269,17 @@
 
                         if ((![NSJSONSerialization isValidJSONObject:parsedJSON]) || (jsonParsingError != nil))
                         {
-                            block(nil);
+                            block(nil, -1);
                         }
                         else
                         {
-                            block(parsedJSON);
+                            block(parsedJSON, -1);
                         }
                     }
                     else
                     {
                         //XML 
-                        block([FaceWrapper parseFaceXML:data]);
+                        block([FaceWrapper parseFaceXML:data], -1);
                     }
                 }
             }];
@@ -312,17 +312,17 @@
                                 
                                 if ((![NSJSONSerialization isValidJSONObject:parsedJSON]) || (jsonParsingError != nil))
                                 {
-                                    block(nil);
+                                    block(nil, -1);
                                 }
                                 else
                                 {
-                                    block(parsedJSON);
+                                    block(parsedJSON, [(FWImage *)obj tag]);
                                 }
                             }
                             else
                             {
                                 //XML 
-                                block([FaceWrapper parseFaceXML:data]);
+                                block([FaceWrapper parseFaceXML:data], [(FWImage *)obj tag]);
                             }
                         }
                     }];
@@ -351,17 +351,17 @@
                                 
                                 if ((![NSJSONSerialization isValidJSONObject:parsedJSON]) || (jsonParsingError != nil))
                                 {
-                                    block(nil);
+                                    block(nil, -1);
                                 }
                                 else
                                 {
-                                    block(parsedJSON);
+                                    block(parsedJSON, [(FWImage *)obj tag]);
                                 }
                             }
                             else
                             {
                                 //XML 
-                                block([FaceWrapper parseFaceXML:data]);
+                                block([FaceWrapper parseFaceXML:data], [(FWImage *)obj tag]);
                             }
                         }
                 }];
@@ -370,6 +370,18 @@
     };
     
     [NSObject ifEvaluate:object.isRESTObject isTrue:restBlock isFalse:postBlock];
+}
+
+- (void)recognizerWithFWObject:(FWRecognizer *)object
+               runInBackground:(BOOL)background 
+                completionData:(void (^)(NSDictionary *))block
+{
+    /*
+     
+     http://api.face.com/faces/recognize.json?api_key=4b4b4c6d54c37&api_secret=&urls=http://farm3.static.flickr.com/2527/3942842476_33341616f2_b.jpg&uids=friends@facebook.com&user_auth=fb_user:571756321,fb_session:
+     
+
+     */
 }
 
 @end

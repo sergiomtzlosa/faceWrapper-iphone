@@ -30,13 +30,17 @@
      
     */
     
+    
     //POST
     UIImage *image = [UIImage imageNamed:@"girls.jpg"];
     NSMutableArray *images = [[NSMutableArray alloc] init];
-    [images addImagePOSTToArray:[[FWImage alloc] initWithData:UIImageJPEGRepresentation(image, 1.0)
-                                                    imageName:@"girls"
-                                                    extension:@"jpg"
-                                                  andFullPath:@""]];
+    
+    FWImage *fwImage = [[FWImage alloc] initWithData:UIImageJPEGRepresentation(image, 1.0)
+                                         imageName:@"girls"
+                                         extension:@"jpg"
+                                       andFullPath:@""];
+    fwImage.tag = 999;
+    [images addImagePOSTToArray:fwImage];
 
     [object setPostImages:images];
      
@@ -66,8 +70,11 @@
 #pragma -
 #pragma FWImageControllerDelegate methods
 
-- (void)controllerDidFindFaceItemWithObject:(NSDictionary *)faces
+- (void)controllerDidFindFaceItemWithObject:(NSDictionary *)faces postImageTag:(int)tag
 {
+    //tag = -1 means NO TAG, this tag is only in available to check POST images
+    NSLog(@"tag: %d", tag);
+    
     ParseObject *parsed = [[ParseObject alloc] initWithRawDictionary:faces];
    
     [parsed loopOverFaces:^(NSDictionary *face) {

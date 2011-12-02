@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F86BB3A14893FBB00E92DE2 /* FWRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F86BB3914893FBB00E92DE2 /* FWRecognizer.m */; };
+		1F86BB3F148940D400E92DE2 /* FWManagerRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F86BB3E148940D400E92DE2 /* FWManagerRecognizer.m */; };
 		B52E6F201483B8AF00428A74 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B52E6F1F1483B8AF00428A74 /* UIKit.framework */; };
 		B52E6F221483B8AF00428A74 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B52E6F211483B8AF00428A74 /* Foundation.framework */; };
 		B52E6F241483B8AF00428A74 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B52E6F231483B8AF00428A74 /* CoreGraphics.framework */; };
@@ -39,6 +41,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F86BB3814893FBB00E92DE2 /* FWRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWRecognizer.h; sourceTree = "<group>"; };
+		1F86BB3914893FBB00E92DE2 /* FWRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWRecognizer.m; sourceTree = "<group>"; };
+		1F86BB3D148940D400E92DE2 /* FWManagerRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWManagerRecognizer.h; sourceTree = "<group>"; };
+		1F86BB3E148940D400E92DE2 /* FWManagerRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWManagerRecognizer.m; sourceTree = "<group>"; };
 		B52E6F1B1483B8AF00428A74 /* faceWrapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = faceWrapper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B52E6F1F1483B8AF00428A74 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B52E6F211483B8AF00428A74 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -109,6 +115,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F86BB3C14893FC200E92DE2 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				1F86BB3814893FBB00E92DE2 /* FWRecognizer.h */,
+				1F86BB3914893FBB00E92DE2 /* FWRecognizer.m */,
+				B52E6F4B1483BBAC00428A74 /* FWObject.h */,
+				B52E6F4C1483BBAC00428A74 /* FWObject.m */,
+			);
+			name = Objects;
+			sourceTree = "<group>";
+		};
 		B52E6F101483B8AE00428A74 = {
 			isa = PBXGroup;
 			children = (
@@ -208,17 +225,18 @@
 		B569682314851FC80009649A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				1F86BB3C14893FC200E92DE2 /* Objects */,
 				B52E6F451483BAD700428A74 /* FaceWrapper.h */,
 				B52E6F461483BAD700428A74 /* FaceWrapper.m */,
 				B5D20AB0148619FD0015CA61 /* FWImageControllerProtocol.h */,
-				B52E6F4B1483BBAC00428A74 /* FWObject.h */,
-				B52E6F4C1483BBAC00428A74 /* FWObject.m */,
 				B5FEFCB31484D6F200B4DACA /* FWImage.h */,
 				B5FEFCB41484D6F300B4DACA /* FWImage.m */,
 				B5696825148522F30009649A /* XMLReader.h */,
 				B5696826148522F30009649A /* XMLReader.m */,
 				B5D20AB7148629FE0015CA61 /* ParseObject.h */,
 				B5D20AB8148629FE0015CA61 /* ParseObject.m */,
+				1F86BB3D148940D400E92DE2 /* FWManagerRecognizer.h */,
+				1F86BB3E148940D400E92DE2 /* FWManagerRecognizer.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -317,6 +335,8 @@
 				B5D20AB9148629FE0015CA61 /* ParseObject.m in Sources */,
 				B5D20ABC148630E50015CA61 /* ParseObject+Enumeration.m in Sources */,
 				B5B411341488E5DF00E58BBA /* FWAccount.m in Sources */,
+				1F86BB3A14893FBB00E92DE2 /* FWRecognizer.m in Sources */,
+				1F86BB3F148940D400E92DE2 /* FWManagerRecognizer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

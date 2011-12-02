@@ -14,7 +14,7 @@
     NSString *extension;
     NSData *data;
     NSString *pathPostImage;
-    
+    int tag;
 }
 
 - (id)initWithURL:(NSURL *)urlImage imageName:(NSString *)imageName extension:(NSString *)extension;
@@ -24,5 +24,6 @@
 @property (nonatomic, strong) NSString *extension;
 @property (nonatomic, retain) NSData *data;
 @property (nonatomic, retain) NSString *pathPostImage;
+@property (nonatomic) int tag;
 
 @end

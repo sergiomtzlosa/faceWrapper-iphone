@@ -13,6 +13,7 @@
 @synthesize extension;
 @synthesize data;
 @synthesize pathPostImage;
+@synthesize tag;
 
 - (id)initWithURL:(NSURL *)_urlImage imageName:(NSString *)_imageName extension:(NSString *)_extension
 {

@@ -72,17 +72,19 @@
 
 - (void)findFaces
 {    
-    [[FaceWrapper instance] detectFaceWithFWObject:object runInBackground:NO completionData:^(NSDictionary *response) {
+    [[FaceWrapper instance] detectFaceWithFWObject:object runInBackground:NO
+                                    completionData:^(NSDictionary *response, int tagImagePost) {
 
         //remark faces on image (remove it if you want)
         [self remarkFaces:response];
         
-        NSString *stringSEL = NSStringFromSelector(@selector(controllerDidFindFaceItemWithObject:));
+        NSString *stringSEL = NSStringFromSelector(@selector(controllerDidFindFaceItemWithObject:postImageTag:));
         
         [stringSEL selectorDidRespondInClass:self.delegate
                                      execute:^{
                                          
-                                        [self.delegate controllerDidFindFaceItemWithObject:response];
+                                        [self.delegate controllerDidFindFaceItemWithObject:response 
+                                                                              postImageTag:tagImagePost];
                                      }];
     }];
 }
@@ -93,11 +95,11 @@
 {
     ParseObject *parsed = [[ParseObject alloc] initWithRawDictionary:dataFaces];
 
-    NSLog(@"%@", parsed.rawDictionary);
+    //NSLog(@"%@", parsed.rawDictionary);
     
     [parsed loopOverFaces:^(NSDictionary *face) {
         
-        NSLog(@"%@", face);
+        //NSLog(@"%@", face);
         CGFloat width = ([[face objectForKey:@"width"] floatValue] * imageView.frame.size.width) / 100;
         CGFloat height = ([[face objectForKey:@"height"] floatValue] * imageView.frame.size.height) / 100;
         CGFloat x = ([[(NSDictionary *)[face objectForKey:@"center"] objectForKey:@"x"] floatValue] * imageView.frame.size.width) / 100;
