@@ -38,10 +38,6 @@
                                                     extension:@"jpg"
                                                   andFullPath:@""]];
 
-    [images addImagePOSTToArray:[[FWImage alloc] initWithData:UIImageJPEGRepresentation([UIImage imageNamed:@"face.jpg"], 1.0)
-                                                    imageName:@"face"
-                                                    extension:@"jpg"
-                                                  andFullPath:@""]];
     [object setPostImages:images];
      
     object.isRESTObject = NO;
