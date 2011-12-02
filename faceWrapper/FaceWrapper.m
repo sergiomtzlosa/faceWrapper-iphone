@@ -292,71 +292,79 @@
         {
             [NSObject performBlockInBackground:^{
                 
-                [NSObject sendPOSTWithURL:[NSURL URLWithString:postURL] withParams:baseURL images:object.postImages completion:^(NSData *data) {
-                   
-                    if (data == nil)
-                    {
-                        [FaceWrapper throwExceptionWithName:@"Data Exception" reason:@"Returned data is NIL"];
-                    }
-                    else
-                    {
-                        if (object.format == FORMAT_TYPE_JSON) 
+                [object.postImages enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                    
+                    [NSObject sendPOSTWithURL:[NSURL URLWithString:postURL] withParams:baseURL 
+                                       images:[NSArray arrayWithObject:(FWImage *)obj] completion:^(NSData *data) {
+                        
+                        if (data == nil)
                         {
-                            NSError *jsonParsingError = nil;
-                            NSDictionary *parsedJSON = [NSJSONSerialization JSONObjectWithData:data
-                                                                                       options:0 
-                                                                                         error:&jsonParsingError];
-                            
-                            if ((![NSJSONSerialization isValidJSONObject:parsedJSON]) || (jsonParsingError != nil))
-                            {
-                                block(nil);
-                            }
-                            else
-                            {
-                                block(parsedJSON);
-                            }
+                            [FaceWrapper throwExceptionWithName:@"Data Exception" reason:@"Returned data is NIL"];
                         }
                         else
                         {
-                            //XML 
-                            block([FaceWrapper parseFaceXML:data]);
+                            if (object.format == FORMAT_TYPE_JSON) 
+                            {
+                                NSError *jsonParsingError = nil;
+                                NSDictionary *parsedJSON = [NSJSONSerialization JSONObjectWithData:data
+                                                                                           options:0 
+                                                                                             error:&jsonParsingError];
+                                
+                                if ((![NSJSONSerialization isValidJSONObject:parsedJSON]) || (jsonParsingError != nil))
+                                {
+                                    block(nil);
+                                }
+                                else
+                                {
+                                    block(parsedJSON);
+                                }
+                            }
+                            else
+                            {
+                                //XML 
+                                block([FaceWrapper parseFaceXML:data]);
+                            }
                         }
-                    }
+                    }];
                 }];
             }];
         }
         else
         {
-            [NSObject sendPOSTWithURL:[NSURL URLWithString:postURL] withParams:baseURL images:object.postImages completion:^(NSData *data) {
+            [object.postImages enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
                 
-                if (data == nil)
-                {
-                    [FaceWrapper throwExceptionWithName:@"Data Exception" reason:@"Returned data is NIL"];
-                }
-                else
-                {
-                    if (object.format == FORMAT_TYPE_JSON) 
-                    {
-                        NSError *jsonParsingError = nil;
-                        NSDictionary *parsedJSON = [NSJSONSerialization JSONObjectWithData:data
-                                                                                   options:0 
-                                                                                     error:&jsonParsingError];
-                        
-                        if ((![NSJSONSerialization isValidJSONObject:parsedJSON]) || (jsonParsingError != nil))
+                [NSObject sendPOSTWithURL:[NSURL URLWithString:postURL] withParams:baseURL 
+                                   images:[NSArray arrayWithObject:(FWImage *)obj] completion:^(NSData *data) {
+                
+                        if (data == nil)
                         {
-                            block(nil);
+                            [FaceWrapper throwExceptionWithName:@"Data Exception" reason:@"Returned data is NIL"];
                         }
                         else
                         {
-                            block(parsedJSON);
+                            if (object.format == FORMAT_TYPE_JSON) 
+                            {
+                                NSError *jsonParsingError = nil;
+                                NSDictionary *parsedJSON = [NSJSONSerialization JSONObjectWithData:data
+                                                                                           options:0 
+                                                                                             error:&jsonParsingError];
+                                
+                                if ((![NSJSONSerialization isValidJSONObject:parsedJSON]) || (jsonParsingError != nil))
+                                {
+                                    block(nil);
+                                }
+                                else
+                                {
+                                    block(parsedJSON);
+                                }
+                            }
+                            else
+                            {
+                                //XML 
+                                block([FaceWrapper parseFaceXML:data]);
+                            }
                         }
-                    }
-                    else
-                    {
-                        //XML 
-                        block([FaceWrapper parseFaceXML:data]);
-                    }
-                }
+                }];
             }];
         }
     };

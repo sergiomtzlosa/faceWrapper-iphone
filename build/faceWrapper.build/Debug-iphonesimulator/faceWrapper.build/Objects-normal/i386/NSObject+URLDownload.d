@@ -1,4 +1,4 @@
 dependencies: \
-  /Users/macpocket1/github/faceWrapper-iphone/faceWrapper/NSObject+URLDownload.m \
-  /Users/macpocket1/github/faceWrapper-iphone/faceWrapper/NSObject+URLDownload.h \
-  /Users/macpocket1/github/faceWrapper-iphone/faceWrapper/NSData+NSString.h
+  /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/NSObject+URLDownload.m \
+  /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/NSObject+URLDownload.h \
+  /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/NSData+NSString.h

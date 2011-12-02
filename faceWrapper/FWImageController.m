@@ -93,8 +93,11 @@
 {
     ParseObject *parsed = [[ParseObject alloc] initWithRawDictionary:dataFaces];
 
+    NSLog(@"%@", parsed.rawDictionary);
+    
     [parsed loopOverFaces:^(NSDictionary *face) {
         
+        NSLog(@"%@", face);
         CGFloat width = ([[face objectForKey:@"width"] floatValue] * imageView.frame.size.width) / 100;
         CGFloat height = ([[face objectForKey:@"height"] floatValue] * imageView.frame.size.height) / 100;
         CGFloat x = ([[(NSDictionary *)[face objectForKey:@"center"] objectForKey:@"x"] floatValue] * imageView.frame.size.width) / 100;

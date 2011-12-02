@@ -37,9 +37,17 @@
                                                     imageName:@"girls"
                                                     extension:@"jpg"
                                                   andFullPath:@""]];
+
+    [images addImagePOSTToArray:[[FWImage alloc] initWithData:UIImageJPEGRepresentation([UIImage imageNamed:@"face.jpg"], 1.0)
+                                                    imageName:@"face"
+                                                    extension:@"jpg"
+                                                  andFullPath:@""]];
+    [object setPostImages:images];
+     
     object.isRESTObject = NO;
     
-    [object setPostImages:images];
+     
+    
     [object setDetector:DETECTOR_TYPE_DEFAULT];
     [object setFormat:FORMAT_TYPE_JSON];
     
@@ -65,7 +73,7 @@
 - (void)controllerDidFindFaceItemWithObject:(NSDictionary *)faces
 {
     ParseObject *parsed = [[ParseObject alloc] initWithRawDictionary:faces];
-    
+   
     [parsed loopOverFaces:^(NSDictionary *face) {
         
         NSLog(@"FACE: %@", face);

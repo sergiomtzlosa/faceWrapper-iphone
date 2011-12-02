@@ -1,3 +1,2 @@
-dependencies: \
-  /Users/macpocket1/github/faceWrapper-iphone/faceWrapper/FWImage.m \
-  /Users/macpocket1/github/faceWrapper-iphone/faceWrapper/FWImage.h
+dependencies: /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/FWImage.m \
+  /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/FWImage.h

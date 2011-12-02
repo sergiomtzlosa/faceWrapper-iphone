@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/macpocket1/github/faceWrapper-iphone/faceWrapper/FWObject.m \
-  /Users/macpocket1/github/faceWrapper-iphone/faceWrapper/FWObject.h
+  /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/FWObject.m \
+  /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/FWObject.h

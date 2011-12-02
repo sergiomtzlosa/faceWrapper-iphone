@@ -8,5 +8,5 @@
 
 #warning define your API from faces.com --> http://developers.face.com/account/
 
-#define kFaceAPI @"YOUR_API_KEY"
-#define kFaceSecretAPI @"YOUR_SECRET_API_KEY"
+#define kFaceAPI @"YOUR_FACE_API_KEY"
+#define kFaceSecretAPI @"YOUR_FACE_API_SECRET_KEY"

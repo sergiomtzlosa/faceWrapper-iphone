@@ -1,3 +1,2 @@
-dependencies: \
-  /Users/macpocket1/github/faceWrapper-iphone/faceWrapper/main.m \
-  /Users/macpocket1/github/faceWrapper-iphone/faceWrapper/AppDelegate.h
+dependencies: /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/main.m \
+  /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/AppDelegate.h
