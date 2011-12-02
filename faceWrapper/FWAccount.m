@@ -17,26 +17,30 @@
 
 #define kUsers @"http://api.face.com/account/users.json?api_key=%@&api_secret=%@&namespaces=%@"
 
+@interface FWAccount (Private)
+
++ (NSDictionary *)serviceManager:(NSString *)url;
+
+@end
+
 @implementation FWAccount
 
-+ (NSDictionary *)namespacesFromCurrentAccount
++ (NSDictionary *)serviceManager:(NSString *)url
 {
-    NSString *url = [NSString stringWithFormat:kNamespaces, kFaceAPI, kFaceSecretAPI];
-
     __block NSDictionary *dictionary = nil;
     void (^execution)(NSString *url);
-
+    
     execution = ^(NSString *url) {
-
+        
         @synchronized(dictionary) 
         { 
             NSData *data = [NSObject downloadURLWithString:url];
-
+            
             NSError *jsonParsingError = nil;
             NSDictionary *parsedJSON = [NSJSONSerialization JSONObjectWithData:data
                                                                        options:0 
                                                                          error:&jsonParsingError];
-                
+            
             if ((![NSJSONSerialization isValidJSONObject:parsedJSON]) || (jsonParsingError != nil))
             {
                 dictionary = nil;
@@ -47,45 +51,24 @@
             }
         }  
     };
-        
+    
     execution(url);
     
     return dictionary;
+}
+
++ (NSDictionary *)namespacesFromCurrentAccount
+{
+    NSString *url = [NSString stringWithFormat:kNamespaces, kFaceAPI, kFaceSecretAPI];
+
+    return [FWAccount serviceManager:url];
 }
 
 + (NSDictionary *)limitsFromCurrentAccount
 {
     NSString *url = [NSString stringWithFormat:kLimits, kFaceAPI, kFaceSecretAPI];
 
-    __block NSDictionary *dictionary = nil;
-    
-    void (^execution)(NSString *url);
-    
-    execution = ^(NSString *url) {
-        
-        @synchronized(dictionary) 
-        { 
-            NSData *data = [NSObject downloadURLWithString:url];
-            
-            NSError *jsonParsingError = nil;
-            NSDictionary *parsedJSON = [NSJSONSerialization JSONObjectWithData:data
-                                                                       options:0 
-                                                                         error:&jsonParsingError];
-            
-            if ((![NSJSONSerialization isValidJSONObject:parsedJSON]) || (jsonParsingError != nil))
-            {
-                dictionary = nil;
-            }
-            else
-            {
-                dictionary = parsedJSON;
-            }
-        }  
-    };
-    
-    execution(url);
-    
-    return dictionary;
+    return [FWAccount serviceManager:url];
 }
 
 + (NSDictionary *)usersFromCurrentAccountForNameSpaces:(NSArray *)namespaces
@@ -105,35 +88,7 @@
     
     NSString *url = [NSString stringWithFormat:kUsers, kFaceAPI, kFaceSecretAPI, spaces];
 
-    __block NSDictionary *dictionary = nil;
-    
-    void (^execution)(NSString *url);
-    
-    execution = ^(NSString *url) {
-        
-        @synchronized(dictionary) 
-        { 
-            NSData *data = [NSObject downloadURLWithString:url];
-            
-            NSError *jsonParsingError = nil;
-            NSDictionary *parsedJSON = [NSJSONSerialization JSONObjectWithData:data
-                                                                       options:0 
-                                                                         error:&jsonParsingError];
-            
-            if ((![NSJSONSerialization isValidJSONObject:parsedJSON]) || (jsonParsingError != nil))
-            {
-                dictionary = nil;
-            }
-            else
-            {
-                dictionary = parsedJSON;
-            }
-        }  
-    };
-    
-    execution(url);
-    
-    return dictionary;
+    return [FWAccount serviceManager:url];
 }
 
 @end

@@ -14,7 +14,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
     //Images must be ALWAYS JPG
     
     FWObject *object = [FWObject new];
