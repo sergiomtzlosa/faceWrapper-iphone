@@ -70,6 +70,14 @@ On delegate method you will receive the response:
 
 </pre>
 
+Wrapped services
+----------------
+
+* detect.json
+* users.json
+* limits.json
+* namespaces.json
+
 ![FaceWrapper](https://github.com/sergiomtzlosa/faceWrapper-iphone/raw/master/faceWrapper-iphone.png)
 
 Follow me on twitter : [http://twitter.com/#!/sergimtzlosa](@sergimtzlosa)

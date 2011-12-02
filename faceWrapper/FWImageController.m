@@ -32,7 +32,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     if (([object.urls count] == 0) || ((id)object == nil))
     {
         [NSException exceptionWithName:@"URLs object" reason:@"URL image array is NULL" userInfo:nil];

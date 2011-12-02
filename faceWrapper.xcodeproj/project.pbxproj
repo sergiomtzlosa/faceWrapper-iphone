@@ -26,6 +26,7 @@
 		B5696827148522F30009649A /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = B5696826148522F30009649A /* XMLReader.m */; };
 		B58BFAB114850BBD00B37B19 /* face.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B58BFAB014850BBC00B37B19 /* face.jpg */; };
 		B5A14CE214865C2B002EFDF7 /* girls.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B5A14CE114865C2B002EFDF7 /* girls.jpg */; };
+		B5B411341488E5DF00E58BBA /* FWAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B411331488E5DF00E58BBA /* FWAccount.m */; };
 		B5D20AAA14860BBC0015CA61 /* FWImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D20AA814860BBC0015CA61 /* FWImageController.m */; };
 		B5D20AAB14860BBC0015CA61 /* FWImageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5D20AA914860BBC0015CA61 /* FWImageController.xib */; };
 		B5D20AAF148610060015CA61 /* NSString+Selector.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D20AAE148610060015CA61 /* NSString+Selector.m */; };
@@ -72,6 +73,8 @@
 		B5696826148522F30009649A /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLReader.m; sourceTree = "<group>"; };
 		B58BFAB014850BBC00B37B19 /* face.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = face.jpg; sourceTree = "<group>"; };
 		B5A14CE114865C2B002EFDF7 /* girls.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = girls.jpg; sourceTree = "<group>"; };
+		B5B411321488E5DF00E58BBA /* FWAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWAccount.h; sourceTree = "<group>"; };
+		B5B411331488E5DF00E58BBA /* FWAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWAccount.m; sourceTree = "<group>"; };
 		B5D20AA714860BBC0015CA61 /* FWImageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWImageController.h; sourceTree = "<group>"; };
 		B5D20AA814860BBC0015CA61 /* FWImageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWImageController.m; sourceTree = "<group>"; };
 		B5D20AA914860BBC0015CA61 /* FWImageController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FWImageController.xib; sourceTree = "<group>"; };
@@ -164,6 +167,7 @@
 		B52E6F401483B99A00428A74 /* FaceWrapper */ = {
 			isa = PBXGroup;
 			children = (
+				B5B411301488E5C700E58BBA /* AccountStatus */,
 				B569682314851FC80009649A /* Classes */,
 				B52E6F441483BAAB00428A74 /* Additions */,
 				B52E6F541483C11400428A74 /* Constants.h */,
@@ -217,6 +221,15 @@
 				B5D20AB8148629FE0015CA61 /* ParseObject.m */,
 			);
 			name = Classes;
+			sourceTree = "<group>";
+		};
+		B5B411301488E5C700E58BBA /* AccountStatus */ = {
+			isa = PBXGroup;
+			children = (
+				B5B411321488E5DF00E58BBA /* FWAccount.h */,
+				B5B411331488E5DF00E58BBA /* FWAccount.m */,
+			);
+			name = AccountStatus;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,6 +316,7 @@
 				B5D20AAF148610060015CA61 /* NSString+Selector.m in Sources */,
 				B5D20AB9148629FE0015CA61 /* ParseObject.m in Sources */,
 				B5D20ABC148630E50015CA61 /* ParseObject+Enumeration.m in Sources */,
+				B5B411341488E5DF00E58BBA /* FWAccount.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
