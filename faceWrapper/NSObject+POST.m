@@ -42,7 +42,7 @@
         //[self utfAppendBody:body
         //               data:[NSString stringWithString:@"Content-Transfer-Encoding: binary\r\n\r\n"]];
        
-        [body appendData:fwImage.data];
+        [body appendData:UIImageJPEGRepresentation([FWImage imageWithData:fwImage.data], 1.0)];
         [self utfAppendBody:body data:endLine];
     }
 	
