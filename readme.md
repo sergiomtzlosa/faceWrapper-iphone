@@ -84,10 +84,10 @@ On delegate method you will receive the response:
 Wrapped services
 ----------------
 
-* detect.json
-* users.json
-* limits.json
-* namespaces.json
+* detect.detect
+* users.account
+* limits.account
+* namespaces.account
 
 ![FaceWrapper](https://github.com/sergiomtzlosa/faceWrapper-iphone/raw/master/faceWrapper-iphone.png)
 
