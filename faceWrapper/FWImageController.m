@@ -16,7 +16,7 @@
 @end
 
 @implementation FWImageController
-@synthesize object, delegate;
+@synthesize objects, delegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,11 +32,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    if (([object.urls count] == 0) || ((id)object == nil))
-    {
-        [NSException exceptionWithName:@"URLs object" reason:@"URL image array is NULL" userInfo:nil];
-    }
     
     UIToolbar *toolBar = [[UIToolbar alloc] init];
     toolBar.barStyle = UIBarStyleBlackOpaque;
@@ -54,39 +49,72 @@
     
     [toolBar setItems:[NSArray arrayWithObjects:flexibleSpace, dismissButton,nil]];
     
-    if (object.isRESTObject)
-    {
-        UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[object.urls objectAtIndex:0]]];
-        imageView = [[UIImageView alloc] initWithImage:image];
-    }
-    else
-    {
-        UIImage *image = [UIImage imageWithData:[(FWImage *)[object.postImages objectAtIndex:0] data]];
-        imageView = [[UIImageView alloc] initWithImage:image];
-    }
-
-    [self.view addSubview:imageView];
+    
     [self.view addSubview:toolBar];
     [self findFaces];
 }
 
 - (void)findFaces
 {    
-    [[FaceWrapper instance] detectFaceWithFWObject:object runInBackground:NO
-                                    completionData:^(NSDictionary *response, int tagImagePost) {
+    for (FWObject *object in objects)
+    {
+        if (object.isRESTObject)
+        {
+            ([object.urls count] == 0) ? [FaceWrapper throwExceptionWithName:@"URL array items exception" 
+                                                                      reason:@"URL array cannot be null"] : nil;
+            
+            (![object.urls arrayIsTypeOf:[NSURL class]]) ? [FaceWrapper throwExceptionWithName:@"URL array type exception" 
+                                                                                        reason:@"Array object is not an NSURL object, addURLsToArray: from NSMutableArray"]: nil;
+            
+            UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[object.urls objectAtIndex:0]]];
+            if (imageView == nil)
+                imageView = [[UIImageView alloc] initWithImage:image];
+        }
+        else
+        {
+            UIImage *image = [UIImage imageWithData:[(FWImage *)[object.postImages objectAtIndex:0] data]];
+            if (imageView == nil)
+                imageView = [[UIImageView alloc] initWithImage:image];
+        }
 
-        //remark faces on image (remove it if you want)
-        [self remarkFaces:response];
+        imageView.tag = 123;
         
-        NSString *stringSEL = NSStringFromSelector(@selector(controllerDidFindFaceItemWithObject:postImageTag:));
+        if ([self.view viewWithTag:imageView.tag] == nil)
+            [self.view addSubview:imageView];
         
-        [stringSEL selectorDidRespondInClass:self.delegate
-                                     execute:^{
-                                         
-                                        [self.delegate controllerDidFindFaceItemWithObject:response 
-                                                                              postImageTag:tagImagePost];
-                                     }];
-    }];
+        [[FaceWrapper instance] detectFaceWithFWObject:object 
+                                       runInBackground:NO
+                                        completionData:^(NSDictionary *response, int tagImagePost) 
+        {
+                    
+            if (!object.wantRecognition) 
+            {
+                //remark faces on image (remove it if you want)
+                [self remarkFaces:response];
+                
+                NSString *stringSEL = NSStringFromSelector(@selector(controllerDidFindFaceItemWithObject:postImageTag:));
+                
+                [stringSEL selectorDidRespondInClass:self.delegate
+                                             execute:^{
+                                                 
+                                                 [self.delegate controllerDidFindFaceItemWithObject:response 
+                                                                                       postImageTag:tagImagePost];
+                                             }];
+                
+            }
+            else
+            {
+                NSString *stringSEL = NSStringFromSelector(@selector(controllerDidRecognizeFaceItemWithObject:postImageTag:));
+                
+                [stringSEL selectorDidRespondInClass:self.delegate
+                                             execute:^{
+                                                 
+                                                 [self.delegate controllerDidRecognizeFaceItemWithObject:response 
+                                                                                            postImageTag:tagImagePost];
+                                             }];
+            }
+        }];
+    }
 }
 
 #define degreesToRadians(x) (M_PI * x / 180.0)
@@ -94,8 +122,6 @@
 - (void)remarkFaces:(NSDictionary *)dataFaces
 {
     ParseObject *parsed = [[ParseObject alloc] initWithRawDictionary:dataFaces];
-
-    //NSLog(@"%@", parsed.rawDictionary);
     
     [parsed loopOverFaces:^(NSDictionary *face) {
         

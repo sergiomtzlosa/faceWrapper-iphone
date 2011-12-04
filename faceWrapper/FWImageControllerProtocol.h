@@ -12,5 +12,6 @@
 @required
 
 - (void)controllerDidFindFaceItemWithObject:(NSDictionary *)faces postImageTag:(int)tag;
+- (void)controllerDidRecognizeFaceItemWithObject:(NSDictionary *)faces postImageTag:(int)tag;
 
 @end

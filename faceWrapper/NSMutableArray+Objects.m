@@ -30,4 +30,9 @@
     [self addObject:image];
 }
 
+- (void)addUIDsToArray:(NSString *)uid
+{
+    [self addObject:uid];
+}
+
 @end

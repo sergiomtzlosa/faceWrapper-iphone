@@ -16,5 +16,6 @@
 - (void)addAttributeToArray:(ATTRIBUTE)attribute;
 - (void)addImageToArray:(NSURL *)imageURL;
 - (void)addImagePOSTToArray:(FWImage *)image;
+- (void)addUIDsToArray:(NSString *)uid;
 
 @end

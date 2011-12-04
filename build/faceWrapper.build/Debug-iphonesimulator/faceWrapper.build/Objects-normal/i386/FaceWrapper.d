@@ -5,9 +5,8 @@ dependencies: \
   /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/FWObject.h \
   /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/FWImage.h \
   /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/NSString+Selector.h \
-  /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/FWRecognizer.h \
-  /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/Constants.h \
   /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/NSArray+TypeChecker.h \
+  /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/Constants.h \
   /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/NSObject+Block.h \
   /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/NSObject+URLDownload.h \
   /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/NSObject+Conditional.h \

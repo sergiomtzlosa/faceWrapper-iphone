@@ -30,8 +30,9 @@ typedef enum
     ATTRIBUTE_SMILING = 4
 }ATTRIBUTE;
 
-@interface FWObject : NSObject
+@interface FWObject : NSObject <NSMutableCopying>
 {
+    //Detect service params
     FORMAT_TYPE format;
     NSArray *urls;
     DETECTOR_TYPE detector;
@@ -40,7 +41,23 @@ typedef enum
     NSURL *callback_url;
     BOOL isRESTObject;
     NSMutableArray *postImages;
+    
+    //Recognition params
+    NSArray *uids;
+    NSString *accountNamespace;
+    NSString *fb_user;
+    NSString *fb_oauth_token;
+    NSString *twitter_username;
+    NSString *twitter_password;
+    NSString *fb_username;
+    NSString *fb_password;
+    NSString *twitter_oauth_user;
+    NSString *twitter_oauth_secret;
+    NSString *twitter_oauth_token;
+    BOOL wantRecognition;
 }
+
++ (FWObject *)objectWithObject:(FWObject *)object;
 
 @property (nonatomic, strong) NSArray *urls;
 @property (nonatomic) DETECTOR_TYPE detector;
@@ -50,5 +67,17 @@ typedef enum
 @property (nonatomic, strong) NSURL *callback_url;
 @property (nonatomic) BOOL isRESTObject;
 @property (nonatomic, strong) NSMutableArray *postImages;
+@property (nonatomic, strong) NSArray *uids;
+@property (nonatomic, strong) NSString *accountNamespace;
+@property (nonatomic, strong) NSString *fb_user;
+@property (nonatomic, strong) NSString *fb_oauth_token;
+@property (nonatomic, strong) NSString *twitter_username;
+@property (nonatomic, strong) NSString *twitter_password;
+@property (nonatomic) BOOL wantRecognition;
+@property (nonatomic, strong) NSString *twitter_oauth_user;
+@property (nonatomic, strong) NSString *twitter_oauth_secret;
+@property (nonatomic, strong) NSString *twitter_oauth_token;
+@property (nonatomic, strong) NSString *fb_username;
+@property (nonatomic, strong) NSString *fb_password;
 
 @end

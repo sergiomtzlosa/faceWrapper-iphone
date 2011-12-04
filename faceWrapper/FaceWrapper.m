@@ -7,7 +7,6 @@
 //
 
 #import "FaceWrapper.h"
-#import "NSArray+TypeChecker.h"
 #import "NSObject+Block.h"
 #import "NSObject+URLDownload.h"
 #import "NSObject+Conditional.h"
@@ -18,7 +17,6 @@
 @interface FaceWrapper (Private)
 
 + (void)checkAPIKeys:(NSString *)apiKey secret:(NSString *)apiSecret;
-+ (void)throwExceptionWithName:(NSString *)name reason:(NSString *)reason;
 
 @end
 
@@ -112,13 +110,14 @@
     __block NSString *baseURL = @"";
     __block NSString *postURL = @"";
     
+    
     if (object.isRESTObject)
     {
-        baseURL = [NSString stringWithFormat:@"http://api.face.com/faces/detect.%@", (object.format == FORMAT_TYPE_XML) ? @"xml?" : @"json?"];
+        baseURL = [NSString stringWithFormat:@"http://api.face.com/faces/%@.%@", (object.wantRecognition) ? @"recognize" : @"detect", (object.format == FORMAT_TYPE_XML) ? @"xml?" : @"json?"];
     }
     else
     {
-        postURL = [NSString stringWithFormat:@"http://api.face.com/faces/detect.%@", (object.format == FORMAT_TYPE_XML) ? @"xml" : @"json"];
+        postURL = [NSString stringWithFormat:@"http://api.face.com/faces/%@.%@", (object.wantRecognition) ? @"recognize" : @"detect",(object.format == FORMAT_TYPE_XML) ? @"xml" : @"json"];
     }
     
     baseURL = [baseURL stringByAppendingFormat:@"&api_key=%@", kFaceAPI];
@@ -149,6 +148,65 @@
         }];
     }
        
+    if (object.wantRecognition)
+    {
+        ([object.uids count] == 0) ? [FaceWrapper throwExceptionWithName:@"UIDS array items exception" 
+                                                                  reason:@"UIDS array cannot be null"] : nil;
+        
+        (![object.uids arrayIsTypeOf:[NSString class]]) ? [FaceWrapper throwExceptionWithName:@"UIDS array type exception" 
+                                                                                    reason:@"Array object is not an NSString object, addUIDsToArray: from NSMutableArray"]: nil;
+        
+        baseURL = [baseURL stringByAppendingFormat:@"&uids="];
+        
+        [object.uids enumerateObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            
+            if (idx == [object.uids count] - 1)
+                baseURL = [baseURL stringByAppendingFormat:@"%@", obj];
+            else
+                baseURL = [baseURL stringByAppendingFormat:@"%@,", obj];
+        }];
+        
+        if (![object.accountNamespace isEqualToString:@""])
+            baseURL = [baseURL stringByAppendingFormat:[NSString stringWithFormat:@"&namespace=%@", object.accountNamespace]];
+     
+        baseURL = [baseURL stringByAppendingFormat:@"&user_auth="];
+        
+        /*
+        //Basic authentication not supported
+        if ((![object.twitter_username isEqualToString:@""]) && (![object.twitter_password isEqualToString:@""]))
+        {
+            baseURL = [baseURL stringByAppendingFormat:@"twitter_username:%@,twitter_password:%@", object.twitter_username, object.twitter_password];
+        }
+        */
+        
+        if ((![object.twitter_username isEqualToString:@""]) && (![object.twitter_password isEqualToString:@""]))
+        {
+            //Generate tokens
+            
+            if ((![object.twitter_oauth_user isEqualToString:@""]) &&
+                (![object.twitter_oauth_secret isEqualToString:@""]) && 
+                (![object.twitter_oauth_token isEqualToString:@""]))
+            {
+                //assign to URL
+            }
+        }
+        else if ((![object.fb_username isEqualToString:@""]) && (![object.fb_password isEqualToString:@""]))
+        {
+            //Generate tokens
+            
+            //Check tokens
+            if ((![object.fb_user isEqualToString:@""]) && (![object.fb_oauth_token isEqualToString:@""]))
+            {
+                //assign to URL
+            }
+        }
+        else
+        {
+            [FaceWrapper throwExceptionWithName:@"Credentials exception"
+                                         reason:@"Wrong credential, please check your Facebook or Twitter credentials"];
+        }
+    }
+    
     NSString *detection;
     
     if (object.detector == DETECTOR_TYPE_NORMAL)
@@ -370,18 +428,6 @@
     };
     
     [NSObject ifEvaluate:object.isRESTObject isTrue:restBlock isFalse:postBlock];
-}
-
-- (void)recognizerWithFWObject:(FWRecognizer *)object
-               runInBackground:(BOOL)background 
-                completionData:(void (^)(NSDictionary *))block
-{
-    /*
-     
-     http://api.face.com/faces/recognize.json?api_key=4b4b4c6d54c37&api_secret=&urls=http://farm3.static.flickr.com/2527/3942842476_33341616f2_b.jpg&uids=friends@facebook.com&user_auth=fb_user:571756321,fb_session:
-     
-
-     */
 }
 
 @end

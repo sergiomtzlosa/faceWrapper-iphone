@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "NSMutableArray+Objects.h"
 #import "NSString+Selector.h"
+#import "NSArray+TypeChecker.h"
 #import "FWObject.h"
-#import "FWRecognizer.h"
 #import "FWImage.h"
 #import "Constants.h"
 
@@ -18,14 +18,12 @@
 
 + (FaceWrapper *)instance;
 
++ (void)throwExceptionWithName:(NSString *)name reason:(NSString *)reason;
+
 + (NSDictionary *)parseFaceXML:(NSData *)xml;
 
 - (void)detectFaceWithFWObject:(FWObject *)object 
                runInBackground:(BOOL)background
                 completionData:(void (^)(NSDictionary *, int))block;
-
-- (void)recognizerWithFWObject:(FWRecognizer *)object
-               runInBackground:(BOOL)background 
-                completionData:(void (^)(NSDictionary *))block;
 
 @end

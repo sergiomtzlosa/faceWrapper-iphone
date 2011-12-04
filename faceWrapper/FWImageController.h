@@ -16,14 +16,14 @@
 
 @interface FWImageController : UIViewController
 {
-    FWObject *object;
+    NSArray *objects;
     id delegate;
     
 @private
     UIImageView *imageView;
 }
 
-@property (nonatomic, strong) FWObject *object;
+@property (nonatomic, strong) NSArray *objects;
 @property (nonatomic, retain) id<FWImageControllerDelegate> delegate;
 
 @end
