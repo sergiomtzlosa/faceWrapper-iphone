@@ -6,7 +6,7 @@
 //  Copyright (c) 2011 Sergio. All rights reserved.
 //
 
-#warning define your API from faces.com --> http://developers.face.com/account/
+//#warning define your API from faces.com --> http://developers.face.com/account/
 
 
 #define kFaceAPI @"YOUR_FACE_API_KEY"
