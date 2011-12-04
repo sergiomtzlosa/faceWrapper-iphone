@@ -114,14 +114,7 @@
     }
     else
     {
-        ParseObject *parsed = [[ParseObject alloc] initWithRawDictionary:faces];
-        
-        [parsed loopOverFaces:^(NSDictionary *face) {
-            
-            NSLog(@"FACE RECOGNIZED: %@", face);
-        }];
-        
-        NSLog(@"%@", faces);
+        NSLog(@"RECOGNIZED : %@", faces);
     }
 }
 

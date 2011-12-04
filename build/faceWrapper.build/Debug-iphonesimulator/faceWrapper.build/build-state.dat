@@ -4,11 +4,11 @@ r1
 cCheck dependencies
 cProcessInfoPlistFile /Users/sid/Desktop/faceWrapper-iphone/build/Debug-iphonesimulator/faceWrapper.app/Info.plist faceWrapper/faceWrapper-Info.plist
 cProcessPCH /var/folders/jz/x1_qydqd0_37csvhjbynhrqc0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/faceWrapper-Prefix-bbzbdgsxfboqlqerzvqhbcxstkek/faceWrapper-Prefix.pch.pth faceWrapper/faceWrapper-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/faceWrapper.build/Debug-iphonesimulator/faceWrapper.build/Objects-normal/i386/main.o /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/faceWrapper.build/Debug-iphonesimulator/faceWrapper.build/Objects-normal/i386/FaceWrapper.o /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/FaceWrapper.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC build/faceWrapper.build/Debug-iphonesimulator/faceWrapper.build/Objects-normal/i386/AppDelegate.o /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/AppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/faceWrapper.build/Debug-iphonesimulator/faceWrapper.build/Objects-normal/i386/main.o /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC build/faceWrapper.build/Debug-iphonesimulator/faceWrapper.build/Objects-normal/i386/ViewController.o /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/ViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC build/faceWrapper.build/Debug-iphonesimulator/faceWrapper.build/Objects-normal/i386/NSObject+Block.o /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/NSObject+Block.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/faceWrapper.build/Debug-iphonesimulator/faceWrapper.build/Objects-normal/i386/FaceWrapper.o /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/FaceWrapper.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC build/faceWrapper.build/Debug-iphonesimulator/faceWrapper.build/Objects-normal/i386/NSData+NSString.o /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/NSData+NSString.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC build/faceWrapper.build/Debug-iphonesimulator/faceWrapper.build/Objects-normal/i386/FWObject.o /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/FWObject.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 cCompileC build/faceWrapper.build/Debug-iphonesimulator/faceWrapper.build/Objects-normal/i386/NSThread+Blocks.o /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/NSThread+Blocks.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
@@ -59,11 +59,11 @@ t1316488875
 s9401232
 
 N/Users/sid/Desktop/faceWrapper-iphone/build/Debug-iphonesimulator/faceWrapper.app
-t1323008475
+t1323008667
 s306
 
 N/Users/sid/Desktop/faceWrapper-iphone/build/Debug-iphonesimulator/faceWrapper.app.dSYM
-t1323008475
+t1323008667
 s102
 
 N/Users/sid/Desktop/faceWrapper-iphone/build/Debug-iphonesimulator/faceWrapper.app/FWImageController.nib
@@ -91,8 +91,8 @@ t1322843534
 s90716
 
 N/Users/sid/Desktop/faceWrapper-iphone/build/Debug-iphonesimulator/faceWrapper.app/faceWrapper
-t1323008475
-s139908
+t1323008667
+s139512
 
 N/Users/sid/Desktop/faceWrapper-iphone/build/Debug-iphonesimulator/faceWrapper.app/girls.jpg
 t1322843538
@@ -127,8 +127,8 @@ t1322855947
 s11920
 
 N/Users/sid/Desktop/faceWrapper-iphone/build/faceWrapper.build/Debug-iphonesimulator/faceWrapper.build/Objects-normal/i386/FaceWrapper.o
-t1323008474
-s69300
+t1323008544
+s69324
 
 N/Users/sid/Desktop/faceWrapper-iphone/build/faceWrapper.build/Debug-iphonesimulator/faceWrapper.build/Objects-normal/i386/NSArray+TypeChecker.o
 t1322843533
@@ -175,8 +175,8 @@ t1322843534
 s10936
 
 N/Users/sid/Desktop/faceWrapper-iphone/build/faceWrapper.build/Debug-iphonesimulator/faceWrapper.build/Objects-normal/i386/ViewController.o
-t1323008212
-s52328
+t1323008667
+s50740
 
 N/Users/sid/Desktop/faceWrapper-iphone/build/faceWrapper.build/Debug-iphonesimulator/faceWrapper.build/Objects-normal/i386/XMLReader.o
 t1322843533
@@ -490,9 +490,9 @@ t1322840768
 s268
 
 N/Users/sid/Desktop/faceWrapper-iphone/faceWrapper/ViewController.m
-c000000004EDB81FE0000000000000F2A
-t1323008510
-s3882
+c000000004EDB82A70000000000000E54
+t1323008679
+s3668
 
 N/Users/sid/Desktop/faceWrapper-iphone/faceWrapper/XMLReader.h
 c000000004ED8F2C00000000000000196
@@ -791,7 +791,7 @@ r0
 
 CCheck dependencies
 r0
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies5edb9fa0b98bb441^9565a0a0b98bb441^---0#1#0#--18"Check dependencies36"5CB0B343-E06C-406E-991D-F2A3CBCF5B0C-
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependenciesc495ef27ba8bb441^390ef027ba8bb441^---0#1#0#--18"Check dependencies36"507E1A48-61EF-436F-8F1E-5B34D1569E67-
 
 CCompileC build/faceWrapper.build/Debug-iphonesimulator/faceWrapper.build/Objects-normal/i386/AppDelegate.o /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/AppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 s344700190.913797
@@ -1041,8 +1041,8 @@ xcom.apple.compilers.llvm.clang.1_0.compiler
 lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection71"Compile /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/ParseObject.m39ee280e3589b441^38dc3f0e3589b441^---0#0#0#-19%DVTDocumentLocation2@79"file://localhost/Users/sid/Desktop/faceWrapper-iphone/faceWrapper/ParseObject.m0000000000000000^2750"CompileC build/faceWrapper.build/Debug-iphonesimulator/faceWrapper.build/Objects-normal/i386/ParseObject.o faceWrapper/ParseObject.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/sid/Desktop/faceWrapper-iphone    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=50000 -iquote /Users/sid/Desktop/faceWrapper-iphone/build/faceWrapper.build/Debug-iphonesimulator/faceWrapper.build/faceWrapper-generated-files.hmap -I/Users/sid/Desktop/faceWrapper-iphone/build/faceWrapper.build/Debug-iphonesimulator/faceWrapper.build/faceWrapper-own-target-headers.hmap -I/Users/sid/Desktop/faceWrapper-iphone/build/faceWrapper.build/Debug-iphonesimulator/faceWrapper.build/faceWrapper-all-target-headers.hmap -iquote /Users/sid/Desktop/faceWrapper-iphone/build/faceWrapper.build/Debug-iphonesimulator/faceWrapper.build/faceWrapper-project-headers.hmap -I/Users/sid/Desktop/faceWrapper-iphone/build/Debug-iphonesimulator/include -I/Users/sid/Desktop/faceWrapper-iphone/build/faceWrapper.build/Debug-iphonesimulator/faceWrapper.build/DerivedSources/i386 -I/Users/sid/Desktop/faceWrapper-iphone/build/faceWrapper.build/Debug-iphonesimulator/faceWrapper.build/DerivedSources -F/Users/sid/Desktop/faceWrapper-iphone/build/Debug-iphonesimulator -include /var/folders/jz/x1_qydqd0_37csvhjbynhrqc0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/faceWrapper-Prefix-bbzbdgsxfboqlqerzvqhbcxstkek/faceWrapper-Prefix.pch -MMD -MT dependencies -MF /Users/sid/Desktop/faceWrapper-iphone/build/faceWrapper.build/Debug-iphonesimulator/faceWrapper.build/Objects-normal/i386/ParseObject.d -c /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/ParseObject.m -o /Users/sid/Desktop/faceWrapper-iphone/build/faceWrapper.build/Debug-iphonesimulator/faceWrapper.build/Objects-normal/i386/ParseObject.o36"26C9001F-2C50-4756-AB36-FC4F6858F3D2-
 
 CCompileC build/faceWrapper.build/Debug-iphonesimulator/faceWrapper.build/Objects-normal/i386/ViewController.o /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/ViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
-s344701344.667617
-e344701344.860376
+s344701479.964467
+e344701480.128365
 r1
 xCompileC
 xbuild/faceWrapper.build/Debug-iphonesimulator/faceWrapper.build/Objects-normal/i386/ViewController.o
@@ -1051,7 +1051,7 @@ xnormal
 xi386
 xobjective-c
 xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection74"Compile /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/ViewController.m1310aba0b98bb441^8941dca0b98bb441^---0#0#0#-19%DVTDocumentLocation2@82"file://localhost/Users/sid/Desktop/faceWrapper-iphone/faceWrapper/ViewController.m0000000000000000^2765"CompileC build/faceWrapper.build/Debug-iphonesimulator/faceWrapper.build/Objects-normal/i386/ViewController.o faceWrapper/ViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/sid/Desktop/faceWrapper-iphone    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=50000 -iquote /Users/sid/Desktop/faceWrapper-iphone/build/faceWrapper.build/Debug-iphonesimulator/faceWrapper.build/faceWrapper-generated-files.hmap -I/Users/sid/Desktop/faceWrapper-iphone/build/faceWrapper.build/Debug-iphonesimulator/faceWrapper.build/faceWrapper-own-target-headers.hmap -I/Users/sid/Desktop/faceWrapper-iphone/build/faceWrapper.build/Debug-iphonesimulator/faceWrapper.build/faceWrapper-all-target-headers.hmap -iquote /Users/sid/Desktop/faceWrapper-iphone/build/faceWrapper.build/Debug-iphonesimulator/faceWrapper.build/faceWrapper-project-headers.hmap -I/Users/sid/Desktop/faceWrapper-iphone/build/Debug-iphonesimulator/include -I/Users/sid/Desktop/faceWrapper-iphone/build/faceWrapper.build/Debug-iphonesimulator/faceWrapper.build/DerivedSources/i386 -I/Users/sid/Desktop/faceWrapper-iphone/build/faceWrapper.build/Debug-iphonesimulator/faceWrapper.build/DerivedSources -F/Users/sid/Desktop/faceWrapper-iphone/build/Debug-iphonesimulator -include /var/folders/jz/x1_qydqd0_37csvhjbynhrqc0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/faceWrapper-Prefix-bbzbdgsxfboqlqerzvqhbcxstkek/faceWrapper-Prefix.pch -MMD -MT dependencies -MF /Users/sid/Desktop/faceWrapper-iphone/build/faceWrapper.build/Debug-iphonesimulator/faceWrapper.build/Objects-normal/i386/ViewController.d -c /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/ViewController.m -o /Users/sid/Desktop/faceWrapper-iphone/build/faceWrapper.build/Debug-iphonesimulator/faceWrapper.build/Objects-normal/i386/ViewController.o36"B2B7A2DF-ABF0-4453-BFF9-924574702925-
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection74"Compile /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/ViewController.md103f727ba8bb441^b5dd2028ba8bb441^---0#0#0#-19%DVTDocumentLocation2@82"file://localhost/Users/sid/Desktop/faceWrapper-iphone/faceWrapper/ViewController.m0000000000000000^2765"CompileC build/faceWrapper.build/Debug-iphonesimulator/faceWrapper.build/Objects-normal/i386/ViewController.o faceWrapper/ViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/sid/Desktop/faceWrapper-iphone    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=50000 -iquote /Users/sid/Desktop/faceWrapper-iphone/build/faceWrapper.build/Debug-iphonesimulator/faceWrapper.build/faceWrapper-generated-files.hmap -I/Users/sid/Desktop/faceWrapper-iphone/build/faceWrapper.build/Debug-iphonesimulator/faceWrapper.build/faceWrapper-own-target-headers.hmap -I/Users/sid/Desktop/faceWrapper-iphone/build/faceWrapper.build/Debug-iphonesimulator/faceWrapper.build/faceWrapper-all-target-headers.hmap -iquote /Users/sid/Desktop/faceWrapper-iphone/build/faceWrapper.build/Debug-iphonesimulator/faceWrapper.build/faceWrapper-project-headers.hmap -I/Users/sid/Desktop/faceWrapper-iphone/build/Debug-iphonesimulator/include -I/Users/sid/Desktop/faceWrapper-iphone/build/faceWrapper.build/Debug-iphonesimulator/faceWrapper.build/DerivedSources/i386 -I/Users/sid/Desktop/faceWrapper-iphone/build/faceWrapper.build/Debug-iphonesimulator/faceWrapper.build/DerivedSources -F/Users/sid/Desktop/faceWrapper-iphone/build/Debug-iphonesimulator -include /var/folders/jz/x1_qydqd0_37csvhjbynhrqc0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/faceWrapper-Prefix-bbzbdgsxfboqlqerzvqhbcxstkek/faceWrapper-Prefix.pch -MMD -MT dependencies -MF /Users/sid/Desktop/faceWrapper-iphone/build/faceWrapper.build/Debug-iphonesimulator/faceWrapper.build/Objects-normal/i386/ViewController.d -c /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/ViewController.m -o /Users/sid/Desktop/faceWrapper-iphone/build/faceWrapper.build/Debug-iphonesimulator/faceWrapper.build/Objects-normal/i386/ViewController.o36"984B0789-2804-45BD-83D9-639FF66E8D0E-
 
 CCompileC build/faceWrapper.build/Debug-iphonesimulator/faceWrapper.build/Objects-normal/i386/XMLReader.o /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/XMLReader.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
 s344536333.782788
@@ -1123,23 +1123,23 @@ xbuild/Debug-iphonesimulator/faceWrapper.app/girls.jpg
 lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection58"Copy build/Debug-iphonesimulator/faceWrapper.app/girls.jpge12786123589b441^11c889123589b441^---0#0#0#-19%DVTDocumentLocation2@107"file://localhost/Users/sid/Desktop/faceWrapper-iphone/build/Debug-iphonesimulator/faceWrapper.app/girls.jpg00f4fcafdeffdf42^517"CpResource faceWrapper/girls.jpg build/Debug-iphonesimulator/faceWrapper.app/girls.jpg    cd /Users/sid/Desktop/faceWrapper-iphone    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/girls.jpg /Users/sid/Desktop/faceWrapper-iphone/build/Debug-iphonesimulator/faceWrapper.app36"04CE3A13-1E0A-49F5-B9AA-F78EBCDD7108-
 
 CGenerateDSYMFile /Users/sid/Desktop/faceWrapper-iphone/build/Debug-iphonesimulator/faceWrapper.app.dSYM /Users/sid/Desktop/faceWrapper-iphone/build/Debug-iphonesimulator/faceWrapper.app/faceWrapper
-s344701344.925336
-e344701344.961866
+s344701480.455974
+e344701480.496927
 r1
 xGenerateDSYMFile
 x/Users/sid/Desktop/faceWrapper-iphone/build/Debug-iphonesimulator/faceWrapper.app.dSYM
 x/Users/sid/Desktop/faceWrapper-iphone/build/Debug-iphonesimulator/faceWrapper.app/faceWrapper
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection97"Generating /Users/sid/Desktop/faceWrapper-iphone/build/Debug-iphonesimulator/faceWrapper.app.dSYM0ef4eca0b98bb441^895ef6a0b98bb441^---0#0#0#-19%DVTDocumentLocation2@103"file://localhost/Users/sid/Desktop/faceWrapper-iphone/build/Debug-iphonesimulator/faceWrapper.app.dSYM/0000000000000000^514"GenerateDSYMFile build/Debug-iphonesimulator/faceWrapper.app.dSYM build/Debug-iphonesimulator/faceWrapper.app/faceWrapper    cd /Users/sid/Desktop/faceWrapper-iphone    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Users/sid/Desktop/faceWrapper-iphone/build/Debug-iphonesimulator/faceWrapper.app/faceWrapper -o /Users/sid/Desktop/faceWrapper-iphone/build/Debug-iphonesimulator/faceWrapper.app.dSYM36"9D2E5A29-3E5F-4863-88D1-04310417D59C-
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection97"Generating /Users/sid/Desktop/faceWrapper-iphone/build/Debug-iphonesimulator/faceWrapper.app.dSYMb3d27428ba8bb441^c2de8828ba8bb441^---0#0#0#-19%DVTDocumentLocation2@103"file://localhost/Users/sid/Desktop/faceWrapper-iphone/build/Debug-iphonesimulator/faceWrapper.app.dSYM/0000000000000000^514"GenerateDSYMFile build/Debug-iphonesimulator/faceWrapper.app.dSYM build/Debug-iphonesimulator/faceWrapper.app/faceWrapper    cd /Users/sid/Desktop/faceWrapper-iphone    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Users/sid/Desktop/faceWrapper-iphone/build/Debug-iphonesimulator/faceWrapper.app/faceWrapper -o /Users/sid/Desktop/faceWrapper-iphone/build/Debug-iphonesimulator/faceWrapper.app.dSYM36"D0360286-7E65-4FB2-BA5D-315962780FF7-
 
 CLd /Users/sid/Desktop/faceWrapper-iphone/build/Debug-iphonesimulator/faceWrapper.app/faceWrapper normal i386
-s344701344.868046
-e344701344.917563
+s344701480.135425
+e344701480.448374
 r1
 xLd
 x/Users/sid/Desktop/faceWrapper-iphone/build/Debug-iphonesimulator/faceWrapper.app/faceWrapper
 xnormal
 xi386
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection98"Link /Users/sid/Desktop/faceWrapper-iphone/build/Debug-iphonesimulator/faceWrapper.app/faceWrapper3c4ddea0b98bb441^f5f7eaa0b98bb441^---0#0#0#--1087"Ld build/Debug-iphonesimulator/faceWrapper.app/faceWrapper normal i386    cd /Users/sid/Desktop/faceWrapper-iphone    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -L/Users/sid/Desktop/faceWrapper-iphone/build/Debug-iphonesimulator -F/Users/sid/Desktop/faceWrapper-iphone/build/Debug-iphonesimulator -filelist /Users/sid/Desktop/faceWrapper-iphone/build/faceWrapper.build/Debug-iphonesimulator/faceWrapper.build/Objects-normal/i386/faceWrapper.LinkFileList -mmacosx-version-min=10.6 -Xlinker -objc_abi_version -Xlinker 2 -fobjc-arc -Xlinker -no_implicit_dylibs -D__IPHONE_OS_VERSION_MIN_REQUIRED=50000 -framework QuartzCore -framework UIKit -framework Foundation -framework CoreGraphics -o /Users/sid/Desktop/faceWrapper-iphone/build/Debug-iphonesimulator/faceWrapper.app/faceWrapper36"EC95204D-36ED-422D-8BCC-D8BCE9F35786-
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection98"Link /Users/sid/Desktop/faceWrapper-iphone/build/Debug-iphonesimulator/faceWrapper.app/faceWrapper94c02228ba8bb441^6bd78828ba8bb441^---0#0#0#--1087"Ld build/Debug-iphonesimulator/faceWrapper.app/faceWrapper normal i386    cd /Users/sid/Desktop/faceWrapper-iphone    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -L/Users/sid/Desktop/faceWrapper-iphone/build/Debug-iphonesimulator -F/Users/sid/Desktop/faceWrapper-iphone/build/Debug-iphonesimulator -filelist /Users/sid/Desktop/faceWrapper-iphone/build/faceWrapper.build/Debug-iphonesimulator/faceWrapper.build/Objects-normal/i386/faceWrapper.LinkFileList -mmacosx-version-min=10.6 -Xlinker -objc_abi_version -Xlinker 2 -fobjc-arc -Xlinker -no_implicit_dylibs -D__IPHONE_OS_VERSION_MIN_REQUIRED=50000 -framework QuartzCore -framework UIKit -framework Foundation -framework CoreGraphics -o /Users/sid/Desktop/faceWrapper-iphone/build/Debug-iphonesimulator/faceWrapper.app/faceWrapper36"C6557A35-FFBC-4DFC-8A05-DCDD1B245AAC-
 
 CProcessInfoPlistFile /Users/sid/Desktop/faceWrapper-iphone/build/Debug-iphonesimulator/faceWrapper.app/Info.plist faceWrapper/faceWrapper-Info.plist
 s344536327.468064
@@ -1180,10 +1180,10 @@ xcom.apple.compilers.llvm.clang.1_0.analyzer
 lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection45"Precompile faceWrapper/faceWrapper-Prefix.pchfbcb4a639a8bb441^7bf630669a8bb441^---0#0#0#-19%DVTDocumentLocation2@88"file://localhost/Users/sid/Desktop/faceWrapper-iphone/faceWrapper/faceWrapper-Prefix.pch0000000000000000^2759"ProcessPCH /var/folders/jz/x1_qydqd0_37csvhjbynhrqc0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/faceWrapper-Prefix-hejrwwmyxttmragaelnxlfxgxbqo/faceWrapper-Prefix.pch.pth faceWrapper/faceWrapper-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.analyzer    cd /Users/sid/Desktop/faceWrapper-iphone    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/clang -x objective-c-header -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -Xclang -analyzer-checker -Xclang osx.cocoa.experimental.SelfInit -D__IPHONE_OS_VERSION_MIN_REQUIRED=50000 -iquote /Users/sid/Desktop/faceWrapper-iphone/build/faceWrapper.build/Debug-iphonesimulator/faceWrapper.build/faceWrapper-generated-files.hmap -I/Users/sid/Desktop/faceWrapper-iphone/build/faceWrapper.build/Debug-iphonesimulator/faceWrapper.build/faceWrapper-own-target-headers.hmap -I/Users/sid/Desktop/faceWrapper-iphone/build/faceWrapper.build/Debug-iphonesimulator/faceWrapper.build/faceWrapper-all-target-headers.hmap -iquote /Users/sid/Desktop/faceWrapper-iphone/build/faceWrapper.build/Debug-iphonesimulator/faceWrapper.build/faceWrapper-project-headers.hmap -I/Users/sid/Desktop/faceWrapper-iphone/build/Debug-iphonesimulator/include -I/Users/sid/Desktop/faceWrapper-iphone/build/faceWrapper.build/Debug-iphonesimulator/faceWrapper.build/DerivedSources/i386 -I/Users/sid/Desktop/faceWrapper-iphone/build/faceWrapper.build/Debug-iphonesimulator/faceWrapper.build/DerivedSources -F/Users/sid/Desktop/faceWrapper-iphone/build/Debug-iphonesimulator -c /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/faceWrapper-Prefix.pch -o /var/folders/jz/x1_qydqd0_37csvhjbynhrqc0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/faceWrapper-Prefix-hejrwwmyxttmragaelnxlfxgxbqo/faceWrapper-Prefix.pch.pth -MMD -MT dependencies -MF /var/folders/jz/x1_qydqd0_37csvhjbynhrqc0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/faceWrapper-Prefix-hejrwwmyxttmragaelnxlfxgxbqo/faceWrapper-Prefix.pch.d36"639B830F-1C35-4C7D-86A4-E10E87FC187B-
 
 CTouch /Users/sid/Desktop/faceWrapper-iphone/build/Debug-iphonesimulator/faceWrapper.app
-s344701344.983033
-e344701345.015935
+s344701480.516589
+e344701480.525632
 r1
 xTouch
 x/Users/sid/Desktop/faceWrapper-iphone/build/Debug-iphonesimulator/faceWrapper.app
-lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection87"Touch /Users/sid/Desktop/faceWrapper-iphone/build/Debug-iphonesimulator/faceWrapper.app9d0efca0b98bb441^bea005a1b98bb441^---0#0#0#--330"Touch build/Debug-iphonesimulator/faceWrapper.app    cd /Users/sid/Desktop/faceWrapper-iphone    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/sid/Desktop/faceWrapper-iphone/build/Debug-iphonesimulator/faceWrapper.app36"CD4B911E-A1F1-4236-B21A-0DCA16C7BEE3-
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection87"Touch /Users/sid/Desktop/faceWrapper-iphone/build/Debug-iphonesimulator/faceWrapper.app404e8428ba8bb441^ebe48828ba8bb441^---0#0#0#--330"Touch build/Debug-iphonesimulator/faceWrapper.app    cd /Users/sid/Desktop/faceWrapper-iphone    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/sid/Desktop/faceWrapper-iphone/build/Debug-iphonesimulator/faceWrapper.app36"EDA305CC-3733-411C-A7AA-0E02D6EB649E-
 
