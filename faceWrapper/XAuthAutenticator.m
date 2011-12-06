@@ -188,7 +188,7 @@ static void (^errorBlock)(NSError *) = nil;
     [parameters setValue:timestamp forKey:@"oauth_timestamp"];
     [parameters setValue:nonce forKey:@"oauth_nonce"];
     [parameters setValue:@"1.0" forKey:@"oauth_version"];
-    
+
     if ((id)self.oauth_token != nil)
         [parameters setValue:self.oauth_token forKey: @"oauth_token"];
     
@@ -277,7 +277,7 @@ static void (^errorBlock)(NSError *) = nil;
         [authorization appendString:@"\""];
     }
     
-    NSLog(@"Authorization: %@", authorization);
+    //NSLog(@"Authorization: %@", authorization);
     
     // Setup the request and connection
     
@@ -356,8 +356,6 @@ static void (^errorBlock)(NSError *) = nil;
         oauth_token_secret = [parameters valueForKey:@"oauth_token_secret"];
         oauth_user = [parameters valueForKey:@"user_id"];
         
-        NSLog(@"parameters: %@", parameters);
-
         completion(oauth_token, oauth_token_secret, oauth_user);
 	}
 	

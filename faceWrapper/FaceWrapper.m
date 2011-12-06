@@ -429,8 +429,8 @@
                             
                             baseURL = [baseURL stringByAppendingFormat:@"twitter_oauth_user:%@,twitter_oauth_secret:%@,twitter_oauth_token:%@", object.twitter_oauth_user, object.twitter_oauth_secret, object.twitter_oauth_token];
                             
-                            NSLog(@"%@", baseURL);
-                            [[XAuthAutenticator sharedInstance] authenticateWithToken:object.twitter_oauth_token];
+                            //NSLog(@"%@", baseURL);
+                            //[[XAuthAutenticator sharedInstance] authenticateWithToken:object.twitter_oauth_token];
                             [NSObject ifEvaluate:object.isRESTObject isTrue:restBlock isFalse:postBlock];
                         }
                         else
@@ -438,7 +438,7 @@
                     }
                     completionError:^(NSError *error) {
             
-                        NSLog(@"%@", [error description]);
+                        //NSLog(@"%@", [error description]);
                         [FaceWrapper throwExceptionWithName:[error description] reason:[error description]];
                     }];
                 }

@@ -27,6 +27,7 @@
 	
 	for (id key in [data keyEnumerator]) 
     {
+        /*
         //Check for user_auth field on recognition service
         if ([key isEqualToString:@"user_auth"])
         {
@@ -45,11 +46,13 @@
         }
         else
         {
-            [self utfAppendBody:body
-                           data:[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"\r\n\r\n", key]];
-            [self utfAppendBody:body data:[data valueForKey:key]];
-            [self utfAppendBody:body data:endLine];
         }
+        */
+        
+        [self utfAppendBody:body
+                       data:[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"\r\n\r\n", key]];
+        [self utfAppendBody:body data:[data valueForKey:key]];
+        [self utfAppendBody:body data:endLine];
 	}
 	
     for (FWImage *fwImage in imageData)
