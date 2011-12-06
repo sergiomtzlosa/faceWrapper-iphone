@@ -14,6 +14,7 @@
 #import "NSData+NSString.h"
 #import "XMLReader.h"
 #import "XAuthAutenticator.h"
+#import "FacebookManager.h"
 
 @interface FaceWrapper (Private)
 
@@ -392,14 +393,6 @@
         
         baseURL = [baseURL stringByAppendingFormat:@"&user_auth="];
         
-        /*
-         //Basic authentication not supported
-         if ((![object.twitter_username isEqualToString:@""]) && (![object.twitter_password isEqualToString:@""]))
-         {
-         baseURL = [baseURL stringByAppendingFormat:@"twitter_username:%@,twitter_password:%@", object.twitter_username, object.twitter_password];
-         }
-         */
-        
         if (((id)object.twitter_username != nil) && ((id)object.twitter_password != nil))
         {
             __block NSString *oAuthString = @"";
@@ -446,17 +439,23 @@
             
             twitterBlock();
         }
-        else if (((id)object.fb_username != nil) && ((id)object.fb_password != nil))
+        else if ((kFacebookAppID != @"") && (object.useFacebook == YES))
         {
             //Generate tokens
-            
-            //Check tokens
-            if ((object.fb_user != @"") && (object.fb_oauth_token != @""))
-            {
-                //assign to URL
+            [[FacebookManager instance] requestTokenWithcompletion:^(NSString *access_token, NSString *userID) {
                 
-                baseURL = [baseURL stringByAppendingFormat:@"fb_user:%@,fb_oauth_token:%@", object.fb_user, object.fb_oauth_token];
-            }
+                object.fb_oauth_token = access_token;
+                object.fb_user = userID;
+                
+                //Check tokens
+                if ((object.fb_user != @"") || (object.fb_oauth_token != @""))
+                {
+                    //assign to URL
+                    baseURL = [baseURL stringByAppendingFormat:@"fb_user:%@,fb_oauth_token:%@", object.fb_user, object.fb_oauth_token];
+                    [NSObject ifEvaluate:object.isRESTObject isTrue:restBlock isFalse:postBlock];
+                }
+                
+            }];
         }
         else
         {

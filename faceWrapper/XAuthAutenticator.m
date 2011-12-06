@@ -348,7 +348,8 @@ static void (^errorBlock)(NSError *) = nil;
             
             if ([nameValue count] == 2)
             {
-                [parameters setValue: [NSData formDecodeString:[nameValue objectAtIndex:1]] forKey:[nameValue objectAtIndex:0]];
+                [parameters setValue:[NSData formDecodeString:[nameValue objectAtIndex:1]]
+                              forKey:[nameValue objectAtIndex:0]];
             }
         }
 

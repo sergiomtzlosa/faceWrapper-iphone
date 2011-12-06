@@ -6,11 +6,18 @@
 //  Copyright (c) 2011 Sergio. All rights reserved.
 //
 
-#warning define your API from faces.com --> http://developers.face.com/account/
+#error Define your keys
 
-//#define kFaceAPI @"YOUR_FACE_API_KEY"
+//Define your API from faces.com --> http://developers.face.com/account/
+
+#define kFaceAPI @"YOUR_FACE_API_KEY"
 #define kFaceSecretAPI @"YOUR_FACE_API_SECRET_KEY"
 
-//Twitter XAUTH Tokens
-#define kTwitterConsumerKey @""
-#define kTwitterConsumerSecret @""
+//Define your xAuth Tokens at developer.twitter.com and set them in your face.com account
+
+#define kTwitterConsumerKey @"YOUR_TWITTER_CONSUMER_KEY"
+#define kTwitterConsumerSecret @"YOUR_TWITTER_CONSUMER_SECRET"
+
+//Define your Facebook Tokens at https://developers.facebook.com and set them in your face.com account
+
+#define kFacebookAppID @"YOUR_FACEBOOK_APPLICATION_ID"

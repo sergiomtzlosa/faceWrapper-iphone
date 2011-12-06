@@ -117,7 +117,7 @@
     [request setValue:contentType forHTTPHeaderField:@"Content-Type"];
     [request setHTTPBody:[NSObject generatePostBody:attribute withImage:images andBoundary:boundary]];
 
-    NSError *error;
+    NSError *error = nil;
     NSURLResponse *response;
     NSData *urlData = [NSURLConnection sendSynchronousRequest:request 
                                             returningResponse:&response 

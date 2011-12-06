@@ -13,4 +13,7 @@ dependencies: \
   /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/NSObject+POST.h \
   /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/NSData+NSString.h \
   /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/XMLReader.h \
-  /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/XAuthAutenticator.h
+  /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/XAuthAutenticator.h \
+  /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/FacebookManager.h \
+  /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/FbGraphAPI/FbGraph.h \
+  /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/FbGraphAPI/FbGraphResponse.h

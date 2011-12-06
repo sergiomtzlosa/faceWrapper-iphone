@@ -17,9 +17,8 @@
     //Images must be ALWAYS JPG
     
     FWObject *object = [FWObject new];
-    
+
     /*
-     
     //REST
     NSMutableArray *urlImages = [NSMutableArray new];
     NSURL *urlImage = [NSURL URLWithString:@"http://images.wikia.com/powerrangers/images/f/fe/ActorJohnCho_John_Shea_55027822.jpg"];
@@ -27,7 +26,7 @@
     [object setUrls:urlImages];
      
     object.isRESTObject = YES;
-     
+    //END REST
     */
     
     //POST
@@ -42,8 +41,10 @@
     [images addImagePOSTToArray:fwImage];
 
     [object setPostImages:images];
-     
+    
     object.isRESTObject = NO;
+    //END POST
+    
     object.wantRecognition = NO;
     
     [object setDetector:DETECTOR_TYPE_DEFAULT];
@@ -61,18 +62,16 @@
     FWObject *recognition = [FWObject objectWithObject:object];
     recognition.wantRecognition = YES;
     recognition.accountNamespace = @"";
-    recognition.twitter_username = @"";
-    recognition.twitter_password = @"";
-    //recognition.fb_username = @"";
-    //recognition.fb_password = @"";
-    
+    recognition.useFacebook = YES;
+    //recognition.twitter_username = @"";
+    //recognition.twitter_password = @"";
+
     NSMutableArray *uidsArray = [NSMutableArray new];
-    //[uidsArray addUIDsToArray:@"friends@facebook.com"];
-    [uidsArray addUIDsToArray:@"xxx@twitter.com"];
+    [uidsArray addUIDsToArray:@"friends@facebook.com"]; //only for facebook authentication
+    //[uidsArray addUIDsToArray:@"xxxxx@twitter.com"]; //only for twitter authentication
     
     recognition.uids = uidsArray;
-    recognition.isRESTObject = NO;
-    
+
     FWImageController *controller = [[FWImageController alloc] initWithNibName:@"FWImageController" bundle:nil];
     controller.objects = [NSArray arrayWithObjects:object, recognition, nil];
     controller.delegate = self;

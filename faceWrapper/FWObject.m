@@ -27,8 +27,7 @@
 @synthesize twitter_oauth_user;
 @synthesize twitter_oauth_secret;
 @synthesize twitter_oauth_token;
-@synthesize fb_username;
-@synthesize fb_password;
+@synthesize useFacebook;
 
 + (FWObject *)objectWithObject:(FWObject *)object
 {
@@ -67,8 +66,7 @@
     [obj setTwitter_oauth_user:twitter_oauth_user];
     [obj setTwitter_oauth_secret:twitter_oauth_secret];
     [obj setTwitter_oauth_token:twitter_oauth_token];
-    [obj setFb_username:fb_username];
-    [obj setFb_password:fb_password];
+    [obj setUseFacebook:useFacebook];
     
     return obj;
 }

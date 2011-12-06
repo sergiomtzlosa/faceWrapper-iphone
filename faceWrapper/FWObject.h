@@ -49,12 +49,11 @@ typedef enum
     NSString *fb_oauth_token;
     NSString *twitter_username;
     NSString *twitter_password;
-    NSString *fb_username;
-    NSString *fb_password;
     NSString *twitter_oauth_user;
     NSString *twitter_oauth_secret;
     NSString *twitter_oauth_token;
     BOOL wantRecognition;
+    BOOL useFacebook;
 }
 
 + (FWObject *)objectWithObject:(FWObject *)object;
@@ -77,7 +76,6 @@ typedef enum
 @property (nonatomic, strong) NSString *twitter_oauth_user;
 @property (nonatomic, strong) NSString *twitter_oauth_secret;
 @property (nonatomic, strong) NSString *twitter_oauth_token;
-@property (nonatomic, strong) NSString *fb_username;
-@property (nonatomic, strong) NSString *fb_password;
+@property (nonatomic) BOOL useFacebook;
 
 @end
