@@ -1,6 +1,8 @@
 FaceWrapper for iPhone
 ===================
 
+![FaceWrapper](https://github.com/sergiomtzlosa/faceWrapper-iphone/raw/master/faceWrapper-iphone.png)
+
 Wrapper class to detect faces from http://face.com, you will need an API key and API Secret which you can get in developer.face.com.
 
 This controller implements a custom object called FWObject where you can set properties to find in the image.
@@ -10,13 +12,13 @@ You can search faces using REST or POST service and you can receive JSON or XML 
 You can analyze images from the web or local images, but always as JPG files.
 
 * Added multiple POST images, FWImage has a property tag returned on delegate method, tag property on failure or REST request has -1 value.
+* Added recognition for images on REST/POST for Facebook accounts
 
 <pre>
 
     FWObject *object = [FWObject new];
-    
+
     /*
-     
     //REST
     NSMutableArray *urlImages = [NSMutableArray new];
     NSURL *urlImage = [NSURL URLWithString:@"http://images.wikia.com/powerrangers/images/f/fe/ActorJohnCho_John_Shea_55027822.jpg"];
@@ -24,9 +26,8 @@ You can analyze images from the web or local images, but always as JPG files.
     [object setUrls:urlImages];
      
     object.isRESTObject = YES;
-     
+    //END REST
     */
-    
     
     //POST
     UIImage *image = [UIImage imageNamed:@"girls.jpg"];
@@ -40,10 +41,11 @@ You can analyze images from the web or local images, but always as JPG files.
     [images addImagePOSTToArray:fwImage];
 
     [object setPostImages:images];
-     
-    object.isRESTObject = NO;
     
-     
+    object.isRESTObject = NO;
+    //END POST
+    
+    object.wantRecognition = NO;
     
     [object setDetector:DETECTOR_TYPE_DEFAULT];
     [object setFormat:FORMAT_TYPE_JSON];
@@ -57,8 +59,21 @@ You can analyze images from the web or local images, but always as JPG files.
     [object setCallback:@""];
     [object setCallback_url:nil];
     
+    FWObject *recognition = [FWObject objectWithObject:object];
+    recognition.wantRecognition = YES;
+    recognition.accountNamespace = @"";
+    recognition.useFacebook = YES;
+    //recognition.twitter_username = @"";
+    //recognition.twitter_password = @"";
+
+    NSMutableArray *uidsArray = [NSMutableArray new];
+    [uidsArray addUIDsToArray:@"friends@facebook.com"]; //only for facebook authentication
+    //[uidsArray addUIDsToArray:@"xxxxx@twitter.com"]; //only for twitter authentication
+    
+    recognition.uids = uidsArray;
+
     FWImageController *controller = [[FWImageController alloc] initWithNibName:@"FWImageController" bundle:nil];
-    controller.object = object;
+    controller.objects = [NSArray arrayWithObjects:object, recognition, nil];
     controller.delegate = self;
     
     [self presentModalViewController:controller animated:YES];
@@ -88,8 +103,6 @@ Wrapped services
 * account.users
 * account.limits
 * account.spaces
-
-![FaceWrapper](https://github.com/sergiomtzlosa/faceWrapper-iphone/raw/master/faceWrapper-iphone.png)
 
 Follow me on twitter : [http://twitter.com/#!/sergimtzlosa](@sergimtzlosa)
 
