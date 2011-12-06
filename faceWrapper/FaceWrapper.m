@@ -13,6 +13,7 @@
 #import "NSObject+POST.h"
 #import "NSData+NSString.h"
 #import "XMLReader.h"
+#import "XAuthAutenticator.h"
 
 @interface FaceWrapper (Private)
 
@@ -147,65 +148,6 @@
                 baseURL = [baseURL stringByAppendingFormat:@"%@,", image.pathPostImage];
         }];
     }
-       
-    if (object.wantRecognition)
-    {
-        ([object.uids count] == 0) ? [FaceWrapper throwExceptionWithName:@"UIDS array items exception" 
-                                                                  reason:@"UIDS array cannot be null"] : nil;
-        
-        (![object.uids arrayIsTypeOf:[NSString class]]) ? [FaceWrapper throwExceptionWithName:@"UIDS array type exception" 
-                                                                                    reason:@"Array object is not an NSString object, addUIDsToArray: from NSMutableArray"]: nil;
-        
-        baseURL = [baseURL stringByAppendingFormat:@"&uids="];
-        
-        [object.uids enumerateObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-            
-            if (idx == [object.uids count] - 1)
-                baseURL = [baseURL stringByAppendingFormat:@"%@", obj];
-            else
-                baseURL = [baseURL stringByAppendingFormat:@"%@,", obj];
-        }];
-        
-        if (![object.accountNamespace isEqualToString:@""])
-            baseURL = [baseURL stringByAppendingFormat:[NSString stringWithFormat:@"&namespace=%@", object.accountNamespace]];
-     
-        baseURL = [baseURL stringByAppendingFormat:@"&user_auth="];
-        
-        /*
-        //Basic authentication not supported
-        if ((![object.twitter_username isEqualToString:@""]) && (![object.twitter_password isEqualToString:@""]))
-        {
-            baseURL = [baseURL stringByAppendingFormat:@"twitter_username:%@,twitter_password:%@", object.twitter_username, object.twitter_password];
-        }
-        */
-        
-        if ((![object.twitter_username isEqualToString:@""]) && (![object.twitter_password isEqualToString:@""]))
-        {
-            //Generate tokens
-            
-            if ((![object.twitter_oauth_user isEqualToString:@""]) &&
-                (![object.twitter_oauth_secret isEqualToString:@""]) && 
-                (![object.twitter_oauth_token isEqualToString:@""]))
-            {
-                //assign to URL
-            }
-        }
-        else if ((![object.fb_username isEqualToString:@""]) && (![object.fb_password isEqualToString:@""]))
-        {
-            //Generate tokens
-            
-            //Check tokens
-            if ((![object.fb_user isEqualToString:@""]) && (![object.fb_oauth_token isEqualToString:@""]))
-            {
-                //assign to URL
-            }
-        }
-        else
-        {
-            [FaceWrapper throwExceptionWithName:@"Credentials exception"
-                                         reason:@"Wrong credential, please check your Facebook or Twitter credentials"];
-        }
-    }
     
     NSString *detection;
     
@@ -268,7 +210,7 @@
     
     if (object.callback_url != nil)
        baseURL = [baseURL stringByAppendingFormat:@"&callback_url=%@", callback_url]; 
-
+    
     void (^restBlock)(void) = ^{ 
         
         if (background)
@@ -426,6 +368,104 @@
             }];
         }
     };
+    
+    if (object.wantRecognition)
+    {
+        ([object.uids count] == 0) ? [FaceWrapper throwExceptionWithName:@"UIDS array items exception" 
+                                                                  reason:@"UIDS array cannot be null"] : nil;
+        
+        (![object.uids arrayIsTypeOf:[NSString class]]) ? [FaceWrapper throwExceptionWithName:@"UIDS array type exception" 
+                                                                                       reason:@"Array object is not an NSString object, addUIDsToArray: from NSMutableArray"]: nil;
+        
+        baseURL = [baseURL stringByAppendingFormat:@"&uids="];
+        
+        [object.uids enumerateObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            
+            if (idx == [object.uids count] - 1)
+                baseURL = [baseURL stringByAppendingFormat:@"%@", obj];
+            else
+                baseURL = [baseURL stringByAppendingFormat:@"%@,", obj];
+        }];
+        
+        if (![object.accountNamespace isEqualToString:@""])
+            baseURL = [baseURL stringByAppendingFormat:[NSString stringWithFormat:@"&namespace=%@", object.accountNamespace]];
+        
+        baseURL = [baseURL stringByAppendingFormat:@"&user_auth="];
+        
+        /*
+         //Basic authentication not supported
+         if ((![object.twitter_username isEqualToString:@""]) && (![object.twitter_password isEqualToString:@""]))
+         {
+         baseURL = [baseURL stringByAppendingFormat:@"twitter_username:%@,twitter_password:%@", object.twitter_username, object.twitter_password];
+         }
+         */
+        
+        if (((id)object.twitter_username != nil) && ((id)object.twitter_password != nil))
+        {
+            __block NSString *oAuthString = @"";
+            
+            void (^twitterBlock)(void) = ^{
+                
+                @synchronized(oAuthString)
+                {
+                    //Generate tokens
+                    [[XAuthAutenticator sharedInstance] executeWithUsername:object.twitter_username 
+                                                                   password:object.twitter_password];
+
+                    [[XAuthAutenticator sharedInstance] completionBlock:^(NSString *oauth_token, NSString *oauth_token_secret, NSString *oauth_user) {
+                        
+                        NSLog(@"%@, %@, %@", oauth_token, oauth_token_secret, oauth_user);
+                        
+                        object.twitter_oauth_user = oauth_user;
+                        object.twitter_oauth_secret = oauth_token_secret;
+                        object.twitter_oauth_token = oauth_token;
+                        
+                        //Check tokens
+                        if ((object.twitter_oauth_user != @"") &&
+                            (object.twitter_oauth_secret != @"") && 
+                            (object.twitter_oauth_token != @""))
+                        {
+                            //assign to URL
+                            
+                            baseURL = [baseURL stringByAppendingFormat:@"twitter_oauth_user:%@,twitter_oauth_secret:%@,twitter_oauth_token:%@", object.twitter_oauth_user, object.twitter_oauth_secret, object.twitter_oauth_token];
+                            
+                            NSLog(@"%@", baseURL);
+                            [[XAuthAutenticator sharedInstance] authenticateWithToken:object.twitter_oauth_token];
+                            [NSObject ifEvaluate:object.isRESTObject isTrue:restBlock isFalse:postBlock];
+                        }
+                        else
+                           [FaceWrapper throwExceptionWithName:@"Credential Exception" reason:@"Wrong twitter credentials"]; 
+                    }
+                    completionError:^(NSError *error) {
+            
+                        NSLog(@"%@", [error description]);
+                        [FaceWrapper throwExceptionWithName:[error description] reason:[error description]];
+                    }];
+                }
+            };
+            
+            twitterBlock();
+        }
+        else if (((id)object.fb_username != nil) && ((id)object.fb_password != nil))
+        {
+            //Generate tokens
+            
+            //Check tokens
+            if ((object.fb_user != @"") && (object.fb_oauth_token != @""))
+            {
+                //assign to URL
+                
+                baseURL = [baseURL stringByAppendingFormat:@"fb_user:%@,fb_oauth_token:%@", object.fb_user, object.fb_oauth_token];
+            }
+        }
+        else
+        {
+            [FaceWrapper throwExceptionWithName:@"Credentials exception"
+                                         reason:@"Wrong credential, please check your Facebook or Twitter credentials"];
+        }
+        
+        return;
+    }
     
     [NSObject ifEvaluate:object.isRESTObject isTrue:restBlock isFalse:postBlock];
 }

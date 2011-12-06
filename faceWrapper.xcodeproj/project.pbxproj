@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F74FA67148E1493005643D1 /* XAuthAutenticator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F74FA66148E1493005643D1 /* XAuthAutenticator.m */; };
+		1FD17EB2148BDB2200813150 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FD17EB1148BDB2200813150 /* Security.framework */; };
+		1FD17EB4148BDB3100813150 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FD17EB3148BDB3100813150 /* libxml2.dylib */; };
 		B52E6F201483B8AF00428A74 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B52E6F1F1483B8AF00428A74 /* UIKit.framework */; };
 		B52E6F221483B8AF00428A74 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B52E6F211483B8AF00428A74 /* Foundation.framework */; };
 		B52E6F241483B8AF00428A74 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B52E6F231483B8AF00428A74 /* CoreGraphics.framework */; };
@@ -39,6 +42,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F74FA65148E1493005643D1 /* XAuthAutenticator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XAuthAutenticator.h; sourceTree = "<group>"; };
+		1F74FA66148E1493005643D1 /* XAuthAutenticator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XAuthAutenticator.m; sourceTree = "<group>"; };
+		1FD17EB1148BDB2200813150 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		1FD17EB3148BDB3100813150 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		B52E6F1B1483B8AF00428A74 /* faceWrapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = faceWrapper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B52E6F1F1483B8AF00428A74 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B52E6F211483B8AF00428A74 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -99,6 +106,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FD17EB4148BDB3100813150 /* libxml2.dylib in Frameworks */,
+				1FD17EB2148BDB2200813150 /* Security.framework in Frameworks */,
 				B5D20AB214861CEE0015CA61 /* QuartzCore.framework in Frameworks */,
 				B52E6F201483B8AF00428A74 /* UIKit.framework in Frameworks */,
 				B52E6F221483B8AF00428A74 /* Foundation.framework in Frameworks */,
@@ -116,6 +125,15 @@
 				B52E6F4C1483BBAC00428A74 /* FWObject.m */,
 			);
 			name = Objects;
+			sourceTree = "<group>";
+		};
+		1FD17EAC148BD92200813150 /* XAuthManager */ = {
+			isa = PBXGroup;
+			children = (
+				1F74FA65148E1493005643D1 /* XAuthAutenticator.h */,
+				1F74FA66148E1493005643D1 /* XAuthAutenticator.m */,
+			);
+			name = XAuthManager;
 			sourceTree = "<group>";
 		};
 		B52E6F101483B8AE00428A74 = {
@@ -138,6 +156,8 @@
 		B52E6F1E1483B8AF00428A74 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1FD17EB3148BDB3100813150 /* libxml2.dylib */,
+				1FD17EB1148BDB2200813150 /* Security.framework */,
 				B5D20AB114861CEE0015CA61 /* QuartzCore.framework */,
 				B52E6F1F1483B8AF00428A74 /* UIKit.framework */,
 				B52E6F211483B8AF00428A74 /* Foundation.framework */,
@@ -217,6 +237,7 @@
 		B569682314851FC80009649A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				1FD17EAC148BD92200813150 /* XAuthManager */,
 				1F86BB3C14893FC200E92DE2 /* Objects */,
 				B52E6F451483BAD700428A74 /* FaceWrapper.h */,
 				B52E6F461483BAD700428A74 /* FaceWrapper.m */,
@@ -325,6 +346,7 @@
 				B5D20AB9148629FE0015CA61 /* ParseObject.m in Sources */,
 				B5D20ABC148630E50015CA61 /* ParseObject+Enumeration.m in Sources */,
 				B5B411341488E5DF00E58BBA /* FWAccount.m in Sources */,
+				1F74FA67148E1493005643D1 /* XAuthAutenticator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,6 +392,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$SDKROOT/usr/include/libxml2/**";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
 			};
@@ -388,6 +411,7 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$SDKROOT/usr/include/libxml2/**";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;

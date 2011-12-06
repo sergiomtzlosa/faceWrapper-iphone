@@ -27,10 +27,29 @@
 	
 	for (id key in [data keyEnumerator]) 
     {
-		[self utfAppendBody:body
-					   data:[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"\r\n\r\n", key]];
-		[self utfAppendBody:body data:[data valueForKey:key]];
-		[self utfAppendBody:body data:endLine];
+        //Check for user_auth field on recognition service
+        if ([key isEqualToString:@"user_auth"])
+        {
+            NSArray *items = [(NSString *)[data valueForKey:key] componentsSeparatedByString:@","];
+            
+            for (NSString *component in items)
+            {
+                NSString *key = [[component componentsSeparatedByString:@":"] objectAtIndex:0];
+                NSString *value = [[component componentsSeparatedByString:@":"] objectAtIndex:1];
+                
+                [self utfAppendBody:body
+                               data:[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"\r\n\r\n", key]];
+                [self utfAppendBody:body data:value];
+                [self utfAppendBody:body data:endLine];
+            }
+        }
+        else
+        {
+            [self utfAppendBody:body
+                           data:[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"\r\n\r\n", key]];
+            [self utfAppendBody:body data:[data valueForKey:key]];
+            [self utfAppendBody:body data:endLine];
+        }
 	}
 	
     for (FWImage *fwImage in imageData)
@@ -46,7 +65,7 @@
         [self utfAppendBody:body data:endLine];
     }
 	
-    //NSString *string = [[NSString alloc] initWithData:body encoding:NSASCIIStringEncoding];
+    //rNSString *string = [[NSString alloc] initWithData:body encoding:NSASCIIStringEncoding];
     //NSLog(@"responseData: %@", string);
 
 	return body;

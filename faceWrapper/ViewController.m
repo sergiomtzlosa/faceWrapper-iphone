@@ -68,10 +68,11 @@
     
     NSMutableArray *uidsArray = [NSMutableArray new];
     //[uidsArray addUIDsToArray:@"friends@facebook.com"];
-    [uidsArray addUIDsToArray:@"facedotcom@twitter.com"];
+    [uidsArray addUIDsToArray:@"s@twitter.com"];
     //[uidsArray addUIDsToArray:@"571756321@facebook.com"];
     
     recognition.uids = uidsArray;
+    recognition.isRESTObject = YES;
     
     FWImageController *controller = [[FWImageController alloc] initWithNibName:@"FWImageController" bundle:nil];
     controller.objects = [NSArray arrayWithObjects:object, recognition, nil];
