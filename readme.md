@@ -87,7 +87,7 @@ Wrapped services
 * faces.detect
 * account.users
 * account.limits
-* account.namespaces
+* account.spaces
 
 ![FaceWrapper](https://github.com/sergiomtzlosa/faceWrapper-iphone/raw/master/faceWrapper-iphone.png)
 
