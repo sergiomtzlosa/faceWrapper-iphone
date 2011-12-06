@@ -99,10 +99,11 @@ On delegate method you will receive the response:
 Wrapped services
 ----------------
 
-* faces.detect
-* account.users
-* account.limits
-* account.spaces
+- faces.detect
+- faces.recognition (Facebook accounts only, by now)
+- account.users
+- account.limits
+- account.spaces
 
 Follow me on twitter : [http://twitter.com/#!/sergimtzlosa](@sergimtzlosa)
 
