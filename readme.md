@@ -102,7 +102,6 @@ Wrapped services
 - faces.detect
 - faces.recognition (Facebook accounts only, by now)
 - account.users
-- account.limits
-- account.spaces
+- account.limits/.spaces
 
 Follow me on twitter : [http://twitter.com/#!/sergimtzlosa](@sergimtzlosa)
