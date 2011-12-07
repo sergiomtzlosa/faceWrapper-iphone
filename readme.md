@@ -124,7 +124,7 @@ On training operations you MUST provide a callback URL due to slowness operation
 //Train method
 [[FaceWrapper instance] statusFaceWithFWObject:statusObject delegate:self]; //POST ONLY
 
-//Status methos
+//Status method
 [[FaceWrapper instance] trainFaceWithFWObject:trainObject delegate:self runInBackground:NO];
 </pre>
 
