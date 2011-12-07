@@ -28,6 +28,7 @@
 @synthesize twitter_oauth_secret;
 @synthesize twitter_oauth_token;
 @synthesize useFacebook;
+@synthesize groupRecognition;
 
 + (FWObject *)objectWithObject:(FWObject *)object
 {
@@ -67,6 +68,7 @@
     [obj setTwitter_oauth_secret:twitter_oauth_secret];
     [obj setTwitter_oauth_token:twitter_oauth_token];
     [obj setUseFacebook:useFacebook];
+    [obj setGroupRecognition:groupRecognition];
     
     return obj;
 }

@@ -10,9 +10,11 @@
 #import "Constants.h"
 
 static void (^block)(NSString *, NSString *) = nil;
+static void (^trainBlock)(NSString *, NSString *) = nil;
+static void (^statusBlock)(NSString *, NSString *) = nil;
 
 @implementation FacebookManager
-@synthesize fbGraph, userId, accessToken;
+@synthesize fbGraph, userId, accessToken, train, simple, status;
 
 + (FacebookManager *)instance
 {
@@ -30,19 +32,38 @@ static void (^block)(NSString *, NSString *) = nil;
 {
     if ((self = [super init]))
     {
-        
+        self.train = self.status = self.simple = NO;
     }
     
     return self;
 }
 
-- (void)requestTokenWithcompletion:(void (^)(NSString *, NSString *))blockCompletion
+- (void)responseBlockForTrain:(void (^)(NSString *, NSString *))blockCompletion
+{
+    trainBlock = nil;
+    trainBlock = [blockCompletion copy];
+    self.train = YES;
+}
+
+- (void)responseBlockForStatus:(void (^)(NSString *, NSString *))blockCompletion
+{
+    statusBlock = nil;
+    statusBlock = [blockCompletion copy];
+    self.status = YES;
+}
+
+- (void)requestTokenWithcompletion:(void (^)(NSString *, NSString *))simpleBlock
 {
     block = nil;
-    block = [blockCompletion copy];
-    
-    fbGraph = [[FbGraph alloc] initWithFbClientID:kFacebookAppID];
+    block = [simpleBlock copy];
+    self.simple = YES;
+    [self requestToken];
+}
 
+- (void)requestToken
+{
+    fbGraph = [[FbGraph alloc] initWithFbClientID:kFacebookAppID];
+    
 	[fbGraph authenticateUserWithCallbackObject:self
                                     andSelector:@selector(fbGraphCallback:) 
 						 andExtendedPermissions:@"user_photos,user_videos,publish_stream,offline_access,user_checkins,friends_checkins"];
@@ -55,29 +76,64 @@ static void (^block)(NSString *, NSString *) = nil;
 		[fbGraph authenticateUserWithCallbackObject:self 
                                         andSelector:@selector(fbGraphCallback:) 
 							 andExtendedPermissions:@"user_photos,user_videos,publish_stream,offline_access,user_checkins,friends_checkins"];
+        
 	} 
     else 
     {
         FbGraphResponse *fb_graph_response = [fbGraph doGraphGet:@"me" withGetVars:nil];
-
+        
         self.accessToken = fbGraph.accessToken;
         
         NSData *data = [fb_graph_response.htmlResponse dataUsingEncoding:NSUTF8StringEncoding];
-
+        
         NSDictionary *facebook_response = [NSJSONSerialization JSONObjectWithData:data  
                                                                           options:0
                                                                             error:nil];	
-
+        
         if ([NSJSONSerialization isValidJSONObject:facebook_response])
         {
             self.userId = (NSString *)[facebook_response objectForKey:@"id"];
             
             //NSLog(@"%@, %@", self.accessToken, self.userId);
-            block(self.accessToken, self.userId);
+            if (simple)
+            {
+                self.simple = NO;
+                block(self.accessToken, self.userId);
+                block = nil;
+            }
+            else if (train)
+            {
+                self.train = NO;
+                trainBlock(self.accessToken, self.userId);
+                trainBlock = nil;
+            }
+            else
+            {
+                self.status = NO;
+                statusBlock(self.accessToken, self.userId);
+                statusBlock = nil;
+            }
         }
         else
         {
-            block(fbGraph.accessToken, @"");
+            if (simple)
+            {
+                self.simple = NO;
+                block(fbGraph.accessToken, @"");
+                block = nil;
+            }
+            else if (train)
+            {
+                self.train = NO;
+                trainBlock(fbGraph.accessToken, @"");
+                trainBlock = nil;
+            }
+            else
+            {
+                self.status = NO;
+                statusBlock(fbGraph.accessToken, @"");
+                statusBlock = nil;
+            }
         }
 	}
 }

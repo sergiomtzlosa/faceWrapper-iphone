@@ -18,6 +18,9 @@
 		1F8FB37B148E7DDB000719A5 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8FB374148E7DDB000719A5 /* SBJsonParser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1F8FB37C148E7DDB000719A5 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8FB376148E7DDB000719A5 /* SBJsonWriter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1F8FEF23148E494E00A58027 /* FacebookManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8FEF22148E494E00A58027 /* FacebookManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1FB708D6148FD7ED0057962A /* NSString+StringChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB708D5148FD7ED0057962A /* NSString+StringChecker.m */; };
+		1FB708DA148FDE630057962A /* TwitterAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB708D9148FDE630057962A /* TwitterAccount.m */; };
+		1FD6F7D4148FE44C00EEAB9E /* TaggerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD6F7D3148FE44C00EEAB9E /* TaggerManager.m */; };
 		B52E6F201483B8AF00428A74 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B52E6F1F1483B8AF00428A74 /* UIKit.framework */; };
 		B52E6F221483B8AF00428A74 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B52E6F211483B8AF00428A74 /* Foundation.framework */; };
 		B52E6F241483B8AF00428A74 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B52E6F231483B8AF00428A74 /* CoreGraphics.framework */; };
@@ -73,6 +76,12 @@
 		1F8FB376148E7DDB000719A5 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		1F8FEF21148E494E00A58027 /* FacebookManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookManager.h; sourceTree = "<group>"; };
 		1F8FEF22148E494E00A58027 /* FacebookManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookManager.m; sourceTree = "<group>"; };
+		1FB708D4148FD7ED0057962A /* NSString+StringChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+StringChecker.h"; sourceTree = "<group>"; };
+		1FB708D5148FD7ED0057962A /* NSString+StringChecker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+StringChecker.m"; sourceTree = "<group>"; };
+		1FB708D8148FDE630057962A /* TwitterAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterAccount.h; sourceTree = "<group>"; };
+		1FB708D9148FDE630057962A /* TwitterAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterAccount.m; sourceTree = "<group>"; };
+		1FD6F7D2148FE44C00EEAB9E /* TaggerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaggerManager.h; sourceTree = "<group>"; };
+		1FD6F7D3148FE44C00EEAB9E /* TaggerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaggerManager.m; sourceTree = "<group>"; };
 		B52E6F1B1483B8AF00428A74 /* faceWrapper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = faceWrapper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B52E6F1F1483B8AF00428A74 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B52E6F211483B8AF00428A74 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -198,6 +207,15 @@
 			name = AuthenticationManagers;
 			sourceTree = "<group>";
 		};
+		1FD6F7D0148FE43C00EEAB9E /* TagManager */ = {
+			isa = PBXGroup;
+			children = (
+				1FD6F7D2148FE44C00EEAB9E /* TaggerManager.h */,
+				1FD6F7D3148FE44C00EEAB9E /* TaggerManager.m */,
+			);
+			name = TagManager;
+			sourceTree = "<group>";
+		};
 		B52E6F101483B8AE00428A74 = {
 			isa = PBXGroup;
 			children = (
@@ -256,6 +274,7 @@
 		B52E6F401483B99A00428A74 /* FaceWrapper */ = {
 			isa = PBXGroup;
 			children = (
+				1FD6F7D0148FE43C00EEAB9E /* TagManager */,
 				B5B411301488E5C700E58BBA /* AccountStatus */,
 				B569682314851FC80009649A /* Classes */,
 				B52E6F441483BAAB00428A74 /* Additions */,
@@ -288,6 +307,8 @@
 				B5D20AAE148610060015CA61 /* NSString+Selector.m */,
 				B5D20ABA148630E40015CA61 /* ParseObject+Enumeration.h */,
 				B5D20ABB148630E50015CA61 /* ParseObject+Enumeration.m */,
+				1FB708D4148FD7ED0057962A /* NSString+StringChecker.h */,
+				1FB708D5148FD7ED0057962A /* NSString+StringChecker.m */,
 				B5FEFCAD1484C93A00B4DACA /* NSObject+POST.h */,
 				B5FEFCAE1484C93A00B4DACA /* NSObject+POST.m */,
 			);
@@ -317,6 +338,8 @@
 			children = (
 				B5B411321488E5DF00E58BBA /* FWAccount.h */,
 				B5B411331488E5DF00E58BBA /* FWAccount.m */,
+				1FB708D8148FDE630057962A /* TwitterAccount.h */,
+				1FB708D9148FDE630057962A /* TwitterAccount.m */,
 			);
 			name = AccountStatus;
 			sourceTree = "<group>";
@@ -417,6 +440,9 @@
 				1F8FB37A148E7DDB000719A5 /* SBJsonBase.m in Sources */,
 				1F8FB37B148E7DDB000719A5 /* SBJsonParser.m in Sources */,
 				1F8FB37C148E7DDB000719A5 /* SBJsonWriter.m in Sources */,
+				1FB708D6148FD7ED0057962A /* NSString+StringChecker.m in Sources */,
+				1FB708DA148FDE630057962A /* TwitterAccount.m in Sources */,
+				1FD6F7D4148FE44C00EEAB9E /* TaggerManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -28,26 +28,26 @@
 	for (id key in [data keyEnumerator]) 
     {
         /*
-        //Check for user_auth field on recognition service
-        if ([key isEqualToString:@"user_auth"])
-        {
-            NSArray *items = [(NSString *)[data valueForKey:key] componentsSeparatedByString:@","];
-            
-            for (NSString *component in items)
-            {
-                NSString *key = [[component componentsSeparatedByString:@":"] objectAtIndex:0];
-                NSString *value = [[component componentsSeparatedByString:@":"] objectAtIndex:1];
-                
-                [self utfAppendBody:body
-                               data:[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"\r\n\r\n", key]];
-                [self utfAppendBody:body data:value];
-                [self utfAppendBody:body data:endLine];
-            }
-        }
-        else
-        {
-        }
-        */
+         //Check for user_auth field on recognition service
+         if ([key isEqualToString:@"user_auth"])
+         {
+         NSArray *items = [(NSString *)[data valueForKey:key] componentsSeparatedByString:@","];
+         
+         for (NSString *component in items)
+         {
+         NSString *key = [[component componentsSeparatedByString:@":"] objectAtIndex:0];
+         NSString *value = [[component componentsSeparatedByString:@":"] objectAtIndex:1];
+         
+         [self utfAppendBody:body
+         data:[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"\r\n\r\n", key]];
+         [self utfAppendBody:body data:value];
+         [self utfAppendBody:body data:endLine];
+         }
+         }
+         else
+         {
+         }
+         */
         
         [self utfAppendBody:body
                        data:[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"\r\n\r\n", key]];
@@ -63,14 +63,14 @@
                        data:[NSString stringWithString:@"Content-Type: image/jpg\r\n\r\n"]];
         //[self utfAppendBody:body
         //               data:[NSString stringWithString:@"Content-Transfer-Encoding: binary\r\n\r\n"]];
-       
+        
         [body appendData:UIImageJPEGRepresentation([FWImage imageWithData:fwImage.data], 1.0)];
         [self utfAppendBody:body data:endLine];
     }
 	
-    //rNSString *string = [[NSString alloc] initWithData:body encoding:NSASCIIStringEncoding];
+    //NSString *string = [[NSString alloc] initWithData:body encoding:NSASCIIStringEncoding];
     //NSLog(@"responseData: %@", string);
-
+    
 	return body;
 }
 
@@ -108,7 +108,7 @@
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url
                                                            cachePolicy:NSURLRequestReloadIgnoringLocalCacheData
                                                        timeoutInterval:180.0];
-
+    
     
     NSString *boundary = @"boundary";
     NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", boundary];
@@ -116,13 +116,13 @@
     [request setHTTPMethod:@"POST"];
     [request setValue:contentType forHTTPHeaderField:@"Content-Type"];
     [request setHTTPBody:[NSObject generatePostBody:attribute withImage:images andBoundary:boundary]];
-
+    
     NSError *error = nil;
-    NSURLResponse *response;
+    NSURLResponse *response = nil;
     NSData *urlData = [NSURLConnection sendSynchronousRequest:request 
                                             returningResponse:&response 
                                                         error:&error];
-
+    
     ((urlData == nil) || (error != nil)) ? block(nil) : block(urlData);
 }
 

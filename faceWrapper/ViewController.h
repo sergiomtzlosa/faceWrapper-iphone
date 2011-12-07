@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "FWImageController.h"
 
-@interface ViewController : UIViewController <FWImageControllerDelegate>
+@interface ViewController : UIViewController <FWImageControllerDelegate, FaceWrapperDelegate>
 
 @end

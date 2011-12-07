@@ -188,7 +188,7 @@ static void (^errorBlock)(NSError *) = nil;
     [parameters setValue:timestamp forKey:@"oauth_timestamp"];
     [parameters setValue:nonce forKey:@"oauth_nonce"];
     [parameters setValue:@"1.0" forKey:@"oauth_version"];
-
+    
     if ((id)self.oauth_token != nil)
         [parameters setValue:self.oauth_token forKey: @"oauth_token"];
     
@@ -217,7 +217,7 @@ static void (^errorBlock)(NSError *) = nil;
     
     // Create the secret
     NSString *secret = nil;
-
+    
     if (oauth_token_secret != nil)
     {
         secret = [NSString stringWithFormat:@"%@&%@", [self formEncodeString:oauth_consumer_secret], [self formEncodeString:oauth_token_secret]];
@@ -291,7 +291,7 @@ static void (^errorBlock)(NSError *) = nil;
     [request setValue:[NSString stringWithFormat:@"%d", [requestData length]] forHTTPHeaderField:@"Content-Length"];
     [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
     
-    connection = [NSURLConnection connectionWithRequest: request delegate: self];
+    self.connection = [NSURLConnection connectionWithRequest: request delegate: self];
 }
 
 #pragma mark -
@@ -321,8 +321,8 @@ static void (^errorBlock)(NSError *) = nil;
     
 	if (statusCode != 200) 
     {
-        //NSLog(@"Response = %@ - status code %d", response, statusCode);
-
+        NSLog(@"Response = %@ - status code %d", response, statusCode);
+        
         if (statusCode == 401)
         {
             completion(oauth_token, oauth_token_secret, oauth_user);
@@ -337,7 +337,7 @@ static void (^errorBlock)(NSError *) = nil;
             completion(response, response, response);
             return;
         }
-
+        
         NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
         
         NSArray *pairs = [response componentsSeparatedByString: @"&"];
@@ -352,7 +352,7 @@ static void (^errorBlock)(NSError *) = nil;
                               forKey:[nameValue objectAtIndex:0]];
             }
         }
-
+        
         oauth_token = [parameters valueForKey:@"oauth_token"];
         oauth_token_secret = [parameters valueForKey:@"oauth_token_secret"];
         oauth_user = [parameters valueForKey:@"user_id"];
@@ -360,7 +360,6 @@ static void (^errorBlock)(NSError *) = nil;
         completion(oauth_token, oauth_token_secret, oauth_user);
 	}
 	
-	self.connection = nil;
 	self.dataReceived = nil;
 }
 

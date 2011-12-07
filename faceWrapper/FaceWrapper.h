@@ -12,7 +12,17 @@
 #import "NSArray+TypeChecker.h"
 #import "FWObject.h"
 #import "FWImage.h"
+#import "NSObject+Block.h"
+#import "NSThread+Blocks.h"
 #import "Constants.h"
+
+@protocol FaceWrapperDelegate <NSObject>
+@optional
+
+- (void)faceWrapperTrainFaceSuccess:(NSDictionary *)faceData photoTag:(int)tag;
+- (void)faceWrapperStatusFacing:(NSDictionary *)faceData photoTag:(int)tag;
+
+@end
 
 @interface FaceWrapper : NSObject
 
@@ -25,5 +35,11 @@
 - (void)detectFaceWithFWObject:(FWObject *)object 
                runInBackground:(BOOL)background
                 completionData:(void (^)(NSDictionary *, int))block;
+
+- (void)trainFaceWithFWObject:(FWObject *)object 
+                     delegate:(id<FaceWrapperDelegate>)delegate
+              runInBackground:(BOOL)background;
+
+- (void)statusFaceWithFWObject:(FWObject *)object delegate:(id<FaceWrapperDelegate>)delegate;
 
 @end

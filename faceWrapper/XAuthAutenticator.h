@@ -14,7 +14,7 @@
     NSString *oauth_consumer_secret;
     NSString *username;
     NSString *password;
-
+    
 @private
     NSString *oauth_token; 
     NSString *oauth_token_secret;
