@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F63E264149A4A8A002BD730 /* FBGetter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F63E263149A4A8A002BD730 /* FBGetter.m */; };
 		1F74FA67148E1493005643D1 /* XAuthAutenticator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F74FA66148E1493005643D1 /* XAuthAutenticator.m */; };
 		1F8FB34C148E78C8000719A5 /* FbGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8FB347148E78C8000719A5 /* FbGraph.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1F8FB34D148E78C8000719A5 /* FbGraphFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8FB349148E78C8000719A5 /* FbGraphFile.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -53,6 +54,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F63E262149A4A8A002BD730 /* FBGetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBGetter.h; sourceTree = "<group>"; };
+		1F63E263149A4A8A002BD730 /* FBGetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBGetter.m; sourceTree = "<group>"; };
 		1F74FA65148E1493005643D1 /* XAuthAutenticator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XAuthAutenticator.h; sourceTree = "<group>"; };
 		1F74FA66148E1493005643D1 /* XAuthAutenticator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XAuthAutenticator.m; sourceTree = "<group>"; };
 		1F8FB346148E78C8000719A5 /* FbGraph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FbGraph.h; sourceTree = "<group>"; };
@@ -340,6 +343,8 @@
 				B5B411331488E5DF00E58BBA /* FWAccount.m */,
 				1FB708D8148FDE630057962A /* TwitterAccount.h */,
 				1FB708D9148FDE630057962A /* TwitterAccount.m */,
+				1F63E262149A4A8A002BD730 /* FBGetter.h */,
+				1F63E263149A4A8A002BD730 /* FBGetter.m */,
 			);
 			name = AccountStatus;
 			sourceTree = "<group>";
@@ -443,6 +448,7 @@
 				1FB708D6148FD7ED0057962A /* NSString+StringChecker.m in Sources */,
 				1FB708DA148FDE630057962A /* TwitterAccount.m in Sources */,
 				1FD6F7D4148FE44C00EEAB9E /* TaggerManager.m in Sources */,
+				1F63E264149A4A8A002BD730 /* FBGetter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

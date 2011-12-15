@@ -1,0 +1,13 @@
+//
+//  FBGetter.h
+//  faceWrapper
+//
+//  Created by sid on 15/12/11.
+//  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+@interface FBGetter : NSObject
+
+@end
