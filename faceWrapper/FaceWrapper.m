@@ -20,6 +20,29 @@
 
 + (void)checkAPIKeys:(NSString *)apiKey secret:(NSString *)apiSecret;
 
++ (void)doRESTRequestWithURL:(NSString *)baseURL 
+                  withObject:(FWObject *)object
+               responseBlock:(void (^)(NSDictionary *, int))block;
+
++ (void)doPOSTRequestWithURL:(NSString *)postURL 
+                  baseParams:(NSString *)baseURL
+                  withObject:(FWObject *)object
+               responseBlock:(void (^)(NSDictionary *, int))block;
+
++ (void)doRESTRequestForTrainWithBaseURL:(NSString *)baseURL 
+                              withObject:(FWObject *)object 
+                              inDelegate:(id)delegate;
+
++ (void)doPOSTRequestForTrainWithBaseURL:(NSString *)postURL
+                              baseParams:(NSString *)baseURL
+                              withObject:(FWObject *)object 
+                              inDelegate:(id)delegate;
+
++ (void)doPOSTRequestForStatusWithBaseURL:(NSString *)postURL
+                               baseParams:(NSString *)baseURL 
+                               withObject:(FWObject *)object 
+                               inDelegate:(id)delegate;
+
 @end
 
 @implementation FaceWrapper
@@ -229,72 +252,12 @@
         {
             [NSObject performBlockInBackground:^{
                 
-                [NSObject downloadURLWithStringWithStatus:baseURL completion:^(NSData *data, int status) {
-                    
-                    if (data == nil) 
-                    {
-                        [FaceWrapper throwExceptionWithName:@"Data Exception" reason:@"Returned data is NIL"];
-                    }
-                    else
-                    {
-                        if (object.format == FORMAT_TYPE_JSON) 
-                        {
-                            NSError *jsonParsingError = nil;
-                            NSDictionary *parsedJSON = [NSJSONSerialization JSONObjectWithData:data
-                                                                                       options:0 
-                                                                                         error:&jsonParsingError];
-                            
-                            if ((![NSJSONSerialization isValidJSONObject:parsedJSON]) || (jsonParsingError != nil))
-                            {
-                                block(nil, -1);
-                            }
-                            else
-                            {
-                                block(parsedJSON, -1);
-                            }
-                        }
-                        else
-                        {
-                            //XML 
-                            block([FaceWrapper parseFaceXML:data], -1); 
-                        }
-                    }
-                }];
+                [FaceWrapper doRESTRequestWithURL:baseURL withObject:object responseBlock:block];
             }];
         }
         else
         {
-            [NSObject downloadURLWithStringWithStatus:baseURL completion:^(NSData *data, int status) {
-                
-                if (data == nil)
-                {
-                    [FaceWrapper throwExceptionWithName:@"Data Exception" reason:@"Returned data is NIL"];
-                }
-                else
-                {
-                    if (object.format == FORMAT_TYPE_JSON) 
-                    {
-                        NSError *jsonParsingError = nil;
-                        NSDictionary *parsedJSON = [NSJSONSerialization JSONObjectWithData:data
-                                                                                   options:0 
-                                                                                     error:&jsonParsingError];
-                        
-                        if ((![NSJSONSerialization isValidJSONObject:parsedJSON]) || (jsonParsingError != nil))
-                        {
-                            block(nil, -1);
-                        }
-                        else
-                        {
-                            block(parsedJSON, -1);
-                        }
-                    }
-                    else
-                    {
-                        //XML 
-                        block([FaceWrapper parseFaceXML:data], -1);
-                    }
-                }
-            }];
+            [FaceWrapper doRESTRequestWithURL:baseURL withObject:object responseBlock:block];
         }
     };
     
@@ -304,81 +267,13 @@
         {
             [NSObject performBlockInBackground:^{
                 
-                [object.postImages enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-                    
-                    [NSObject sendPOSTWithURL:[NSURL URLWithString:postURL] withParams:baseURL 
-                                       images:[NSArray arrayWithObject:(FWImage *)obj] completion:^(NSData *data) {
-                                           
-                                           if (data == nil)
-                                           {
-                                               [FaceWrapper throwExceptionWithName:@"Data Exception" reason:@"Returned data is NIL"];
-                                           }
-                                           else
-                                           {
-                                               if (object.format == FORMAT_TYPE_JSON) 
-                                               {
-                                                   NSError *jsonParsingError = nil;
-                                                   NSDictionary *parsedJSON = [NSJSONSerialization JSONObjectWithData:data
-                                                                                                              options:0 
-                                                                                                                error:&jsonParsingError];
-                                                   
-                                                   if ((![NSJSONSerialization isValidJSONObject:parsedJSON]) || (jsonParsingError != nil))
-                                                   {
-                                                       block(nil, -1);
-                                                   }
-                                                   else
-                                                   {
-                                                       block(parsedJSON, [(FWImage *)obj tag]);
-                                                   }
-                                               }
-                                               else
-                                               {
-                                                   //XML 
-                                                   block([FaceWrapper parseFaceXML:data], [(FWImage *)obj tag]);
-                                               }
-                                           }
-                                       }];
-                }];
+                [FaceWrapper doPOSTRequestWithURL:postURL baseParams:baseURL withObject:object responseBlock:block];
+                
             }];
         }
         else
         {
-            [object.postImages enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-                
-                [NSObject sendPOSTWithURL:[NSURL URLWithString:postURL] 
-                               withParams:baseURL 
-                                   images:[NSArray arrayWithObject:(FWImage *)obj] completion:^(NSData *data) {
-                                       
-                                       if (data == nil)
-                                       {
-                                           [FaceWrapper throwExceptionWithName:@"Data Exception" reason:@"Returned data is NIL"];
-                                       }
-                                       else
-                                       {
-                                           if (object.format == FORMAT_TYPE_JSON) 
-                                           {
-                                               NSError *jsonParsingError = nil;
-                                               NSDictionary *parsedJSON = [NSJSONSerialization JSONObjectWithData:data
-                                                                                                          options:0 
-                                                                                                            error:&jsonParsingError];
-                                               
-                                               if ((![NSJSONSerialization isValidJSONObject:parsedJSON]) || (jsonParsingError != nil))
-                                               {
-                                                   block(nil, -1);
-                                               }
-                                               else
-                                               {
-                                                   block(parsedJSON, [(FWImage *)obj tag]);
-                                               }
-                                           }
-                                           else
-                                           {
-                                               //XML 
-                                               block([FaceWrapper parseFaceXML:data], [(FWImage *)obj tag]);
-                                           }
-                                       }
-                                   }];
-            }];
+            [FaceWrapper doPOSTRequestWithURL:postURL baseParams:baseURL withObject:object responseBlock:block];
         }
     };
     
@@ -441,11 +336,11 @@
                         else
                             [FaceWrapper throwExceptionWithName:@"Credential Exception" reason:@"Wrong twitter credentials"]; 
                     }
-                                                        completionError:^(NSError *error) {
+                    completionError:^(NSError *error) {
                                                             
-                                                            //NSLog(@"%@", [error description]);
-                                                            [FaceWrapper throwExceptionWithName:[error description] reason:[error description]];
-                                                        }];
+                       //NSLog(@"%@", [error description]);
+                       [FaceWrapper throwExceptionWithName:[error description] reason:[error description]];
+                    }];
                 }
             };
             
@@ -559,102 +454,12 @@
         {
             [NSObject performBlockInBackground:^{
                 
-                [NSObject downloadURLWithStringWithStatus:baseURL completion:^(NSData *data, int status) {
-                    
-                    if (data == nil) 
-                    {
-                        [FaceWrapper throwExceptionWithName:@"Data Exception" reason:@"Returned data is NIL"];
-                    }
-                    else
-                    {
-                        if (object.format == FORMAT_TYPE_JSON) 
-                        {
-                            NSError *jsonParsingError = nil;
-                            NSDictionary *parsedJSON = [NSJSONSerialization JSONObjectWithData:data
-                                                                                       options:0 
-                                                                                         error:&jsonParsingError];
-                            
-                            if ((![NSJSONSerialization isValidJSONObject:parsedJSON]) || (jsonParsingError != nil))
-                            {
-                                NSString *stringSEL = NSStringFromSelector(@selector(faceWrapperTrainFaceSuccess:photoTag:));
-                                
-                                [stringSEL selectorDidRespondInClass:delegate execute:^{
-                                    
-                                    [delegate faceWrapperTrainFaceSuccess:nil photoTag:-1];
-                                }];
-                            }
-                            else
-                            {
-                                NSString *stringSEL = NSStringFromSelector(@selector(faceWrapperTrainFaceSuccess:photoTag:));
-                                
-                                [stringSEL selectorDidRespondInClass:delegate execute:^{
-                                    
-                                    [delegate faceWrapperTrainFaceSuccess:parsedJSON photoTag:-1];
-                                }];
-                            }
-                        }
-                        else
-                        {
-                            //XML 
-                            NSString *stringSEL = NSStringFromSelector(@selector(faceWrapperTrainFaceSuccess:photoTag:));
-                            
-                            [stringSEL selectorDidRespondInClass:delegate execute:^{
-                                
-                                [delegate faceWrapperTrainFaceSuccess:[FaceWrapper parseFaceXML:data] photoTag:-1];
-                            }];
-                        }
-                    }
-                }];
+                [FaceWrapper doRESTRequestForTrainWithBaseURL:baseURL withObject:object inDelegate:delegate];
             }];
         }
         else
         {
-            [NSObject downloadURLWithStringWithStatus:baseURL completion:^(NSData *data, int status) {
-                
-                if (data == nil)
-                {
-                    [FaceWrapper throwExceptionWithName:@"Data Exception" reason:@"Returned data is NIL"];
-                }
-                else
-                {
-                    if (object.format == FORMAT_TYPE_JSON) 
-                    {
-                        NSError *jsonParsingError = nil;
-                        NSDictionary *parsedJSON = [NSJSONSerialization JSONObjectWithData:data
-                                                                                   options:0 
-                                                                                     error:&jsonParsingError];
-                        
-                        if ((![NSJSONSerialization isValidJSONObject:parsedJSON]) || (jsonParsingError != nil))
-                        {
-                            NSString *stringSEL = NSStringFromSelector(@selector(faceWrapperTrainFaceSuccess:photoTag:));
-                            
-                            [stringSEL selectorDidRespondInClass:delegate execute:^{
-                                
-                                [delegate faceWrapperTrainFaceSuccess:nil photoTag:-1];
-                            }];
-                        }
-                        else
-                        {
-                            NSString *stringSEL = NSStringFromSelector(@selector(faceWrapperTrainFaceSuccess:photoTag:));
-                            
-                            [stringSEL selectorDidRespondInClass:delegate execute:^{
-                                
-                                [delegate faceWrapperTrainFaceSuccess:parsedJSON photoTag:-1];
-                            }];
-                        }
-                    }
-                    else
-                    {
-                        //XML 
-                        NSString *stringSEL = NSStringFromSelector(@selector(faceWrapperTrainFaceSuccess:photoTag:));
-                        
-                        [stringSEL selectorDidRespondInClass:delegate execute:^{
-                            
-                            [delegate faceWrapperTrainFaceSuccess:[FaceWrapper parseFaceXML:data] photoTag:-1];
-                        }];
-                    }
-                }
-            }];
+            [FaceWrapper doRESTRequestForTrainWithBaseURL:baseURL withObject:object inDelegate:delegate];
         }
     };
     
@@ -664,115 +469,12 @@
         {
             [NSObject performBlockInBackground:^{
                 
-                [object.postImages enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-                    
-                    [NSObject sendPOSTWithURL:[NSURL URLWithString:postURL] withParams:baseURL 
-                                       images:[NSArray arrayWithObject:(FWImage *)obj] completion:^(NSData *data) {
-                                           
-                                           if (data == nil)
-                                           {
-                                               [FaceWrapper throwExceptionWithName:@"Data Exception" reason:@"Returned data is NIL"];
-                                           }
-                                           else
-                                           {
-                                               if (object.format == FORMAT_TYPE_JSON) 
-                                               {
-                                                   NSError *jsonParsingError = nil;
-                                                   NSDictionary *parsedJSON = [NSJSONSerialization JSONObjectWithData:data
-                                                                                                              options:0 
-                                                                                                                error:&jsonParsingError];
-                                                   
-                                                   if ((![NSJSONSerialization isValidJSONObject:parsedJSON]) || (jsonParsingError != nil))
-                                                   {
-                                                       NSString *stringSEL = NSStringFromSelector(@selector(faceWrapperTrainFaceSuccess:photoTag:));
-                                                       
-                                                       [stringSEL selectorDidRespondInClass:delegate execute:^{
-                                                           
-                                                           [delegate faceWrapperTrainFaceSuccess:nil photoTag:-1];
-                                                       }];
-                                                   }
-                                                   else
-                                                   {
-                                                       NSString *stringSEL = NSStringFromSelector(@selector(faceWrapperTrainFaceSuccess:photoTag:));
-                                                       
-                                                       [stringSEL selectorDidRespondInClass:delegate
-                                                                                    execute:^{
-                                                                                        
-                                                                                        [delegate faceWrapperTrainFaceSuccess:parsedJSON 
-                                                                                                                     photoTag:[(FWImage *)obj tag]];
-                                                                                    }];
-                                                   }
-                                               }
-                                               else
-                                               {
-                                                   //XML 
-                                                   NSString *stringSEL = NSStringFromSelector(@selector(faceWrapperTrainFaceSuccess:photoTag:));
-                                                   
-                                                   [stringSEL selectorDidRespondInClass:delegate execute:^{
-                                                       
-                                                       [delegate faceWrapperTrainFaceSuccess:[FaceWrapper parseFaceXML:data] 
-                                                                                    photoTag:[(FWImage *)obj tag]];
-                                                   }];
-                                               }
-                                           }
-                                       }];
-                }];
+                [FaceWrapper doPOSTRequestForTrainWithBaseURL:postURL baseParams:baseURL withObject:object inDelegate:delegate];
             }];
         }
         else
         {
-            [object.postImages enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-                
-                [NSObject sendPOSTWithURL:[NSURL URLWithString:postURL] 
-                               withParams:baseURL 
-                                   images:[NSArray arrayWithObject:(FWImage *)obj] completion:^(NSData *data) {
-                                       
-                                       if (data == nil)
-                                       {
-                                           [FaceWrapper throwExceptionWithName:@"Data Exception" reason:@"Returned data is NIL"];
-                                       }
-                                       else
-                                       {
-                                           if (object.format == FORMAT_TYPE_JSON) 
-                                           {
-                                               NSError *jsonParsingError = nil;
-                                               NSDictionary *parsedJSON = [NSJSONSerialization JSONObjectWithData:data
-                                                                                                          options:0 
-                                                                                                            error:&jsonParsingError];
-                                               
-                                               if ((![NSJSONSerialization isValidJSONObject:parsedJSON]) || (jsonParsingError != nil))
-                                               {
-                                                   NSString *stringSEL = NSStringFromSelector(@selector(faceWrapperTrainFaceSuccess:photoTag:));
-                                                   
-                                                   [stringSEL selectorDidRespondInClass:delegate execute:^{
-                                                       
-                                                       [delegate faceWrapperTrainFaceSuccess:nil photoTag:-1];
-                                                   }];
-                                               }
-                                               else
-                                               {
-                                                   NSString *stringSEL = NSStringFromSelector(@selector(faceWrapperTrainFaceSuccess:photoTag:));
-                                                   
-                                                   [stringSEL selectorDidRespondInClass:delegate execute:^{
-                                                       
-                                                       [delegate faceWrapperTrainFaceSuccess:parsedJSON photoTag:[(FWImage *)obj tag]];
-                                                   }];
-                                               }
-                                           }
-                                           else
-                                           {
-                                               //XML 
-                                               NSString *stringSEL = NSStringFromSelector(@selector(faceWrapperTrainFaceSuccess:photoTag:));
-                                               
-                                               [stringSEL selectorDidRespondInClass:delegate execute:^{
-                                                   
-                                                   [delegate faceWrapperTrainFaceSuccess:[FaceWrapper parseFaceXML:data] 
-                                                                                photoTag:[(FWImage *)obj tag]];
-                                               }];
-                                           }
-                                       }
-                                   }];
-            }];
+            [FaceWrapper doPOSTRequestForTrainWithBaseURL:postURL baseParams:baseURL withObject:object inDelegate:delegate];
         }
     };
     
@@ -814,11 +516,11 @@
                     else
                         [FaceWrapper throwExceptionWithName:@"Credential Exception" reason:@"Wrong twitter credentials"]; 
                 }
-                                                    completionError:^(NSError *error) {
+                completionError:^(NSError *error) {
                                                         
-                                                        //NSLog(@"%@", [error description]);
-                                                        [FaceWrapper throwExceptionWithName:[error description] reason:[error description]];
-                                                    }];
+                    //NSLog(@"%@", [error description]);
+                    [FaceWrapper throwExceptionWithName:[error description] reason:[error description]];
+                }];
             }
         };
         
@@ -927,58 +629,7 @@
     
     void (^postBlockStatus)(void) = ^{
         
-        [object.postImages enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-            
-            [NSObject sendPOSTWithURL:[NSURL URLWithString:postURL]
-                           withParams:baseURL 
-                               images:[NSArray arrayWithObject:(FWImage *)obj]
-                           completion:^(NSData *data) {
-                               
-                               if (data == nil)
-                               {
-                                   [FaceWrapper throwExceptionWithName:@"Data Exception" reason:@"Returned data is NIL"];
-                               }
-                               else
-                               {
-                                   if (object.format == FORMAT_TYPE_JSON) 
-                                   {
-                                       NSError *jsonParsingError = nil;
-                                       NSDictionary *parsedJSON = [NSJSONSerialization JSONObjectWithData:data
-                                                                                                  options:0 
-                                                                                                    error:&jsonParsingError];
-                                       
-                                       if ((![NSJSONSerialization isValidJSONObject:parsedJSON]) || (jsonParsingError != nil))
-                                       {
-                                           NSString *stringSEL = NSStringFromSelector(@selector(faceWrapperStatusFacing:photoTag:));
-                                           
-                                           [stringSEL selectorDidRespondInClass:delegate execute:^{
-                                               
-                                               [delegate faceWrapperStatusFacing:parsedJSON photoTag:-1];
-                                           }];
-                                       }
-                                       else
-                                       {
-                                           NSString *stringSEL = NSStringFromSelector(@selector(faceWrapperStatusFacing:photoTag:));
-                                           
-                                           [stringSEL selectorDidRespondInClass:delegate execute:^{
-                                               
-                                               [delegate faceWrapperStatusFacing:parsedJSON photoTag:[(FWImage *)obj tag]];
-                                           }];
-                                       }
-                                   }
-                                   else
-                                   {
-                                       //XML 
-                                       NSString *stringSEL = NSStringFromSelector(@selector(faceWrapperStatusFacing:photoTag:));
-                                       
-                                       [stringSEL selectorDidRespondInClass:delegate execute:^{
-                                           
-                                           [delegate faceWrapperStatusFacing:[FaceWrapper parseFaceXML:data] photoTag:[(FWImage *)obj tag]];
-                                       }];
-                                   }
-                               }
-                           }];
-        }];
+        [FaceWrapper doPOSTRequestForStatusWithBaseURL:postURL baseParams:baseURL withObject:object inDelegate:delegate];
     };
     
     if (((id)object.twitter_username != nil) && ((id)object.twitter_password != nil))
@@ -1013,11 +664,11 @@
                 else
                     [FaceWrapper throwExceptionWithName:@"Credential Exception" reason:@"Wrong twitter credentials"]; 
             }
-                                                completionError:^(NSError *error) {
+            completionError:^(NSError *error) {
                                                     
-                                                    //NSLog(@"%@", [error description]);
-                                                    [FaceWrapper throwExceptionWithName:[error description] reason:[error description]];
-                                                }];
+              //NSLog(@"%@", [error description]);
+              [FaceWrapper throwExceptionWithName:[error description] reason:[error description]];
+            }];
         };
         
         twitterBlock();
@@ -1054,4 +705,257 @@
     }
 }
 
+#pragma mark -
+#pragma Mark Utils
+
++ (void)doRESTRequestWithURL:(NSString *)baseURL withObject:(FWObject *)object responseBlock:(void (^)(NSDictionary *, int))block
+{
+    [NSObject downloadURLWithStringWithStatus:baseURL completion:^(NSData *data, int status) {
+        
+        if (data == nil) 
+        {
+            [FaceWrapper throwExceptionWithName:@"Data Exception" reason:@"Returned data is NIL"];
+        }
+        else
+        {
+            if (object.format == FORMAT_TYPE_JSON) 
+            {
+                NSError *jsonParsingError = nil;
+                NSDictionary *parsedJSON = [NSJSONSerialization JSONObjectWithData:data
+                                                                           options:0 
+                                                                             error:&jsonParsingError];
+                
+                if ((![NSJSONSerialization isValidJSONObject:parsedJSON]) || (jsonParsingError != nil))
+                {
+                    block(nil, -1);
+                }
+                else
+                {
+                    block(parsedJSON, -1);
+                }
+            }
+            else
+            {
+                //XML 
+                block([FaceWrapper parseFaceXML:data], -1); 
+            }
+        }
+    }];
+}
+
++ (void)doPOSTRequestWithURL:(NSString *)postURL 
+                  baseParams:(NSString *)baseURL
+                  withObject:(FWObject *)object
+               responseBlock:(void (^)(NSDictionary *, int))block
+{
+    [object.postImages enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        
+        [NSObject sendPOSTWithURL:[NSURL URLWithString:postURL] withParams:baseURL 
+                           images:[NSArray arrayWithObject:(FWImage *)obj] 
+                       completion:^(NSData *data) {
+                               
+               if (data == nil)
+               {
+                   [FaceWrapper throwExceptionWithName:@"Data Exception" reason:@"Returned data is NIL"];
+               }
+               else
+               {
+                   if (object.format == FORMAT_TYPE_JSON) 
+                   {
+                       NSError *jsonParsingError = nil;
+                       NSDictionary *parsedJSON = [NSJSONSerialization JSONObjectWithData:data
+                                                                                  options:0 
+                                                                                    error:&jsonParsingError];
+                       
+                       if ((![NSJSONSerialization isValidJSONObject:parsedJSON]) || (jsonParsingError != nil))
+                       {
+                           block(nil, -1);
+                       }
+                       else
+                       {
+                           block(parsedJSON, [(FWImage *)obj tag]);
+                       }
+                   }
+                   else
+                   {
+                       //XML 
+                       block([FaceWrapper parseFaceXML:data], [(FWImage *)obj tag]);
+                   }
+               }
+         }];
+    }];
+}
+
++ (void)doRESTRequestForTrainWithBaseURL:(NSString *)baseURL 
+                              withObject:(FWObject *)object
+                              inDelegate:(id)delegate
+{
+    [NSObject downloadURLWithStringWithStatus:baseURL completion:^(NSData *data, int status) {
+        
+        if (data == nil) 
+        {
+            [FaceWrapper throwExceptionWithName:@"Data Exception" reason:@"Returned data is NIL"];
+        }
+        else
+        {
+            if (object.format == FORMAT_TYPE_JSON) 
+            {
+                NSError *jsonParsingError = nil;
+                NSDictionary *parsedJSON = [NSJSONSerialization JSONObjectWithData:data
+                                                                           options:0 
+                                                                             error:&jsonParsingError];
+                
+                if ((![NSJSONSerialization isValidJSONObject:parsedJSON]) || (jsonParsingError != nil))
+                {
+                    NSString *stringSEL = NSStringFromSelector(@selector(faceWrapperTrainFaceSuccess:photoTag:));
+                    
+                    [stringSEL selectorDidRespondInClass:delegate execute:^{
+                        
+                        [delegate faceWrapperTrainFaceSuccess:nil photoTag:-1];
+                    }];
+                }
+                else
+                {
+                    NSString *stringSEL = NSStringFromSelector(@selector(faceWrapperTrainFaceSuccess:photoTag:));
+                    
+                    [stringSEL selectorDidRespondInClass:delegate execute:^{
+                        
+                        [delegate faceWrapperTrainFaceSuccess:parsedJSON photoTag:-1];
+                    }];
+                }
+            }
+            else
+            {
+                //XML 
+                NSString *stringSEL = NSStringFromSelector(@selector(faceWrapperTrainFaceSuccess:photoTag:));
+                
+                [stringSEL selectorDidRespondInClass:delegate execute:^{
+                    
+                    [delegate faceWrapperTrainFaceSuccess:[FaceWrapper parseFaceXML:data] photoTag:-1];
+                }];
+            }
+        }
+    }];
+}
+
++ (void)doPOSTRequestForTrainWithBaseURL:(NSString *)postURL
+                              baseParams:(NSString *)baseURL
+                              withObject:(FWObject *)object 
+                              inDelegate:(id)delegate
+{
+    [object.postImages enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        
+        [NSObject sendPOSTWithURL:[NSURL URLWithString:postURL] 
+                       withParams:baseURL 
+                           images:[NSArray arrayWithObject:(FWImage *)obj] 
+                       completion:^(NSData *data) {
+                               
+           if (data == nil)
+           {
+               [FaceWrapper throwExceptionWithName:@"Data Exception" reason:@"Returned data is NIL"];
+           }
+           else
+           {
+               if (object.format == FORMAT_TYPE_JSON) 
+               {
+                   NSError *jsonParsingError = nil;
+                   NSDictionary *parsedJSON = [NSJSONSerialization JSONObjectWithData:data
+                                                                              options:0 
+                                                                                error:&jsonParsingError];
+                   
+                   if ((![NSJSONSerialization isValidJSONObject:parsedJSON]) || (jsonParsingError != nil))
+                   {
+                       NSString *stringSEL = NSStringFromSelector(@selector(faceWrapperTrainFaceSuccess:photoTag:));
+                       
+                       [stringSEL selectorDidRespondInClass:delegate execute:^{
+                           
+                           [delegate faceWrapperTrainFaceSuccess:nil photoTag:-1];
+                       }];
+                   }
+                   else
+                   {
+                       NSString *stringSEL = NSStringFromSelector(@selector(faceWrapperTrainFaceSuccess:photoTag:));
+                       
+                       [stringSEL selectorDidRespondInClass:delegate
+                                                    execute:^{
+                                                        
+                                                        [delegate faceWrapperTrainFaceSuccess:parsedJSON 
+                                                                                     photoTag:[(FWImage *)obj tag]];
+                                                    }];
+                   }
+               }
+               else
+               {
+                   //XML 
+                   NSString *stringSEL = NSStringFromSelector(@selector(faceWrapperTrainFaceSuccess:photoTag:));
+                   
+                   [stringSEL selectorDidRespondInClass:delegate execute:^{
+                       
+                       [delegate faceWrapperTrainFaceSuccess:[FaceWrapper parseFaceXML:data] 
+                                                    photoTag:[(FWImage *)obj tag]];
+                   }];
+               }
+           }
+       }];
+    }];
+}
+
++ (void)doPOSTRequestForStatusWithBaseURL:(NSString *)postURL
+                               baseParams:(NSString *)baseURL 
+                               withObject:(FWObject *)object 
+                               inDelegate:(id)delegate
+{
+    [object.postImages enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        
+        [NSObject sendPOSTWithURL:[NSURL URLWithString:postURL]
+                       withParams:baseURL 
+                           images:[NSArray arrayWithObject:(FWImage *)obj]
+                       completion:^(NSData *data) {
+                           
+           if (data == nil)
+           {
+               [FaceWrapper throwExceptionWithName:@"Data Exception" reason:@"Returned data is NIL"];
+           }
+           else
+           {
+               if (object.format == FORMAT_TYPE_JSON) 
+               {
+                   NSError *jsonParsingError = nil;
+                   NSDictionary *parsedJSON = [NSJSONSerialization JSONObjectWithData:data
+                                                                              options:0 
+                                                                                error:&jsonParsingError];
+                   
+                   if ((![NSJSONSerialization isValidJSONObject:parsedJSON]) || (jsonParsingError != nil))
+                   {
+                       NSString *stringSEL = NSStringFromSelector(@selector(faceWrapperStatusFacing:photoTag:));
+                       
+                       [stringSEL selectorDidRespondInClass:delegate execute:^{
+                           
+                           [delegate faceWrapperStatusFacing:parsedJSON photoTag:-1];
+                       }];
+                   }
+                   else
+                   {
+                       NSString *stringSEL = NSStringFromSelector(@selector(faceWrapperStatusFacing:photoTag:));
+                       
+                       [stringSEL selectorDidRespondInClass:delegate execute:^{
+                           
+                           [delegate faceWrapperStatusFacing:parsedJSON photoTag:[(FWImage *)obj tag]];
+                       }];
+                   }
+               }
+               else
+               {
+                   //XML 
+                   NSString *stringSEL = NSStringFromSelector(@selector(faceWrapperStatusFacing:photoTag:));
+                   
+                   [stringSEL selectorDidRespondInClass:delegate execute:^{
+                       
+                       [delegate faceWrapperStatusFacing:[FaceWrapper parseFaceXML:data] photoTag:[(FWImage *)obj tag]];
+                   }];
+               }
+           }
+       }];
+    }];
+}
 @end
