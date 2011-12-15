@@ -166,21 +166,21 @@ Facebook.get service how-to:
 
 FBGetterObject *fbObject = [[FBGetterObject alloc] initWithFWObject:recognition];
 
-    uidsArray = [NSMutableArray new];
-    [uidsArray addUIDsToArray:@"xxxxxxx@facebook.com"];
+uidsArray = [NSMutableArray new];
+[uidsArray addUIDsToArray:@"xxxxxxx@facebook.com"];
 
-    fbObject.uids = uidsArray;
-    fbObject.format = FORMAT_TYPE_JSON;
-    fbObject.limit = 10;
-    fbObject.callback_url = nil;
-    fbObject.attributes = [NSArray arrayWithObjects:[FBGetterManager objectFromFBAttribute:FBATTRIBUTE_GENDER_FEMALE], [FBGetterManager objectFromFBAttribute:FBATTRIBUTE_GLASSES_TRUE], [FBGetterManager objectFromFBAttribute:FBATTRIBUTE_PITCH_CENTER], [FBGetterManager objectFromFBAttribute:FBATTRIBUTE_ROLL_RANGE], [FBGetterManager objectFromFBAttribute:FBATTRIBUTE_YAW_CENTER], nil];
+fbObject.uids = uidsArray;
+fbObject.format = FORMAT_TYPE_JSON;
+fbObject.limit = 10;
+fbObject.callback_url = nil;
+fbObject.attributes = [NSArray arrayWithObjects:[FBGetterManager objectFromFBAttribute:FBATTRIBUTE_GENDER_FEMALE], [FBGetterManager objectFromFBAttribute:FBATTRIBUTE_GLASSES_TRUE], [FBGetterManager objectFromFBAttribute:FBATTRIBUTE_PITCH_CENTER], [FBGetterManager objectFromFBAttribute:FBATTRIBUTE_ROLL_RANGE], [FBGetterManager objectFromFBAttribute:FBATTRIBUTE_YAW_CENTER], nil];
     
-    fbObject.rollRange = CGPointMake(40.0, 150.0);
+fbObject.rollRange = CGPointMake(40.0, 150.0);
     
-    [FBGetterManager requestForFacebookWithObject:fbObject completionBlock:^(NSDictionary *dictionary) {
+[FBGetterManager requestForFacebookWithObject:fbObject completionBlock:^(NSDictionary *dictionary) {
         
-        NSLog(@"FBDICTIONARY: %@", dictionary);
-    }];
+    NSLog(@"FBDICTIONARY: %@", dictionary);
+}];
 
 </pre>
 
