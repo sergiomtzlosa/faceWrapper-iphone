@@ -85,11 +85,11 @@ You can analyze images from the web or local images, but always as JPG files.
     
     [self presentModalViewController:controller animated:YES];
     
-    //FWObject *statusObject = [FWObject objectWithObject:recognition];
+    FWObject *statusObject = [FWObject objectWithObject:recognition];
 
     //WARNING SLOW OPERATION!!!
     //if (!recognition.isRESTObject)
-    //    [[FaceWrapper instance] statusFaceWithFWObject:statusObject delegate:self]; //POST ONLY
+        [[FaceWrapper instance] statusFaceWithFWObject:statusObject delegate:self]; //POST ONLY
     
     //FWObject *trainObject = [FWObject objectWithObject:recognition];
     //trainObject.callback_url = [NSURL URLWithString:@"http://www.facebook.com/connect/login_success.html"]; //dummy callback URL
