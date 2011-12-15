@@ -99,7 +99,11 @@
     fbObject.format = FORMAT_TYPE_JSON;
     fbObject.limit = 10;
     fbObject.callback_url = nil;
-    fbObject.attributes = [NSArray arrayWithObjects:[FBGetterManager objectFromFBAttribute:FBATTRIBUTE_GENDER_FEMALE], [FBGetterManager objectFromFBAttribute:FBATTRIBUTE_GLASSES_TRUE], [FBGetterManager objectFromFBAttribute:FBATTRIBUTE_PITCH_CENTER], [FBGetterManager objectFromFBAttribute:FBATTRIBUTE_ROLL_RANGE], [FBGetterManager objectFromFBAttribute:FBATTRIBUTE_YAW_CENTER], nil];
+    fbObject.attributes = [NSArray arrayWithObjects:[FBGetterManager objectFromFBAttribute:FBATTRIBUTE_GENDER_FEMALE], 
+                           [FBGetterManager objectFromFBAttribute:FBATTRIBUTE_GLASSES_TRUE], 
+                           [FBGetterManager objectFromFBAttribute:FBATTRIBUTE_PITCH_CENTER], 
+                           [FBGetterManager objectFromFBAttribute:FBATTRIBUTE_ROLL_RANGE], 
+                           [FBGetterManager objectFromFBAttribute:FBATTRIBUTE_YAW_CENTER], nil];
     
     fbObject.rollRange = CGPointMake(40.0, 150.0);
     
