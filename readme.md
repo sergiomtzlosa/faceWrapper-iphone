@@ -15,7 +15,9 @@ You can analyze images from the web or local images, but always as JPG files.
 
 * Added multiple POST images, FWImage has a property tag returned on delegate method, tag property on failure or REST request has -1 value.
 * Added recognition for images on REST/POST for Facebook accounts
-
+* Added photo training
+* Added Twitter/Facebook authentication
+* Added status account management
 <pre>
 
     //Images must be ALWAYS JPG
@@ -161,10 +163,10 @@ Wrapped services
 ----------------
 
 - faces.detect
-- faces.recognition (Facebook accounts only)
-- faces.train (Facebook accounts only)
-- faces.group (Facebook accounts only)
-- faces.status (Facebook accounts only)
+- faces.recognition
+- faces.train
+- faces.group
+- faces.status
 - account.users
 - account.limits/.spaces
 
