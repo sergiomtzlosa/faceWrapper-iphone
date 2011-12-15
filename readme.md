@@ -128,20 +128,6 @@ On training operations you MUST provide a callback URL due to slowness operation
 [[FaceWrapper instance] trainFaceWithFWObject:trainObject delegate:self runInBackground:NO];
 </pre>
 
-
-Use detection method just to place squares on photo's faces:
-
-<pre>
-
-[[FaceWrapper instance] detectFaceWithFWObject:object 
-                               runInBackground:NO
-                                completionData:^(NSDictionary *response, int tagImagePost) {
-
-                    //Detection response and tag of the image
-}];
-
-</pre>
-
 <pre>
 #pragma mark -
 #pragma mark FaceWrapperDelegate methods
@@ -155,6 +141,19 @@ Use detection method just to place squares on photo's faces:
 {
     NSLog(@"STATUS: %@", faceData);
 }
+
+</pre>
+
+Use detection method just to place squares on photo's faces:
+
+<pre>
+
+[[FaceWrapper instance] detectFaceWithFWObject:object 
+                               runInBackground:NO
+                                completionData:^(NSDictionary *response, int tagImagePost) {
+
+                    //Detection response and tag of the image
+}];
 
 </pre>
 
