@@ -10,6 +10,8 @@ dependencies: \
   /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/NSObject+Block.h \
   /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/NSThread+Blocks.h \
   /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/Constants.h \
+  /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/FBGetterManager.h \
+  /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/FBGetterObject.h \
   /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/FWImageControllerProtocol.h \
   /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/ParseObject.h \
   /Users/sid/Desktop/faceWrapper-iphone/faceWrapper/ParseObject+Enumeration.h \

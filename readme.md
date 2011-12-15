@@ -160,6 +160,30 @@ Use detection method just to place squares on photo's faces:
 
 </pre>
 
+Facebook.get service how-to:
+
+<pre>
+
+FBGetterObject *fbObject = [[FBGetterObject alloc] initWithFWObject:recognition];
+
+    uidsArray = [NSMutableArray new];
+    [uidsArray addUIDsToArray:@"xxxxxxx@facebook.com"];
+
+    fbObject.uids = uidsArray;
+    fbObject.format = FORMAT_TYPE_JSON;
+    fbObject.limit = 10;
+    fbObject.callback_url = nil;
+    fbObject.attributes = [NSArray arrayWithObjects:[FBGetterManager objectFromFBAttribute:FBATTRIBUTE_GENDER_FEMALE], [FBGetterManager objectFromFBAttribute:FBATTRIBUTE_GLASSES_TRUE], [FBGetterManager objectFromFBAttribute:FBATTRIBUTE_PITCH_CENTER], [FBGetterManager objectFromFBAttribute:FBATTRIBUTE_ROLL_RANGE], [FBGetterManager objectFromFBAttribute:FBATTRIBUTE_YAW_CENTER], nil];
+    
+    fbObject.rollRange = CGPointMake(40.0, 150.0);
+    
+    [FBGetterManager requestForFacebookWithObject:fbObject completionBlock:^(NSDictionary *dictionary) {
+        
+        NSLog(@"FBDICTIONARY: %@", dictionary);
+    }];
+
+</pre>
+
 Wrapped services
 ----------------
 
@@ -170,5 +194,6 @@ Wrapped services
 - faces.status
 - account.users
 - account.limits/.spaces
+- facebook.get
 
 Follow me on twitter : [http://twitter.com/#!/sergimtzlosa](@sergimtzlosa)

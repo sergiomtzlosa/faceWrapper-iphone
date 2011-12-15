@@ -15,6 +15,7 @@
 #import "NSObject+Block.h"
 #import "NSThread+Blocks.h"
 #import "Constants.h"
+#import "FBGetterManager.h"
 
 @protocol FaceWrapperDelegate <NSObject>
 @optional

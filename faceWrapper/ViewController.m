@@ -78,17 +78,35 @@
     
     [self presentModalViewController:controller animated:YES];
     
-    FWObject *statusObject = [FWObject objectWithObject:recognition];
+    //FWObject *statusObject = [FWObject objectWithObject:recognition];
 
     //WARNING SLOW OPERATION!!!
-    if (!recognition.isRESTObject)
-        [[FaceWrapper instance] statusFaceWithFWObject:statusObject delegate:self]; //POST ONLY
+    //if (!recognition.isRESTObject)
+    //    [[FaceWrapper instance] statusFaceWithFWObject:statusObject delegate:self]; //POST ONLY
     
     //FWObject *trainObject = [FWObject objectWithObject:recognition];
     //trainObject.callback_url = [NSURL URLWithString:@"http://www.facebook.com/connect/login_success.html"]; //dummy callback URL
     
     //WARNING SLOW OPERATION!!!
     //[[FaceWrapper instance] trainFaceWithFWObject:trainObject delegate:self runInBackground:NO];
+    
+    FBGetterObject *fbObject = [[FBGetterObject alloc] initWithFWObject:recognition];
+
+    uidsArray = [NSMutableArray new];
+    [uidsArray addUIDsToArray:@"xxxxxxx@facebook.com"];
+
+    fbObject.uids = uidsArray;
+    fbObject.format = FORMAT_TYPE_JSON;
+    fbObject.limit = 10;
+    fbObject.callback_url = nil;
+    fbObject.attributes = [NSArray arrayWithObjects:[FBGetterManager objectFromFBAttribute:FBATTRIBUTE_GENDER_FEMALE], [FBGetterManager objectFromFBAttribute:FBATTRIBUTE_GLASSES_TRUE], [FBGetterManager objectFromFBAttribute:FBATTRIBUTE_PITCH_CENTER], [FBGetterManager objectFromFBAttribute:FBATTRIBUTE_ROLL_RANGE], [FBGetterManager objectFromFBAttribute:FBATTRIBUTE_YAW_CENTER], nil];
+    
+    fbObject.rollRange = CGPointMake(40.0, 150.0);
+    
+    [FBGetterManager requestForFacebookWithObject:fbObject completionBlock:^(NSDictionary *dictionary) {
+        
+        NSLog(@"FBDICTIONARY: %@", dictionary);
+    }];
 }
 
 #pragma mark -
