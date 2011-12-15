@@ -68,14 +68,14 @@ You can analyze images from the web or local images, but always as JPG files.
     FWObject *recognition = [FWObject objectWithObject:object];
     recognition.wantRecognition = YES;
     recognition.accountNamespace = @"";
-    recognition.useFacebook = NO;
+    recognition.useFacebook = YES;
     
-    recognition.twitter_username = @"";
-    recognition.twitter_password = @"";
+    //recognition.twitter_username = @"";
+    //recognition.twitter_password = @"";
     
     NSMutableArray *uidsArray = [NSMutableArray new];
-    //[uidsArray addUIDsToArray:@"friends@facebook.com"]; //only for facebook authentication
-    [uidsArray addUIDsToArray:@"sergimtzlosa@twitter.com"]; //only for twitter authentication
+    [uidsArray addUIDsToArray:@"friends@facebook.com"]; //only for facebook authentication
+    //[uidsArray addUIDsToArray:@"xxxx@twitter.com"]; //only for twitter authentication
     
     recognition.uids = uidsArray;
     
@@ -85,17 +85,17 @@ You can analyze images from the web or local images, but always as JPG files.
     
     [self presentModalViewController:controller animated:YES];
     
-    FWObject *statusObject = [FWObject objectWithObject:recognition];
+    //FWObject *statusObject = [FWObject objectWithObject:recognition];
 
     //WARNING SLOW OPERATION!!!
-    if (!recognition.isRESTObject)
-        [[FaceWrapper instance] statusFaceWithFWObject:statusObject delegate:self]; //POST ONLY
+    //if (!recognition.isRESTObject)
+    //    [[FaceWrapper instance] statusFaceWithFWObject:statusObject delegate:self]; //POST ONLY
     
-    FWObject *trainObject = [FWObject objectWithObject:recognition];
-    trainObject.callback_url = [NSURL URLWithString:@"http://www.facebook.com/connect/login_success.html"]; //dummy callback URL
+    //FWObject *trainObject = [FWObject objectWithObject:recognition];
+    //trainObject.callback_url = [NSURL URLWithString:@"http://www.facebook.com/connect/login_success.html"]; //dummy callback URL
     
     //WARNING SLOW OPERATION!!!
-    [[FaceWrapper instance] trainFaceWithFWObject:trainObject delegate:self runInBackground:NO];
+    //[[FaceWrapper instance] trainFaceWithFWObject:trainObject delegate:self runInBackground:NO];
 
 </pre>
 
