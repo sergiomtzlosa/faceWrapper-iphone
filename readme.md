@@ -18,6 +18,7 @@ You can analyze images from the web or local images, but always as JPG files.
 * Added photo training
 * Added Twitter/Facebook authentication
 * Added status account management
+
 <pre>
 
     //Images must be ALWAYS JPG
