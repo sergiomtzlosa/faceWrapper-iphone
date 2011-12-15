@@ -70,8 +70,8 @@ You can analyze images from the web or local images, but always as JPG files.
     recognition.accountNamespace = @"";
     recognition.useFacebook = NO;
     
-    recognition.twitter_username = @"sergiomtzlosa";
-    recognition.twitter_password = @"4ha62p";
+    recognition.twitter_username = @"";
+    recognition.twitter_password = @"";
     
     NSMutableArray *uidsArray = [NSMutableArray new];
     //[uidsArray addUIDsToArray:@"friends@facebook.com"]; //only for facebook authentication
