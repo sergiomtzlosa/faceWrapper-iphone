@@ -164,9 +164,9 @@ Wrapped services
 ----------------
 
 - faces.detect
-- faces.recognition
-- faces.train
+- faces.recognize
 - faces.group
+- faces.train
 - faces.status
 - account.users
 - account.limits/.spaces
