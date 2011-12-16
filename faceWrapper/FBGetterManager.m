@@ -203,8 +203,11 @@
             if ((object.fb_user != @"") || (object.fb_oauth_token != @""))
             {
                 //assign to URL
-           
-                baseURL = [baseURL stringByAppendingFormat:@"fb_user:%@,fb_oauth_token:%@", object.fb_user, object.fb_oauth_token];
+                if ((![baseURL containsString:[@"fb_user:" stringByAppendingFormat:@"%@", object.fb_user]]) && 
+                    (![baseURL containsString:[@"fb_oauth_token:" stringByAppendingFormat:@"%@", object.fb_oauth_token]]))
+                {
+                    baseURL = [baseURL stringByAppendingFormat:@"fb_user:%@,fb_oauth_token:%@", object.fb_user, object.fb_oauth_token];    
+                }
                 
                 NSLog(@"URL FINAL: %@", baseURL);
                 
