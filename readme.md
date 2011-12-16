@@ -211,8 +211,8 @@ On your build setting into "Other linker Flags" add -ObjC and -all_load.
 Import framework as:
 
 <pre>
-#import <WrapperFace/FWImageController.h>
-#import <WrapperFace/FWKeysHelper.h>
+#import \<WrapperFace\/FWImageController.h\>
+#import \<WrapperFace\/FWKeysHelper.h\>
 </pre>
 
 Wrapped services
