@@ -1,0 +1,302 @@
+TexampleFramework
+v4
+r1
+cCheck dependencies
+cProcessInfoPlistFile /Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator/exampleFramework.app/Info.plist prueba/exampleFramework-Info.plist
+cProcessPCH /var/folders/jz/x1_qydqd0_37csvhjbynhrqc0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/exampleFramework-Prefix-hjlzjtamxcwigtchkksjsawadsak/exampleFramework-Prefix.pch.pth prueba/exampleFramework-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/exampleFramework.build/Debug-iphonesimulator/exampleFramework.build/Objects-normal/i386/main.o /Users/sid/Desktop/Archive/exampleFramework/prueba/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/exampleFramework.build/Debug-iphonesimulator/exampleFramework.build/Objects-normal/i386/AppDelegate.o /Users/sid/Desktop/Archive/exampleFramework/prueba/AppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/exampleFramework.build/Debug-iphonesimulator/exampleFramework.build/Objects-normal/i386/ViewController.o /Users/sid/Desktop/Archive/exampleFramework/prueba/ViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+cLd /Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator/exampleFramework.app/exampleFramework normal i386
+cGenerateDSYMFile /Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator/exampleFramework.app.dSYM /Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator/exampleFramework.app/exampleFramework
+cCopyStringsFile /Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator/exampleFramework.app/en.lproj/InfoPlist.strings prueba/en.lproj/InfoPlist.strings
+cCompileXIB /Users/sid/Desktop/Archive/exampleFramework/prueba/en.lproj/ViewController.xib
+cCpResource prueba/girls.jpg build/Debug-iphonesimulator/exampleFramework.app/girls.jpg
+cCpResource prueba/face.jpg build/Debug-iphonesimulator/exampleFramework.app/face.jpg
+cCpResource WrapperFace.embeddedframework/Resources/FWImageController.nib build/Debug-iphonesimulator/exampleFramework.app/FWImageController.nib
+cTouch /Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator/exampleFramework.app
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk
+c000000004E8C6F890000000000000110
+t1317826441
+s272
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004E72F1CC0000000000245480
+t1316155852
+s2380928
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004E72F2960000000000353830
+t1316156054
+s3487792
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004E7806AB00000000008F7390
+t1316488875
+s9401232
+
+N/Users/sid/Desktop/Archive/exampleFramework/WrapperFace.embeddedframework/Resources/FWImageController.nib
+c000000004EEB40630000000000000318
+t1324040291
+s792
+
+N/Users/sid/Desktop/Archive/exampleFramework/WrapperFace.embeddedframework/WrapperFace.framework/WrapperFace
+c000000004EEB406D000000000016F7E8
+t1324040301
+s1505256
+
+N/Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator/exampleFramework.app
+t2
+s0
+
+N/Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator/exampleFramework.app.dSYM
+t2
+s0
+
+N/Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator/exampleFramework.app/FWImageController.nib
+t2
+s0
+
+N/Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator/exampleFramework.app/Info.plist
+t2
+s0
+
+N/Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator/exampleFramework.app/PkgInfo
+t2
+s0
+
+N/Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator/exampleFramework.app/en.lproj/InfoPlist.strings
+t2
+s0
+
+N/Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator/exampleFramework.app/en.lproj/ViewController.nib
+t2
+s0
+
+N/Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator/exampleFramework.app/exampleFramework
+t2
+s0
+
+N/Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator/exampleFramework.app/face.jpg
+t2
+s0
+
+N/Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator/exampleFramework.app/girls.jpg
+t2
+s0
+
+N/Users/sid/Desktop/Archive/exampleFramework/build/exampleFramework.build/Debug-iphonesimulator/exampleFramework.build/Objects-normal/i386/AppDelegate.o
+t2
+s0
+
+N/Users/sid/Desktop/Archive/exampleFramework/build/exampleFramework.build/Debug-iphonesimulator/exampleFramework.build/Objects-normal/i386/ViewController.o
+t2
+s0
+
+N/Users/sid/Desktop/Archive/exampleFramework/build/exampleFramework.build/Debug-iphonesimulator/exampleFramework.build/Objects-normal/i386/exampleFramework.LinkFileList
+c000000004EEB94E400000000000001C4
+t1324061924
+s452
+
+N/Users/sid/Desktop/Archive/exampleFramework/build/exampleFramework.build/Debug-iphonesimulator/exampleFramework.build/Objects-normal/i386/main.o
+t2
+s0
+
+N/Users/sid/Desktop/Archive/exampleFramework/prueba/AppDelegate.m
+c000000004EEB36C40000000000000B87
+t1324037828
+s2951
+
+N/Users/sid/Desktop/Archive/exampleFramework/prueba/ViewController.m
+c000000004EEB94870000000000000DD3
+t1324061831
+s3539
+
+N/Users/sid/Desktop/Archive/exampleFramework/prueba/en.lproj/InfoPlist.strings
+c000000004EEB14BC000000000000002D
+t1324029116
+s45
+
+N/Users/sid/Desktop/Archive/exampleFramework/prueba/en.lproj/ViewController.xib
+c000000004EEB14BC000000000000146B
+t1324029116
+s5227
+
+N/Users/sid/Desktop/Archive/exampleFramework/prueba/exampleFramework-Prefix.pch
+c000000004EEB14BC000000000000013B
+t1324029116
+s315
+
+N/Users/sid/Desktop/Archive/exampleFramework/prueba/face.jpg
+c000000004EEB0E72000000000001625C
+t1324027506
+s90716
+
+N/Users/sid/Desktop/Archive/exampleFramework/prueba/girls.jpg
+c000000004EEB0E720000000000020627
+t1324027506
+s132647
+
+N/Users/sid/Desktop/Archive/exampleFramework/prueba/main.m
+c000000004EEB14BC0000000000000155
+t1324029116
+s341
+
+N/var/folders/jz/x1_qydqd0_37csvhjbynhrqc0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/exampleFramework-Prefix-hjlzjtamxcwigtchkksjsawadsak/exampleFramework-Prefix.pch.pth
+t2
+s0
+
+Nprueba/exampleFramework-Info.plist
+c000000004EEB93D3000000000000049E
+t1324061651
+s1182
+
+CBuild AST from /Users/sid/Desktop/Archive/exampleFramework/prueba/AppDelegate.m
+r0
+
+CBuild AST from /Users/sid/Desktop/Archive/exampleFramework/prueba/ViewController.m
+r0
+
+CBuild AST from /Users/sid/Desktop/Archive/exampleFramework/prueba/main.m
+r0
+
+CCheck dependencies
+r0
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependenciesb857be64cc9bb441^cb9ecc64cc9bb441^---0#1#0#--18"Check dependencies36"0865B43B-EF5C-4275-B2D4-EA3D8BAD3426-
+
+CCompileC build/exampleFramework.build/Debug-iphonesimulator/exampleFramework.build/Objects-normal/i386/AppDelegate.o /Users/sid/Desktop/Archive/exampleFramework/prueba/AppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s345754727.405401
+e345754727.616984
+r1
+xCompileC
+xbuild/exampleFramework.build/Debug-iphonesimulator/exampleFramework.build/Objects-normal/i386/AppDelegate.o
+x/Users/sid/Desktop/Archive/exampleFramework/prueba/AppDelegate.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection72"Compile /Users/sid/Desktop/Archive/exampleFramework/prueba/AppDelegate.m4fea6767cc9bb441^bbf29d67cc9bb441^---0#0#0#-19%DVTDocumentLocation2@80"file://localhost/Users/sid/Desktop/Archive/exampleFramework/prueba/AppDelegate.m0000000000000000^3054"CompileC build/exampleFramework.build/Debug-iphonesimulator/exampleFramework.build/Objects-normal/i386/AppDelegate.o prueba/AppDelegate.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/sid/Desktop/Archive/exampleFramework    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=50000 -iquote /Users/sid/Desktop/Archive/exampleFramework/build/exampleFramework.build/Debug-iphonesimulator/exampleFramework.build/exampleFramework-generated-files.hmap -I/Users/sid/Desktop/Archive/exampleFramework/build/exampleFramework.build/Debug-iphonesimulator/exampleFramework.build/exampleFramework-own-target-headers.hmap -I/Users/sid/Desktop/Archive/exampleFramework/build/exampleFramework.build/Debug-iphonesimulator/exampleFramework.build/exampleFramework-all-target-headers.hmap -iquote /Users/sid/Desktop/Archive/exampleFramework/build/exampleFramework.build/Debug-iphonesimulator/exampleFramework.build/exampleFramework-project-headers.hmap -I/Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator/include -I/Users/sid/Desktop/Archive/exampleFramework/build/exampleFramework.build/Debug-iphonesimulator/exampleFramework.build/DerivedSources/i386 -I/Users/sid/Desktop/Archive/exampleFramework/build/exampleFramework.build/Debug-iphonesimulator/exampleFramework.build/DerivedSources -F/Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator -F/Users/sid/Desktop/Archive/exampleFramework -F/Users/sid/Desktop/Archive/exampleFramework/WrapperFace.embeddedframework -include /var/folders/jz/x1_qydqd0_37csvhjbynhrqc0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/exampleFramework-Prefix-hjlzjtamxcwigtchkksjsawadsak/exampleFramework-Prefix.pch -MMD -MT dependencies -MF /Users/sid/Desktop/Archive/exampleFramework/build/exampleFramework.build/Debug-iphonesimulator/exampleFramework.build/Objects-normal/i386/AppDelegate.d -c /Users/sid/Desktop/Archive/exampleFramework/prueba/AppDelegate.m -o /Users/sid/Desktop/Archive/exampleFramework/build/exampleFramework.build/Debug-iphonesimulator/exampleFramework.build/Objects-normal/i386/AppDelegate.o36"E06D9AE4-F84D-4FEC-8550-9213D70E8D91-
+
+CCompileC build/exampleFramework.build/Debug-iphonesimulator/exampleFramework.build/Objects-normal/i386/ViewController.o /Users/sid/Desktop/Archive/exampleFramework/prueba/ViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s345754727.561325
+e345754727.685895
+r1
+xCompileC
+xbuild/exampleFramework.build/Debug-iphonesimulator/exampleFramework.build/Objects-normal/i386/ViewController.o
+x/Users/sid/Desktop/Archive/exampleFramework/prueba/ViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection75"Compile /Users/sid/Desktop/Archive/exampleFramework/prueba/ViewController.m05dc8f67cc9bb441^d196af67cc9bb441^---0#0#0#-19%DVTDocumentLocation2@83"file://localhost/Users/sid/Desktop/Archive/exampleFramework/prueba/ViewController.m0000000000000000^3069"CompileC build/exampleFramework.build/Debug-iphonesimulator/exampleFramework.build/Objects-normal/i386/ViewController.o prueba/ViewController.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/sid/Desktop/Archive/exampleFramework    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=50000 -iquote /Users/sid/Desktop/Archive/exampleFramework/build/exampleFramework.build/Debug-iphonesimulator/exampleFramework.build/exampleFramework-generated-files.hmap -I/Users/sid/Desktop/Archive/exampleFramework/build/exampleFramework.build/Debug-iphonesimulator/exampleFramework.build/exampleFramework-own-target-headers.hmap -I/Users/sid/Desktop/Archive/exampleFramework/build/exampleFramework.build/Debug-iphonesimulator/exampleFramework.build/exampleFramework-all-target-headers.hmap -iquote /Users/sid/Desktop/Archive/exampleFramework/build/exampleFramework.build/Debug-iphonesimulator/exampleFramework.build/exampleFramework-project-headers.hmap -I/Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator/include -I/Users/sid/Desktop/Archive/exampleFramework/build/exampleFramework.build/Debug-iphonesimulator/exampleFramework.build/DerivedSources/i386 -I/Users/sid/Desktop/Archive/exampleFramework/build/exampleFramework.build/Debug-iphonesimulator/exampleFramework.build/DerivedSources -F/Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator -F/Users/sid/Desktop/Archive/exampleFramework -F/Users/sid/Desktop/Archive/exampleFramework/WrapperFace.embeddedframework -include /var/folders/jz/x1_qydqd0_37csvhjbynhrqc0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/exampleFramework-Prefix-hjlzjtamxcwigtchkksjsawadsak/exampleFramework-Prefix.pch -MMD -MT dependencies -MF /Users/sid/Desktop/Archive/exampleFramework/build/exampleFramework.build/Debug-iphonesimulator/exampleFramework.build/Objects-normal/i386/ViewController.d -c /Users/sid/Desktop/Archive/exampleFramework/prueba/ViewController.m -o /Users/sid/Desktop/Archive/exampleFramework/build/exampleFramework.build/Debug-iphonesimulator/exampleFramework.build/Objects-normal/i386/ViewController.o36"C326F94D-1F65-434B-B5E6-7F5DF4A56C8E-
+
+CCompileC build/exampleFramework.build/Debug-iphonesimulator/exampleFramework.build/Objects-normal/i386/main.o /Users/sid/Desktop/Archive/exampleFramework/prueba/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s345754727.404794
+e345754727.559996
+r1
+xCompileC
+xbuild/exampleFramework.build/Debug-iphonesimulator/exampleFramework.build/Objects-normal/i386/main.o
+x/Users/sid/Desktop/Archive/exampleFramework/prueba/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection65"Compile /Users/sid/Desktop/Archive/exampleFramework/prueba/main.m48c56767cc9bb441^e65b8f67cc9bb441^---0#0#0#-19%DVTDocumentLocation2@73"file://localhost/Users/sid/Desktop/Archive/exampleFramework/prueba/main.m0000000000000000^3019"CompileC build/exampleFramework.build/Debug-iphonesimulator/exampleFramework.build/Objects-normal/i386/main.o prueba/main.m normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/sid/Desktop/Archive/exampleFramework    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=50000 -iquote /Users/sid/Desktop/Archive/exampleFramework/build/exampleFramework.build/Debug-iphonesimulator/exampleFramework.build/exampleFramework-generated-files.hmap -I/Users/sid/Desktop/Archive/exampleFramework/build/exampleFramework.build/Debug-iphonesimulator/exampleFramework.build/exampleFramework-own-target-headers.hmap -I/Users/sid/Desktop/Archive/exampleFramework/build/exampleFramework.build/Debug-iphonesimulator/exampleFramework.build/exampleFramework-all-target-headers.hmap -iquote /Users/sid/Desktop/Archive/exampleFramework/build/exampleFramework.build/Debug-iphonesimulator/exampleFramework.build/exampleFramework-project-headers.hmap -I/Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator/include -I/Users/sid/Desktop/Archive/exampleFramework/build/exampleFramework.build/Debug-iphonesimulator/exampleFramework.build/DerivedSources/i386 -I/Users/sid/Desktop/Archive/exampleFramework/build/exampleFramework.build/Debug-iphonesimulator/exampleFramework.build/DerivedSources -F/Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator -F/Users/sid/Desktop/Archive/exampleFramework -F/Users/sid/Desktop/Archive/exampleFramework/WrapperFace.embeddedframework -include /var/folders/jz/x1_qydqd0_37csvhjbynhrqc0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/exampleFramework-Prefix-hjlzjtamxcwigtchkksjsawadsak/exampleFramework-Prefix.pch -MMD -MT dependencies -MF /Users/sid/Desktop/Archive/exampleFramework/build/exampleFramework.build/Debug-iphonesimulator/exampleFramework.build/Objects-normal/i386/main.d -c /Users/sid/Desktop/Archive/exampleFramework/prueba/main.m -o /Users/sid/Desktop/Archive/exampleFramework/build/exampleFramework.build/Debug-iphonesimulator/exampleFramework.build/Objects-normal/i386/main.o36"E7528A88-6B3A-4650-A804-C53A87B7046D-
+
+CCompileXIB /Users/sid/Desktop/Archive/exampleFramework/prueba/en.lproj/ViewController.xib
+s345754727.987819
+e345754728.055640
+r1
+xCompileXIB
+x/Users/sid/Desktop/Archive/exampleFramework/prueba/en.lproj/ViewController.xib
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection88"Compiling /Users/sid/Desktop/Archive/exampleFramework/prueba/en.lproj/ViewController.xib7bfafc67cc9bb441^a5670e68cc9bb441^---0#0#0#-19%DVTDocumentLocation2@94"file://localhost/Users/sid/Desktop/Archive/exampleFramework/prueba/en.lproj/ViewController.xib0000000000000000^731"CompileXIB prueba/en.lproj/ViewController.xib    cd /Users/sid/Desktop/Archive/exampleFramework    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 5.0    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    setenv XCODE_DEVELOPER_USR_PATH /Developer/usr/bin/..    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator/exampleFramework.app/en.lproj/ViewController.nib /Users/sid/Desktop/Archive/exampleFramework/prueba/en.lproj/ViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk36"595C6462-C34C-4E6E-8055-9556989CA111-
+
+CCopyStringsFile /Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator/exampleFramework.app/en.lproj/InfoPlist.strings prueba/en.lproj/InfoPlist.strings
+s345754727.987230
+e345754727.991019
+r1
+xCopyStringsFile
+x/Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator/exampleFramework.app/en.lproj/InfoPlist.strings
+xprueba/en.lproj/InfoPlist.strings
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection38"Copy prueba/en.lproj/InfoPlist.strings91d2fc67cc9bb441^f2b3fd67cc9bb441^---0#0#0#-19%DVTDocumentLocation2@93"file://localhost/Users/sid/Desktop/Archive/exampleFramework/prueba/en.lproj/InfoPlist.strings0000000000000000^537"CopyStringsFile build/Debug-iphonesimulator/exampleFramework.app/en.lproj/InfoPlist.strings prueba/en.lproj/InfoPlist.strings    cd /Users/sid/Desktop/Archive/exampleFramework    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copyStrings --validate --inputencoding utf-8 --outputencoding binary --outdir /Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator/exampleFramework.app/en.lproj -- prueba/en.lproj/InfoPlist.strings36"1E77AA8A-750A-4D99-AA85-9B78D414B023-
+
+CCpResource WrapperFace.embeddedframework/Resources/FWImageController.nib build/Debug-iphonesimulator/exampleFramework.app/FWImageController.nib
+s345754728.029834
+e345754728.032440
+r1
+xCpResource
+xWrapperFace.embeddedframework/Resources/FWImageController.nib
+xbuild/Debug-iphonesimulator/exampleFramework.app/FWImageController.nib
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection75"Copy build/Debug-iphonesimulator/exampleFramework.app/FWImageController.nibaeb90768cc9bb441^404e0868cc9bb441^---0#0#0#-19%DVTDocumentLocation2@130"file://localhost/Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator/exampleFramework.app/FWImageController.nib00f49407deffdf42^637"CpResource WrapperFace.embeddedframework/Resources/FWImageController.nib build/Debug-iphonesimulator/exampleFramework.app/FWImageController.nib    cd /Users/sid/Desktop/Archive/exampleFramework    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/sid/Desktop/Archive/exampleFramework/WrapperFace.embeddedframework/Resources/FWImageController.nib /Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator/exampleFramework.app36"A3A0A5E5-FAF8-49E5-AC19-6271564D942B-
+
+CCpResource prueba/face.jpg build/Debug-iphonesimulator/exampleFramework.app/face.jpg
+s345754727.998294
+e345754728.018206
+r1
+xCpResource
+xprueba/face.jpg
+xbuild/Debug-iphonesimulator/exampleFramework.app/face.jpg
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection62"Copy build/Debug-iphonesimulator/exampleFramework.app/face.jpga5a4ff67cc9bb441^48a90468cc9bb441^---0#0#0#-19%DVTDocumentLocation2@117"file://localhost/Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator/exampleFramework.app/face.jpg00f49407deffdf42^532"CpResource prueba/face.jpg build/Debug-iphonesimulator/exampleFramework.app/face.jpg    cd /Users/sid/Desktop/Archive/exampleFramework    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/sid/Desktop/Archive/exampleFramework/prueba/face.jpg /Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator/exampleFramework.app36"D5A82A5E-9DF9-4375-971D-5439D2E1F1C6-
+
+CCpResource prueba/girls.jpg build/Debug-iphonesimulator/exampleFramework.app/girls.jpg
+s345754727.992267
+e345754727.995378
+r1
+xCpResource
+xprueba/girls.jpg
+xbuild/Debug-iphonesimulator/exampleFramework.app/girls.jpg
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection63"Copy build/Debug-iphonesimulator/exampleFramework.app/girls.jpgdf18fe67cc9bb441^d0d1fe67cc9bb441^---0#0#0#-19%DVTDocumentLocation2@118"file://localhost/Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator/exampleFramework.app/girls.jpg00f49407deffdf42^535"CpResource prueba/girls.jpg build/Debug-iphonesimulator/exampleFramework.app/girls.jpg    cd /Users/sid/Desktop/Archive/exampleFramework    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/sid/Desktop/Archive/exampleFramework/prueba/girls.jpg /Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator/exampleFramework.app36"8A1C2AAC-6AAE-4C78-B87C-9E431510B16D-
+
+CGenerateDSYMFile /Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator/exampleFramework.app.dSYM /Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator/exampleFramework.app/exampleFramework
+s345754727.786414
+e345754727.979305
+r1
+xGenerateDSYMFile
+x/Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator/exampleFramework.app.dSYM
+x/Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator/exampleFramework.app/exampleFramework
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection108"Generating /Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator/exampleFramework.app.dSYMcf6ac967cc9bb441^31b4fa67cc9bb441^---0#0#0#-19%DVTDocumentLocation2@113"file://localhost/Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator/exampleFramework.app.dSYM00f49407deffdf42^562"GenerateDSYMFile build/Debug-iphonesimulator/exampleFramework.app.dSYM build/Debug-iphonesimulator/exampleFramework.app/exampleFramework    cd /Users/sid/Desktop/Archive/exampleFramework    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator/exampleFramework.app/exampleFramework -o /Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator/exampleFramework.app.dSYM36"A35879C2-EEDC-46DF-B94D-982D8018371F-
+
+CLd /Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator/exampleFramework.app/exampleFramework normal i386
+s345754727.693439
+e345754727.779478
+r1
+xLd
+x/Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator/exampleFramework.app/exampleFramework
+xnormal
+xi386
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection114"Link /Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator/exampleFramework.app/exampleFramework83a2b167cc9bb441^548cc767cc9bb441^---0#0#0#--1291"Ld build/Debug-iphonesimulator/exampleFramework.app/exampleFramework normal i386    cd /Users/sid/Desktop/Archive/exampleFramework    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -L/Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator -F/Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator -F/Users/sid/Desktop/Archive/exampleFramework -F/Users/sid/Desktop/Archive/exampleFramework/WrapperFace.embeddedframework -filelist /Users/sid/Desktop/Archive/exampleFramework/build/exampleFramework.build/Debug-iphonesimulator/exampleFramework.build/Objects-normal/i386/exampleFramework.LinkFileList -mmacosx-version-min=10.6 -Xlinker -objc_abi_version -Xlinker 2 -ObjC -all_load -fobjc-arc -Xlinker -no_implicit_dylibs -D__IPHONE_OS_VERSION_MIN_REQUIRED=50000 -framework UIKit -framework Foundation -framework CoreGraphics -framework WrapperFace -o /Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator/exampleFramework.app/exampleFramework36"75DB4A04-05CE-41B2-BCC1-38A5BA8D6D39-
+
+CProcessInfoPlistFile /Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator/exampleFramework.app/Info.plist prueba/exampleFramework-Info.plist
+s345754724.805929
+e345754724.810385
+r1
+xProcessInfoPlistFile
+x/Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator/exampleFramework.app/Info.plist
+xprueba/exampleFramework-Info.plist
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection42"Process prueba/exampleFramework-Info.plist8c69ce64cc9bb441^37e0cf64cc9bb441^-204"warning: invalid character '*' in Bundle Identifier at column 18. This string must be a uniform type identifier (UTI) that contains only alphanumeric (A-Z,a-z,0-9), hyphen (-), and period (.) characters.1(21%IDEActivityLogMessage2@194"invalid character '*' in Bundle Identifier at column 18. This string must be a uniform type identifier (UTI) that contains only alphanumeric (A-Z,a-z,0-9), hyphen (-), and period (.) characters.102"Invalid character '*' in Bundle Identifier at column 18. This string must be a uniform type identifier345754724#18446744073709551615#0#-1#-23%DVTTextDocumentLocation3@-0000000000000000^18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#18446744073709551615#0#---0#0#0#-19%DVTDocumentLocation4@94"file://localhost/Users/sid/Desktop/Archive/exampleFramework/prueba/exampleFramework-Info.plist0000000000000000^644"ProcessInfoPlistFile build/Debug-iphonesimulator/exampleFramework.app/Info.plist prueba/exampleFramework-Info.plist    cd /Users/sid/Desktop/Archive/exampleFramework    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility prueba/exampleFramework-Info.plist -genpkginfo /Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator/exampleFramework.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator/exampleFramework.app/Info.plist36"9F34012A-D999-4484-AE27-C9277D58FD97-
+
+CProcessPCH /Users/sid/Library/Developer/Xcode/DerivedData/exampleFramework-akgjtrfxerettheckuuqocfdwelo/Index/PrecompiledHeaders/exampleFramework-Prefix-duqjhhopjocihddjajvtzzrwxsjx_ast/exampleFramework-Prefix.pch.pth prueba/exampleFramework-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.astbuilder
+r0
+
+CProcessPCH /var/folders/jz/x1_qydqd0_37csvhjbynhrqc0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/exampleFramework-Prefix-hjlzjtamxcwigtchkksjsawadsak/exampleFramework-Prefix.pch.pth prueba/exampleFramework-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler
+s345754724.819055
+e345754727.397933
+r1
+xProcessPCH
+x/var/folders/jz/x1_qydqd0_37csvhjbynhrqc0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/exampleFramework-Prefix-hjlzjtamxcwigtchkksjsawadsak/exampleFramework-Prefix.pch.pth
+xprueba/exampleFramework-Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.llvm.clang.1_0.compiler
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection45"Precompile prueba/exampleFramework-Prefix.pch27dad164cc9bb441^c8eb6567cc9bb441^---0#0#0#-19%DVTDocumentLocation2@94"file://localhost/Users/sid/Desktop/Archive/exampleFramework/prueba/exampleFramework-Prefix.pch0000000000000000^3030"ProcessPCH /var/folders/jz/x1_qydqd0_37csvhjbynhrqc0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/exampleFramework-Prefix-hjlzjtamxcwigtchkksjsawadsak/exampleFramework-Prefix.pch.pth prueba/exampleFramework-Prefix.pch normal i386 objective-c com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/sid/Desktop/Archive/exampleFramework    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/clang -x objective-c-header -arch i386 -fmessage-length=0 -fdiagnostics-print-source-range-info -fdiagnostics-show-category=id -fdiagnostics-parseable-fixits -std=gnu99 -fobjc-arc -Wno-trigraphs -fpascal-strings -O0 -Wmissing-prototypes -Wreturn-type -Wparentheses -Wswitch -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-shorten-64-to-32 -DDEBUG=1 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator5.0.sdk -fexceptions -fasm-blocks -mmacosx-version-min=10.6 -gdwarf-2 -Wno-sign-conversion -fobjc-abi-version=2 -fobjc-legacy-dispatch "-DIBOutlet=__attribute__((iboutlet))" "-DIBOutletCollection(ClassName)=__attribute__((iboutletcollection(ClassName)))" "-DIBAction=void)__attribute__((ibaction)" -D__IPHONE_OS_VERSION_MIN_REQUIRED=50000 -iquote /Users/sid/Desktop/Archive/exampleFramework/build/exampleFramework.build/Debug-iphonesimulator/exampleFramework.build/exampleFramework-generated-files.hmap -I/Users/sid/Desktop/Archive/exampleFramework/build/exampleFramework.build/Debug-iphonesimulator/exampleFramework.build/exampleFramework-own-target-headers.hmap -I/Users/sid/Desktop/Archive/exampleFramework/build/exampleFramework.build/Debug-iphonesimulator/exampleFramework.build/exampleFramework-all-target-headers.hmap -iquote /Users/sid/Desktop/Archive/exampleFramework/build/exampleFramework.build/Debug-iphonesimulator/exampleFramework.build/exampleFramework-project-headers.hmap -I/Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator/include -I/Users/sid/Desktop/Archive/exampleFramework/build/exampleFramework.build/Debug-iphonesimulator/exampleFramework.build/DerivedSources/i386 -I/Users/sid/Desktop/Archive/exampleFramework/build/exampleFramework.build/Debug-iphonesimulator/exampleFramework.build/DerivedSources -F/Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator -F/Users/sid/Desktop/Archive/exampleFramework -F/Users/sid/Desktop/Archive/exampleFramework/WrapperFace.embeddedframework -c /Users/sid/Desktop/Archive/exampleFramework/prueba/exampleFramework-Prefix.pch -o /var/folders/jz/x1_qydqd0_37csvhjbynhrqc0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/exampleFramework-Prefix-hjlzjtamxcwigtchkksjsawadsak/exampleFramework-Prefix.pch.pth -MMD -MT dependencies -MF /var/folders/jz/x1_qydqd0_37csvhjbynhrqc0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/exampleFramework-Prefix-hjlzjtamxcwigtchkksjsawadsak/exampleFramework-Prefix.pch.d36"9189C35F-AEA2-4913-9E68-38DBAD9DC670-
+
+CTouch /Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator/exampleFramework.app
+s345754728.079229
+e345754728.122034
+r1
+xTouch
+x/Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator/exampleFramework.app
+lSLF04#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection98"Touch /Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator/exampleFramework.app84611468cc9bb441^d13d1f68cc9bb441^---0#0#0#--352"Touch build/Debug-iphonesimulator/exampleFramework.app    cd /Users/sid/Desktop/Archive/exampleFramework    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/sid/Desktop/Archive/exampleFramework/build/Debug-iphonesimulator/exampleFramework.app36"A2613717-BDA9-4461-A66D-EA27DE7A5D2B-
+
