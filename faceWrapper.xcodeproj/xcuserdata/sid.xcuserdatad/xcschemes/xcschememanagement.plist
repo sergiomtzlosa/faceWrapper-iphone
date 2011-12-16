@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>WrapperFace.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>faceWrapper.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -13,6 +18,11 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>B52E6F1A1483B8AF00428A74</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B5F8A6F9149B46660008C6E3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -13,6 +13,7 @@
 #import "ParseObject.h"
 #import "ParseObject+Enumeration.h"
 #import "FWAccount.h"
+#import "FWKeysHelper.h"
 
 @interface FWImageController : UIViewController
 {
