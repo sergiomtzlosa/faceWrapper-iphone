@@ -10,6 +10,7 @@
 #import "NSObject+URLDownload.h"
 #import "Constants.h"
 #import "NSObject+Block.h"
+#import "FWKeysHelper.h"
 
 #define kNamespaces @"http://api.face.com/account/namespaces.json?api_key=%@&api_secret=%@"
 
@@ -59,14 +60,14 @@
 
 + (NSDictionary *)namespacesFromCurrentAccount
 {
-    NSString *url = [NSString stringWithFormat:kNamespaces, kFaceAPI, kFaceSecretAPI];
+    NSString *url = [NSString stringWithFormat:kNamespaces, [FWKeysHelper faceAPI], [FWKeysHelper faceSecretAPI]];
 
     return [FWAccount serviceManager:url];
 }
 
 + (NSDictionary *)limitsFromCurrentAccount
 {
-    NSString *url = [NSString stringWithFormat:kLimits, kFaceAPI, kFaceSecretAPI];
+    NSString *url = [NSString stringWithFormat:kLimits, [FWKeysHelper faceAPI], [FWKeysHelper faceSecretAPI]];
 
     return [FWAccount serviceManager:url];
 }
@@ -86,7 +87,7 @@
         }];
     }
     
-    NSString *url = [NSString stringWithFormat:kUsers, kFaceAPI, kFaceSecretAPI, spaces];
+    NSString *url = [NSString stringWithFormat:kUsers, [FWKeysHelper faceAPI], [FWKeysHelper faceSecretAPI], spaces];
 
     return [FWAccount serviceManager:url];
 }

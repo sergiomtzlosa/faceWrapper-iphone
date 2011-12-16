@@ -8,6 +8,7 @@
 
 #import "FacebookManager.h"
 #import "Constants.h"
+#import "FWKeysHelper.h"
 
 static void (^block)(NSString *, NSString *) = nil;
 static void (^trainBlock)(NSString *, NSString *) = nil;
@@ -62,7 +63,7 @@ static void (^statusBlock)(NSString *, NSString *) = nil;
 
 - (void)requestToken
 {
-    fbGraph = [[FbGraph alloc] initWithFbClientID:kFacebookAppID];
+    fbGraph = [[FbGraph alloc] initWithFbClientID:[FWKeysHelper facebookAppID]];
     
 	[fbGraph authenticateUserWithCallbackObject:self
                                     andSelector:@selector(fbGraphCallback:) 

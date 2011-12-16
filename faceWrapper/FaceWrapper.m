@@ -15,6 +15,7 @@
 #import "XAuthAutenticator.h"
 #import "FacebookManager.h"
 #import "NSString+StringChecker.h"
+#import "FWKeysHelper.h"
 
 @interface FaceWrapper (Private)
 
@@ -112,7 +113,7 @@
                runInBackground:(BOOL)background 
                 completionData:(void (^)(NSDictionary *, int))block
 {
-    [FaceWrapper checkAPIKeys:kFaceAPI secret:kFaceSecretAPI];
+    [FaceWrapper checkAPIKeys:[FWKeysHelper faceAPI] secret:[FWKeysHelper faceSecretAPI]];
     
     if (object.isRESTObject) 
     {
@@ -156,8 +157,8 @@
             postURL = [NSString stringWithFormat:@"http://api.face.com/faces/%@.%@", (object.wantRecognition) ? @"recognize" : @"detect", (object.format == FORMAT_TYPE_XML) ? @"xml" : @"json"];
     }
     
-    baseURL = [baseURL stringByAppendingFormat:@"&api_key=%@", kFaceAPI];
-    baseURL = [baseURL stringByAppendingFormat:@"&api_secret=%@", kFaceSecretAPI];
+    baseURL = [baseURL stringByAppendingFormat:@"&api_key=%@", [FWKeysHelper faceAPI]];
+    baseURL = [baseURL stringByAppendingFormat:@"&api_secret=%@", [FWKeysHelper faceSecretAPI]];
     
     baseURL = [baseURL stringByAppendingFormat:@"&urls="];
     
@@ -346,7 +347,7 @@
             
             twitterBlock();
         }
-        else if ((kFacebookAppID != @"") && (object.useFacebook == YES))
+        else if (([FWKeysHelper facebookAppID] != @"") && (object.useFacebook == YES))
         {
             //Generate tokens
             [[FacebookManager instance] requestTokenWithcompletion:^(NSString *access_token, NSString *userID) {
@@ -384,7 +385,7 @@
                      delegate:(id<FaceWrapperDelegate>)delegate
               runInBackground:(BOOL)background 
 {
-    [FaceWrapper checkAPIKeys:kFaceAPI secret:kFaceSecretAPI];
+    [FaceWrapper checkAPIKeys:[FWKeysHelper faceAPI] secret:[FWKeysHelper faceSecretAPI]];
     
     if (object.isRESTObject) 
     {
@@ -422,8 +423,8 @@
         postURL = [NSString stringWithFormat:@"http://api.face.com/faces/train.%@", (object.format == FORMAT_TYPE_XML) ? @"xml" : @"json"];
     }
     
-    baseURL = [baseURL stringByAppendingFormat:@"&api_key=%@", kFaceAPI];
-    baseURL = [baseURL stringByAppendingFormat:@"&api_secret=%@", kFaceSecretAPI];
+    baseURL = [baseURL stringByAppendingFormat:@"&api_key=%@", [FWKeysHelper faceAPI]];
+    baseURL = [baseURL stringByAppendingFormat:@"&api_secret=%@", [FWKeysHelper faceSecretAPI]];
     
     baseURL = [baseURL stringByAppendingFormat:@"&uids="];
     
@@ -526,7 +527,7 @@
         
         twitterBlock();
     }
-    else if ((kFacebookAppID != @"") && (object.useFacebook == YES))
+    else if (([FWKeysHelper facebookAppID] != @"") && (object.useFacebook == YES))
     {
         //Generate tokens
         [[FacebookManager instance] responseBlockForTrain:^(NSString *access_token, NSString *userID) {
@@ -560,7 +561,7 @@
 
 - (void)statusFaceWithFWObject:(FWObject *)object delegate:(id<FaceWrapperDelegate>)delegate
 {
-    [FaceWrapper checkAPIKeys:kFaceAPI secret:kFaceSecretAPI];
+    [FaceWrapper checkAPIKeys:[FWKeysHelper faceAPI] secret:[FWKeysHelper faceSecretAPI]];
     
     if (object.isRESTObject) 
     {
@@ -599,8 +600,8 @@
         postURL = [NSString stringWithFormat:@"http://api.face.com/faces/status.%@", (object.format == FORMAT_TYPE_XML) ? @"xml" : @"json"];
     }
     
-    baseURL = [baseURL stringByAppendingFormat:@"&api_key=%@", kFaceAPI];
-    baseURL = [baseURL stringByAppendingFormat:@"&api_secret=%@", kFaceSecretAPI];
+    baseURL = [baseURL stringByAppendingFormat:@"&api_key=%@", [FWKeysHelper faceAPI]];
+    baseURL = [baseURL stringByAppendingFormat:@"&api_secret=%@", [FWKeysHelper faceSecretAPI]];
     
     baseURL = [baseURL stringByAppendingFormat:@"&uids="];
     
@@ -673,7 +674,7 @@
         
         twitterBlock();
     }
-    else if ((kFacebookAppID != @"") && (object.useFacebook == YES))
+    else if (([FWKeysHelper facebookAppID] != @"") && (object.useFacebook == YES))
     {
         //Generate tokens
         [[FacebookManager instance] responseBlockForStatus:^(NSString *access_token, NSString *userID) {

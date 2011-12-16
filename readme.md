@@ -18,9 +18,24 @@ You can analyze images from the web or local images, but always as JPG files.
 * Added photo training
 * Added Twitter/Facebook authentication
 * Added status account management
+* Added framework support (you MUST install https://github.com/kstenerud/iOS-Universal-Framework for framework templates)
 
 <pre>
 
+    //Define your API from faces.com --> http://developers.face.com/account/
+    
+    [FWKeysHelper setFaceAPI:@"YOUR_FACE_API_KEY"];
+    [FWKeysHelper setFaceSecretAPI:@"YOUR_FACE_API_SECRET_KEY"];
+    
+    //Define your Facebook Tokens at https://developers.facebook.com and set them in your face.com account
+
+    [FWKeysHelper setFacebookAppID:@"YOUR_FACEBOOK_APPLICATION_ID"];
+    
+    //Define your xAuth Tokens at developer.twitter.com and set them in your face.com account
+    
+    [FWKeysHelper setTwitterConsumerKey:@"YOUR_TWITTER_CONSUMER_KEY"];
+    [FWKeysHelper setTwitterConsumerSecret:@"YOUR_TWITTER_CONSUMER_SECRET"];
+    
     //Images must be ALWAYS JPG
     
     FWObject *object = [FWObject new];
@@ -182,6 +197,22 @@ fbObject.rollRange = CGPointMake(40.0, 150.0);
     NSLog(@"FBDICTIONARY: %@", dictionary);
 }];
 
+</pre>
+
+WrapperFace framework
+---------------------
+
+FaceWrapper project now turn to framework (but also single files support), the new framework tries to reach an easy way to integrate with face.com services.
+
+Just drag WrapperFace.embeddedframework to your protect folder, select WrapperFace.framework from your project [BUILD PHASES] -> [LINK BINARY WITH LIBRARIES] -> [BUTTON "+"].
+
+On your build setting into "Other linker Flags" add -ObjC and -all_load.
+
+Import framework as:
+
+<pre>
+#import <WrapperFace/FWImageController.h>
+#import <WrapperFace/FWKeysHelper.h>
 </pre>
 
 Wrapped services

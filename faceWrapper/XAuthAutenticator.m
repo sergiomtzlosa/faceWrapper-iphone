@@ -9,6 +9,7 @@
 #import "XAuthAutenticator.h"
 #include <CommonCrypto/CommonHMAC.h>
 #import "Constants.h"
+#import "FWKeysHelper.h"
 
 @interface NSData (TwitterUtils)
 
@@ -166,8 +167,8 @@ static void (^errorBlock)(NSError *) = nil;
 
 - (void)executeWithUsername:(NSString *)user password:(NSString *)pass
 {
-    oauth_consumer_key = kTwitterConsumerKey;
-    oauth_consumer_secret = kTwitterConsumerSecret;
+    oauth_consumer_key = [FWKeysHelper twitterConsumerKey];//kTwitterConsumerKey;
+    oauth_consumer_secret = [FWKeysHelper twitterConsumerSecret];//kTwitterConsumerSecret;
     username = user;
     password = pass;
     

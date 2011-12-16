@@ -12,6 +12,7 @@
 #import "NSString+StringChecker.h"
 #import "NSObject+URLDownload.h"
 #import "Constants.h"
+#import "FWKeysHelper.h"
 
 @interface FBGetterManager (Private)
 
@@ -41,12 +42,13 @@
 
 + (void)requestForFacebookWithObject:(FBGetterObject *)object completionBlock:(void (^)(NSDictionary *))block
 {
-    [FBGetterManager checkAPIKeys:kFaceAPI secret:kFaceSecretAPI];
+    [FBGetterManager checkAPIKeys:[FWKeysHelper faceAPI] 
+                           secret:[FWKeysHelper faceSecretAPI]];
     
     __block NSString *baseURL = [NSString stringWithFormat:@"http://api.face.com/facebook/get.%@", (object.format == FORMAT_TYPE_XML) ? @"xml?" : @"json?"];
     
-    baseURL = [baseURL stringByAppendingFormat:@"api_key=%@", kFaceAPI];
-    baseURL = [baseURL stringByAppendingFormat:@"&api_secret=%@", kFaceSecretAPI];
+    baseURL = [baseURL stringByAppendingFormat:@"api_key=%@", [FWKeysHelper faceAPI]];
+    baseURL = [baseURL stringByAppendingFormat:@"&api_secret=%@", [FWKeysHelper faceSecretAPI]];
     
     baseURL = [baseURL stringByAppendingFormat:@"&uids="];
     
@@ -189,7 +191,7 @@
      
      */
     
-    if (kFacebookAppID != @"")
+    if ([FWKeysHelper facebookAppID] != @"")
     {
         baseURL = [baseURL stringByAppendingFormat:@"&user_auth="];
         

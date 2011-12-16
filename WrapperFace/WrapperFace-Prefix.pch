@@ -1,0 +1,16 @@
+//
+// Prefix header for all source files of the 'WrapperFace' target in the 'WrapperFace' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import "NSMutableArray+Objects.h"
+    #import "NSString+Selector.h"
+    #import "NSArray+TypeChecker.h"
+    #import "FWObject.h"
+    #import "FWImage.h"
+    #import "NSObject+Block.h"
+    #import "NSThread+Blocks.h"
+    #import "Constants.h"
+    #import "FBGetterManager.h"
+#endif

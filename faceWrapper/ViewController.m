@@ -15,6 +15,22 @@
     [super viewDidLoad];
     //Images must be ALWAYS JPG
 
+    #error SETUP your keys 
+    
+    //Define your API from faces.com --> http://developers.face.com/account/
+    
+    [FWKeysHelper setFaceAPI:@"YOUR_FACE_API_KEY"];
+    [FWKeysHelper setFaceSecretAPI:@"YOUR_FACE_API_SECRET_KEY"];
+    
+    //Define your Facebook Tokens at https://developers.facebook.com and set them in your face.com account
+
+    [FWKeysHelper setFacebookAppID:@"YOUR_FACEBOOK_APPLICATION_ID"];
+    
+    //Define your xAuth Tokens at developer.twitter.com and set them in your face.com account
+    
+    [FWKeysHelper setTwitterConsumerKey:@"YOUR_TWITTER_CONSUMER_KEY"];
+    [FWKeysHelper setTwitterConsumerSecret:@"YOUR_TWITTER_CONSUMER_SECRET"];
+    
     FWObject *object = [FWObject new];
     
     /*
