@@ -202,7 +202,7 @@ fbObject.rollRange = CGPointMake(40.0, 150.0);
 WrapperFace framework
 ---------------------
 
-FaceWrapper project now turn to framework (but also single files support), the new framework tries to reach an easy way to integrate with face.com services.
+FaceWrapper project now turns to framework (but also single files support), the new framework tries to reach an easy way to integrate with face.com services.
 
 Just drag WrapperFace.embeddedframework to your protect folder, select WrapperFace.framework from your project [BUILD PHASES] -> [LINK BINARY WITH LIBRARIES] -> [BUTTON "+"].
 
@@ -214,6 +214,7 @@ Import framework as:
 #import &lt;WrapperFace/FWImageController.h&gt;
 #import &lt;WrapperFace/FWKeysHelper.h&gt;
 </pre>
+
 Wrapped services
 ----------------
 
