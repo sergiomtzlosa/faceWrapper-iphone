@@ -17,6 +17,7 @@
 
     #error SETUP your keys 
     
+    //if your compile this project as framework do NOT set your keys, do it into the project where you add the framework
     //Define your API from faces.com --> http://developers.face.com/account/
     
     [FWKeysHelper setFaceAPI:@"YOUR_FACE_API_KEY"];
