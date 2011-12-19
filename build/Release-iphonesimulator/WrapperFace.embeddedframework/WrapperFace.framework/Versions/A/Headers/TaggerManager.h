@@ -9,16 +9,19 @@
 #import <Foundation/Foundation.h>
 #import "FWObject.h"
 
-@protocol TaggerManagerDelegate <NSObject>
-@optional
+typedef void (^Block)(NSDictionary *);
 
-@end
+typedef enum
+{
+    TAG_ACTION_SAVE = 0,
+    TAG_ACTION_REMOVE = 1
+}TAG_ACTION;
 
 @interface TaggerManager : NSObject
 
-- (void)saveTagWithObject:(FWObject *)object delegate:(id<TaggerManagerDelegate>)delegate;
-- (void)addTagWithObject:(FWObject *)object delegate:(id<TaggerManagerDelegate>)delegate;
-- (void)getTagsWithObject:(FWObject *)object delegate:(id<TaggerManagerDelegate>)delegate;
-- (void)removeTagWithObject:(FWObject *)object delegate:(id<TaggerManagerDelegate>)delegate;
++ (TaggerManager *)sharedInstance;
+- (void)actionTagWithObject:(FWObject *)object doAction:(TAG_ACTION)action blockCompletion:(Block)completion;
+- (void)addTagWithObject:(FWObject *)object blockCompletion:(Block)completion;
+- (void)getTagsWithObject:(FWObject *)object blockCompletion:(Block)completion;
 
 @end

@@ -55,6 +55,18 @@ typedef enum
     BOOL wantRecognition;
     BOOL useFacebook;
     BOOL groupRecognition;
+    
+    NSArray *tids;
+    NSString *taggerID;
+    NSString *tagUID;
+    NSString *tagLabel;
+    NSString *password;
+    
+    NSString *tagURL;
+    int tagX;
+    int tagY;
+    int tagWidth;
+    
 }
 
 + (FWObject *)objectWithObject:(FWObject *)object;
@@ -79,4 +91,14 @@ typedef enum
 @property (nonatomic, strong) NSString *twitter_oauth_token;
 @property (nonatomic) BOOL useFacebook;
 @property (nonatomic) BOOL groupRecognition;
+@property (nonatomic, strong) NSArray *tids;
+@property (nonatomic, strong) NSString *taggerID;
+@property (nonatomic, strong) NSString *tagUID;
+@property (nonatomic, strong) NSString *tagLabel;
+@property (nonatomic, strong) NSString *password;
+@property (nonatomic, strong) NSString *tagURL;
+@property (nonatomic) int tagX;
+@property (nonatomic) int tagY;
+@property (nonatomic) int tagWidth;
+
 @end

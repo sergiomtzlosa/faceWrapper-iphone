@@ -20,6 +20,11 @@
     [self addObject:[NSNumber numberWithInt:attribute]];
 }
 
+- (void)addTidToArray:(int)tid
+{    
+    [self addObject:[NSNumber numberWithInt:tid]];
+}
+
 - (void)addImageToArray:(NSURL *)imageURL
 {
     [self addObject:imageURL];

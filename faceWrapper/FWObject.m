@@ -29,6 +29,15 @@
 @synthesize twitter_oauth_token;
 @synthesize useFacebook;
 @synthesize groupRecognition;
+@synthesize tids;
+@synthesize taggerID;
+@synthesize tagUID;
+@synthesize tagLabel;
+@synthesize password;
+@synthesize tagURL;
+@synthesize tagX;
+@synthesize tagY;
+@synthesize tagWidth;
 
 + (FWObject *)objectWithObject:(FWObject *)object
 {
@@ -69,7 +78,16 @@
     [obj setTwitter_oauth_token:twitter_oauth_token];
     [obj setUseFacebook:useFacebook];
     [obj setGroupRecognition:groupRecognition];
-    
+    [obj setTids:tids];
+    [obj setTaggerID:taggerID];
+    [obj setTagUID:tagUID];
+    [obj setTagLabel:tagLabel];
+    [obj setPassword:password];
+    [obj setTagURL:tagURL];
+    [obj setTagX:tagX];
+    [obj setTagY:tagY];
+    [obj setTagWidth:tagWidth];
+
     return obj;
 }
 

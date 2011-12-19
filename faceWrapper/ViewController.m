@@ -128,6 +128,52 @@
         
         NSLog(@"FBDICTIONARY: %@", dictionary);
     }];
+    
+    
+    //DOC URL: http://developers.face.com/docs/api/tags-save/
+    
+    FWObject *taggerObject = [FWObject objectWithObject:object];
+    taggerObject.tagUID = @"YOUR_TAG_UID";
+    taggerObject.tagLabel = @"YOUR_TAG_LABEL";
+    taggerObject.tagUID = @"YOUR_TAG_UID";
+    taggerObject.callback = @"";
+    taggerObject.password = @"YOUR_PASSWORD"; //for use when saving tags is a privileged action in your client-side application (must be enabled in application settings)
+    
+    NSMutableArray *arrayTids = [NSMutableArray new];
+    [arrayTids addTidToArray:0]; //example how to add tid
+    
+    taggerObject.tids = arrayTids; //one or more tag ids to associate with the passed uid. The tag id is a reference field in the response of faces.detect and faces.recognize methods
+    
+    [[TaggerManager sharedInstance] actionTagWithObject:taggerObject
+                                               doAction:TAG_ACTION_SAVE
+                                        blockCompletion:^(NSDictionary *data) {
+                                                   
+        NSLog(@"%@", data);
+    }];
+    
+    [[TaggerManager sharedInstance] actionTagWithObject:taggerObject 
+                                               doAction:TAG_ACTION_REMOVE 
+                                        blockCompletion:^(NSDictionary *data) {
+        
+        NSLog(@"%@", data);
+    }];
+    
+    //DOC URL: http://developers.face.com/docs/api/tags-add/
+    
+    taggerObject.tagURL = @"YOUR_TAG_URL";
+    taggerObject.tagX = 0;
+    taggerObject.tagY = 0;
+    taggerObject.tagWidth = 0;
+    taggerObject.tagUID = @"YOUR_TAG_UID";
+    taggerObject.taggerID = @"YOUR_TAGGER_ID";
+    taggerObject.tagLabel = @"YOUR_LABEL";
+    taggerObject.callback = @"";
+    taggerObject.password = @"YOUR_PASSWORD";
+    
+    [[TaggerManager sharedInstance] addTagWithObject:object blockCompletion:^(NSDictionary *data) {
+        
+        NSLog(@"%@", data);
+    }];
 }
 
 #pragma mark -
