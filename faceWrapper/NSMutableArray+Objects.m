@@ -32,6 +32,11 @@
 
 - (void)addImagePOSTToArray:(FWImage *)image
 {
+    if ([image.data length] > 1000000)
+    {
+        [NSException exceptionWithName:@"Image Limit" reason:@"Image is bigger than 1MB" userInfo:nil];
+    }
+    
     [self addObject:image];
 }
 
