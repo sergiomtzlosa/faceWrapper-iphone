@@ -551,7 +551,7 @@
 		B52E6F121483B8AE00428A74 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0430;
 			};
 			buildConfigurationList = B52E6F151483B8AE00428A74 /* Build configuration list for PBXProject "faceWrapper" */;
 			compatibilityVersion = "Xcode 3.2";

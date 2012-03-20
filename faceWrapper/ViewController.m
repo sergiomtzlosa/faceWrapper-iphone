@@ -20,12 +20,12 @@
     //if your compile this project as framework do NOT set your keys, do it into the project where you add the framework
     //Define your API from faces.com --> http://developers.face.com/account/
     
-    [FWKeysHelper setFaceAPI:@"YOUR_FACE_API_KEY"];
-    [FWKeysHelper setFaceSecretAPI:@"YOUR_FACE_API_SECRET_KEY"];
+    [FWKeysHelper setFaceAPI:@"YOUR_FACE_API"];
+    [FWKeysHelper setFaceSecretAPI:@"YOUR_FACECOM_SECRET API"];
     
     //Define your Facebook Tokens at https://developers.facebook.com and set them in your face.com account
 
-    [FWKeysHelper setFacebookAppID:@"YOUR_FACEBOOK_APPLICATION_ID"];
+    [FWKeysHelper setFacebookAppID:@"YOUR_FACEBOOK_APP_ID"];
     
     //Define your xAuth Tokens at developer.twitter.com and set them in your face.com account
     

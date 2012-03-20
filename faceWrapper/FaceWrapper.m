@@ -137,7 +137,7 @@
                                                                     reason:@"Attributes array cannot be null"] : nil;
     
     (![object.attributes arrayIsTypeOf:[NSNumber class]]) ? [FaceWrapper throwExceptionWithName:@"ATTRIBUTE array type exception" 
-                                                                                         reason:@"Array object is not an ATTRIBUTE object, addAttributeToArray: from NSMutableArray"] : @"";
+                                                                                         reason:@"Array object is not an ATTRIBUTE object, addAttributeToArray: from NSMutableArray"] : nil;
     
     __block NSString *baseURL = @"";
     __block NSString *postURL = @"";
@@ -409,7 +409,7 @@
                                                                     reason:@"Attributes array cannot be null"] : nil;
     
     (![object.attributes arrayIsTypeOf:[NSNumber class]]) ? [FaceWrapper throwExceptionWithName:@"ATTRIBUTE array type exception" 
-                                                                                         reason:@"Array object is not an ATTRIBUTE object, addAttributeToArray: from NSMutableArray"] : @"";
+                                                                                         reason:@"Array object is not an ATTRIBUTE object, addAttributeToArray: from NSMutableArray"] : nil;
     
     __block NSString *baseURL = @"";
     __block NSString *postURL = @"";
@@ -585,7 +585,7 @@
                                                                     reason:@"Attributes array cannot be null"] : nil;
     
     (![object.attributes arrayIsTypeOf:[NSNumber class]]) ? [FaceWrapper throwExceptionWithName:@"ATTRIBUTE array type exception" 
-                                                                                         reason:@"Array object is not an ATTRIBUTE object, addAttributeToArray: from NSMutableArray"] : @"";
+                                                                                         reason:@"Array object is not an ATTRIBUTE object, addAttributeToArray: from NSMutableArray"] : nil;
     
     __block NSString *baseURL = @"";
     __block NSString *postURL = @"";

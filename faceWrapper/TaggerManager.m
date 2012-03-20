@@ -62,7 +62,7 @@ static Block myBlock;
                                                               reason:@"TIDS array cannot be null"] : nil;
     
     (![object.tids arrayIsTypeOf:[NSNumber class]]) ? [FaceWrapper throwExceptionWithName:@"TIDS array type exception" 
-                                                                                   reason:@"Array object is not an TIDS object, addTidToArray: from NSMutableArray"] : @"";
+                                                                                   reason:@"Array object is not an TIDS object, addTidToArray: from NSMutableArray"] : nil;
     
     myBlock = nil;
     myBlock = [completion copy];
