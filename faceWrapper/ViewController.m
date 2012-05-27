@@ -15,22 +15,22 @@
     [super viewDidLoad];
     //Images must be ALWAYS JPG
 
-    #error SETUP your keys 
+    //#error SETUP your keys 
     
     //if your compile this project as framework do NOT set your keys, do it into the project where you add the framework
     //Define your API from faces.com --> http://developers.face.com/account/
     
-    [FWKeysHelper setFaceAPI:@"YOUR_FACE_API"];
-    [FWKeysHelper setFaceSecretAPI:@"YOUR_FACECOM_SECRET API"];
+    [FWKeysHelper setFaceAPI:@"xxxxxxxxxxx"];
+    [FWKeysHelper setFaceSecretAPI:@"xxxxxxxxxxxx"];
     
     //Define your Facebook Tokens at https://developers.facebook.com and set them in your face.com account
 
-    [FWKeysHelper setFacebookAppID:@"YOUR_FACEBOOK_APP_ID"];
+    [FWKeysHelper setFacebookAppID:@"xxxxxxxxx"];
     
     //Define your xAuth Tokens at developer.twitter.com and set them in your face.com account
     
-    [FWKeysHelper setTwitterConsumerKey:@"YOUR_TWITTER_CONSUMER_KEY"];
-    [FWKeysHelper setTwitterConsumerSecret:@"YOUR_TWITTER_CONSUMER_SECRET"];
+    [FWKeysHelper setTwitterConsumerKey:@"xxxxxxxxxxxx"];
+    [FWKeysHelper setTwitterConsumerSecret:@"xxxxxxxxxxx"];
     
     FWObject *object = [FWObject new];
     
@@ -50,15 +50,17 @@
      NSMutableArray *images = [[NSMutableArray alloc] init];
      
      FWImage *fwImage = [[FWImage alloc] initWithData:UIImageJPEGRepresentation(image, 1.0)
-     imageName:@"girls"
-     extension:@"jpg"
-     andFullPath:@""];
-     fwImage.tag = 999;
-     [images addImagePOSTToArray:fwImage];
+                                            imageName:@"girls"
+                                            extension:@"jpg"
+                                          andFullPath:@""];
+    
+    fwImage.tag = 999;
+    
+    [images addImagePOSTToArray:fwImage];
      
-     [object setPostImages:images];
+    [object setPostImages:images];
      
-     object.isRESTObject = NO;
+    object.isRESTObject = NO;
      //END POST
     
     object.wantRecognition = NO;
@@ -90,10 +92,13 @@
     recognition.uids = uidsArray;
     
     FWImageController *controller = [[FWImageController alloc] initWithNibName:@"FWImageController" bundle:nil];
-    controller.objects = [NSArray arrayWithObjects:object, nil];
+    controller.objects = [NSArray arrayWithObjects:object, recognition, nil];
     controller.delegate = self;
     
     [self presentModalViewController:controller animated:YES];
+    
+    //remove this return for more operations
+    return;
     
     //FWObject *statusObject = [FWObject objectWithObject:recognition];
 
@@ -110,7 +115,7 @@
     FBGetterObject *fbObject = [[FBGetterObject alloc] initWithFWObject:recognition];
 
     uidsArray = [NSMutableArray new];
-    [uidsArray addUIDsToArray:@"xxxxxxx@facebook.com"];
+    [uidsArray addUIDsToArray:@"xxxxxxxx@facebook.com"];
 
     fbObject.uids = uidsArray;
     fbObject.format = FORMAT_TYPE_JSON;
@@ -129,6 +134,7 @@
         NSLog(@"FBDICTIONARY: %@", dictionary);
     }];
     
+    return;
     
     //DOC URL: http://developers.face.com/docs/api/tags-save/
     

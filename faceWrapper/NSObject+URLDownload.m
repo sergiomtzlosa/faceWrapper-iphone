@@ -88,7 +88,7 @@
             NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)urlResponse;
             int status = [httpResponse statusCode];
             
-            if ((status >= 200) && (status < 300))
+            if ((status >= 200) && (status < 401))
             {
                 completion(result, status);
             }

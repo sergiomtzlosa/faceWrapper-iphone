@@ -92,8 +92,10 @@
             [NSException exceptionWithName:@"Invalid object" reason:@"Object is not kind of FWImage" userInfo:nil];
         }
     }
+    //NSLog(@"%@", params);
     
-    params = [params substringFromIndex:1];
+    params = [params stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@"%@&", url]
+                                               withString:@""];
     
     NSMutableDictionary *attribute = [NSMutableDictionary new];
     

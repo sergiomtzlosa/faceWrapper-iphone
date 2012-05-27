@@ -44,6 +44,8 @@ static void (^statusBlock)(NSString *, NSString *) = nil;
     trainBlock = nil;
     trainBlock = [blockCompletion copy];
     self.train = YES;
+    self.simple = NO;
+    self.status = NO;
 }
 
 - (void)responseBlockForStatus:(void (^)(NSString *, NSString *))blockCompletion
@@ -51,6 +53,8 @@ static void (^statusBlock)(NSString *, NSString *) = nil;
     statusBlock = nil;
     statusBlock = [blockCompletion copy];
     self.status = YES;
+    self.simple = NO;
+    self.train = NO;
 }
 
 - (void)requestTokenWithcompletion:(void (^)(NSString *, NSString *))simpleBlock
@@ -58,6 +62,8 @@ static void (^statusBlock)(NSString *, NSString *) = nil;
     block = nil;
     block = [simpleBlock copy];
     self.simple = YES;
+    self.status = NO;
+    self.train = NO;
     [self requestToken];
 }
 
@@ -108,7 +114,7 @@ static void (^statusBlock)(NSString *, NSString *) = nil;
                 trainBlock(self.accessToken, self.userId);
                 trainBlock = nil;
             }
-            else
+            else if (status)
             {
                 self.status = NO;
                 statusBlock(self.accessToken, self.userId);
@@ -129,7 +135,7 @@ static void (^statusBlock)(NSString *, NSString *) = nil;
                 trainBlock(fbGraph.accessToken, @"");
                 trainBlock = nil;
             }
-            else
+            else if (status)
             {
                 self.status = NO;
                 statusBlock(fbGraph.accessToken, @"");

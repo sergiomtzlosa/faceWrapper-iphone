@@ -86,12 +86,12 @@
                                        runInBackground:NO
                                         completionData:^(NSDictionary *response, int tagImagePost) 
         {
-                    
+             
+            //remark faces on image (remove it if you want)
+            [self remarkFaces:response];
+            
             if (!object.wantRecognition) 
             {
-                //remark faces on image (remove it if you want)
-                [self remarkFaces:response];
-                
                 NSString *stringSEL = NSStringFromSelector(@selector(controllerDidFindFaceItemWithObject:postImageTag:));
                 
                 [stringSEL selectorDidRespondInClass:self.delegate

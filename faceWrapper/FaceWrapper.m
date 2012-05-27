@@ -148,13 +148,16 @@
             baseURL = [NSString stringWithFormat:@"http://api.face.com/faces/group.%@", (object.format == FORMAT_TYPE_XML) ? @"xml?" : @"json?"];
         else
             baseURL = [NSString stringWithFormat:@"http://api.face.com/faces/group.%@", (object.format == FORMAT_TYPE_XML) ? @"xml?" : @"json?"];
+            
     }
     else
     {
         if (object.groupRecognition)
             baseURL = [NSString stringWithFormat:@"http://api.face.com/faces/group.%@", (object.format == FORMAT_TYPE_XML) ? @"xml" : @"json"];
         else
-            postURL = [NSString stringWithFormat:@"http://api.face.com/faces/%@.%@", (object.wantRecognition) ? @"recognize" : @"detect", (object.format == FORMAT_TYPE_XML) ? @"xml" : @"json"];
+            baseURL = [NSString stringWithFormat:@"http://api.face.com/faces/%@.%@", (object.wantRecognition) ? @"recognize" : @"detect", (object.format == FORMAT_TYPE_XML) ? @"xml" : @"json"];
+        
+        postURL = baseURL;
     }
     
     baseURL = [baseURL stringByAppendingFormat:@"&api_key=%@", [FWKeysHelper faceAPI]];
@@ -246,6 +249,8 @@
     
     if (object.callback_url != nil)
         baseURL = [baseURL stringByAppendingFormat:@"&callback_url=%@", callback_url]; 
+    
+    NSLog(@"%@", baseURL);
     
     void (^restBlock)(void) = ^{ 
         
@@ -751,7 +756,9 @@
 {
     [object.postImages enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         
-        [NSObject sendPOSTWithURL:[NSURL URLWithString:postURL] withParams:baseURL 
+       
+        [NSObject sendPOSTWithURL:[NSURL URLWithString:postURL] 
+                       withParams:baseURL 
                            images:[NSArray arrayWithObject:(FWImage *)obj] 
                        completion:^(NSData *data) {
                                
