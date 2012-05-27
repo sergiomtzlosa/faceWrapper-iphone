@@ -17,6 +17,6 @@
 - (void)addImageToArray:(NSURL *)imageURL;
 - (void)addImagePOSTToArray:(FWImage *)image;
 - (void)addUIDsToArray:(NSString *)uid;
-- (void)addTidToArray:(int)tid;
+- (void)addTidToArray:(NSString *)tid;
 
 @end

@@ -146,7 +146,7 @@
     taggerObject.password = @"YOUR_PASSWORD"; //for use when saving tags is a privileged action in your client-side application (must be enabled in application settings)
     
     NSMutableArray *arrayTids = [NSMutableArray new];
-    [arrayTids addTidToArray:0]; //example how to add tid
+    [arrayTids addTidToArray:@"0"]; //example how to add tid
     
     taggerObject.tids = arrayTids; //one or more tag ids to associate with the passed uid. The tag id is a reference field in the response of faces.detect and faces.recognize methods
     

@@ -20,9 +20,9 @@
     [self addObject:[NSNumber numberWithInt:attribute]];
 }
 
-- (void)addTidToArray:(int)tid
+- (void)addTidToArray:(NSString *)tid
 {    
-    [self addObject:[NSNumber numberWithInt:tid]];
+    [self addObject:tid];
 }
 
 - (void)addImageToArray:(NSURL *)imageURL
