@@ -3,7 +3,7 @@ FaceWrapper for iPhone
 
 ![FaceWrapper](https://github.com/sergiomtzlosa/faceWrapper-iphone/raw/master/faceWrapper-iphone.png)
 
-Wrapper class to detect faces from https://www.skybiometry.com/, you will need an API key and API Secret which you can get in https://www.skybiometry.com/Account.
+Wrapper class to detect faces from SkyBiometry, you will need an API key and API Secret which you can get in https://www.skybiometry.com/Account.
 
 This controller implements a custom object called FWObject where you can set properties to find in the image.
 
