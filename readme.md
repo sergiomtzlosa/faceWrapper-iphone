@@ -3,7 +3,7 @@ FaceWrapper for iPhone
 
 ![FaceWrapper](https://github.com/sergiomtzlosa/faceWrapper-iphone/raw/master/faceWrapper-iphone.png)
 
-Wrapper class to detect faces from http://face.com, you will need an API key and API Secret which you can get in developer.face.com.
+Wrapper class to detect faces from https://www.skybiometry.com/, you will need an API key and API Secret which you can get in https://www.skybiometry.com/Account.
 
 This controller implements a custom object called FWObject where you can set properties to find in the image.
 
@@ -22,16 +22,16 @@ You can analyze images from the web or local images, but always as JPG files.
 
 <pre>
 
-    //Define your API from faces.com --> http://developers.face.com/account/
+    //Define your API from skybiometry.com --> https://www.skybiometry.com/Account
     
     [FWKeysHelper setFaceAPI:@"YOUR_FACE_API_KEY"];
     [FWKeysHelper setFaceSecretAPI:@"YOUR_FACE_API_SECRET_KEY"];
     
-    //Define your Facebook Tokens at https://developers.facebook.com and set them in your face.com account
+    //Define your Facebook Tokens at https://developers.facebook.com and set them in your skybiometry.com account
 
     [FWKeysHelper setFacebookAppID:@"YOUR_FACEBOOK_APPLICATION_ID"];
     
-    //Define your xAuth Tokens at developer.twitter.com and set them in your face.com account
+    //Define your xAuth Tokens at developer.twitter.com and set them in your skybiometry.com account
     
     [FWKeysHelper setTwitterConsumerKey:@"YOUR_TWITTER_CONSUMER_KEY"];
     [FWKeysHelper setTwitterConsumerSecret:@"YOUR_TWITTER_CONSUMER_SECRET"];
@@ -206,7 +206,7 @@ Actually, FaceWrapper has tags.save, tags.remove and tags.add, see the following
 
 <pre>
 
-//DOC URL: http://developers.face.com/docs/api/tags-save/
+//DOC URL: https://www.skybiometry.com/Documentation#tags/save
     
 FWObject *taggerObject = [FWObject objectWithObject:object];
 taggerObject.tagUID = @"YOUR_TAG_UID";
@@ -234,7 +234,7 @@ taggerObject.tids = arrayTids; //one or more tag ids to associate with the passe
        NSLog(@"%@", data);
 }];
     
-//DOC URL: http://developers.face.com/docs/api/tags-add/
+//DOC URL: https://www.skybiometry.com/Documentation#tags/add
     
 taggerObject.tagURL = @"YOUR_TAG_URL";
 taggerObject.tagX = 0;
@@ -256,7 +256,7 @@ taggerObject.password = @"YOUR_PASSWORD";
 WrapperFace framework
 ---------------------
 
-FaceWrapper project now turns to framework (but also single files support), the new framework tries to reach an easy way to integrate with face.com services.
+FaceWrapper project now turns to framework (but also single files support), the new framework tries to reach an easy way to integrate with skybiometry.com services.
 
 Just drag WrapperFace.embeddedframework to your protect folder, select WrapperFace.framework from your project [BUILD PHASES] -> [LINK BINARY WITH LIBRARIES] -> [BUTTON "+"].
 

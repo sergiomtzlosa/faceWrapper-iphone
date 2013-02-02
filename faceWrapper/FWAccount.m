@@ -12,11 +12,11 @@
 #import "NSObject+Block.h"
 #import "FWKeysHelper.h"
 
-#define kNamespaces @"http://api.face.com/account/namespaces.json?api_key=%@&api_secret=%@"
+#define kNamespaces @"http://api.skybiometry.com/fc/account/namespaces.json?api_key=%@&api_secret=%@"
 
-#define kLimits @"http://api.face.com/account/limits.json?api_key=%@&api_secret=%@"
+#define kLimits @"http://api.skybiometry.com/fc/account/limits.json?api_key=%@&api_secret=%@"
 
-#define kUsers @"http://api.face.com/account/users.json?api_key=%@&api_secret=%@&namespaces=%@"
+#define kUsers @"http://api.skybiometry.com/fc/account/users.json?api_key=%@&api_secret=%@&namespaces=%@"
 
 @interface FWAccount (Private)
 
