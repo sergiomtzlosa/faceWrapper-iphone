@@ -145,17 +145,17 @@
     if (object.isRESTObject)
     {
         if (object.groupRecognition)
-            baseURL = [NSString stringWithFormat:@"http://api.face.com/faces/group.%@", (object.format == FORMAT_TYPE_XML) ? @"xml?" : @"json?"];
+            baseURL = [NSString stringWithFormat:@"http://api.skybiometry.com/fc/faces/group.%@", (object.format == FORMAT_TYPE_XML) ? @"xml?" : @"json?"];
         else
-            baseURL = [NSString stringWithFormat:@"http://api.face.com/faces/group.%@", (object.format == FORMAT_TYPE_XML) ? @"xml?" : @"json?"];
+            baseURL = [NSString stringWithFormat:@"http://api.skybiometry.com/fc/faces/group.%@", (object.format == FORMAT_TYPE_XML) ? @"xml?" : @"json?"];
             
     }
     else
     {
         if (object.groupRecognition)
-            baseURL = [NSString stringWithFormat:@"http://api.face.com/faces/group.%@", (object.format == FORMAT_TYPE_XML) ? @"xml" : @"json"];
+            baseURL = [NSString stringWithFormat:@"http://api.skybiometry.com/fc/faces/group.%@", (object.format == FORMAT_TYPE_XML) ? @"xml" : @"json"];
         else
-            baseURL = [NSString stringWithFormat:@"http://api.face.com/faces/%@.%@", (object.wantRecognition) ? @"recognize" : @"detect", (object.format == FORMAT_TYPE_XML) ? @"xml" : @"json"];
+            baseURL = [NSString stringWithFormat:@"http://api.skybiometry.com/fc/faces/%@.%@", (object.wantRecognition) ? @"recognize" : @"detect", (object.format == FORMAT_TYPE_XML) ? @"xml" : @"json"];
         
         postURL = baseURL;
     }
@@ -421,11 +421,11 @@
     
     if (object.isRESTObject)
     {
-        baseURL = [NSString stringWithFormat:@"http://api.face.com/faces/train.%@", (object.format == FORMAT_TYPE_XML) ? @"xml?" : @"json?"];
+        baseURL = [NSString stringWithFormat:@"http://api.skybiometry.com/fc/faces/train.%@", (object.format == FORMAT_TYPE_XML) ? @"xml?" : @"json?"];
     }
     else
     {
-        postURL = [NSString stringWithFormat:@"http://api.face.com/faces/train.%@", (object.format == FORMAT_TYPE_XML) ? @"xml" : @"json"];
+        postURL = [NSString stringWithFormat:@"http://api.skybiometry.com/fc/faces/train.%@", (object.format == FORMAT_TYPE_XML) ? @"xml" : @"json"];
     }
     
     baseURL = [baseURL stringByAppendingFormat:@"&api_key=%@", [FWKeysHelper faceAPI]];
@@ -598,11 +598,11 @@
     
     if (object.isRESTObject)
     {
-        baseURL = [NSString stringWithFormat:@"http://api.face.com/faces/status.%@", (object.format == FORMAT_TYPE_XML) ? @"xml?" : @"json?"];
+        baseURL = [NSString stringWithFormat:@"http://api.skybiometry.com/fc/faces/status.%@", (object.format == FORMAT_TYPE_XML) ? @"xml?" : @"json?"];
     }
     else
     {
-        postURL = [NSString stringWithFormat:@"http://api.face.com/faces/status.%@", (object.format == FORMAT_TYPE_XML) ? @"xml" : @"json"];
+        postURL = [NSString stringWithFormat:@"http://api.skybiometry.com/fc/faces/status.%@", (object.format == FORMAT_TYPE_XML) ? @"xml" : @"json"];
     }
     
     baseURL = [baseURL stringByAppendingFormat:@"&api_key=%@", [FWKeysHelper faceAPI]];

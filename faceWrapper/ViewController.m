@@ -18,16 +18,16 @@
     //#error SETUP your keys 
     
     //if your compile this project as framework do NOT set your keys, do it into the project where you add the framework
-    //Define your API from faces.com --> http://developers.face.com/account/
+    //Define your API from skybiometry.com --> https://www.skybiometry.com/Account
     
     [FWKeysHelper setFaceAPI:@"xxxxxxxxxxx"];
     [FWKeysHelper setFaceSecretAPI:@"xxxxxxxxxxxx"];
     
-    //Define your Facebook Tokens at https://developers.facebook.com and set them in your face.com account
+    //Define your Facebook Tokens at https://developers.facebook.com and set them in your skybiometry.com account
 
     [FWKeysHelper setFacebookAppID:@"xxxxxxxxx"];
     
-    //Define your xAuth Tokens at developer.twitter.com and set them in your face.com account
+    //Define your xAuth Tokens at developer.twitter.com and set them in your skybiometry.com account
     
     [FWKeysHelper setTwitterConsumerKey:@"xxxxxxxxxxxx"];
     [FWKeysHelper setTwitterConsumerSecret:@"xxxxxxxxxxx"];
@@ -136,7 +136,7 @@
     
     return;
     
-    //DOC URL: http://developers.face.com/docs/api/tags-save/
+    //DOC URL: https://www.skybiometry.com/Documentation#tags/save
     
     FWObject *taggerObject = [FWObject objectWithObject:object];
     taggerObject.tagUID = @"YOUR_TAG_UID";
@@ -164,7 +164,7 @@
         NSLog(@"%@", data);
     }];
     
-    //DOC URL: http://developers.face.com/docs/api/tags-add/
+    //DOC URL: https://www.skybiometry.com/Documentation#tags/add
     
     taggerObject.tagURL = @"YOUR_TAG_URL";
     taggerObject.tagX = 0;

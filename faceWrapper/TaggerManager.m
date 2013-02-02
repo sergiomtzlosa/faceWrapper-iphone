@@ -69,7 +69,7 @@ static Block myBlock;
     
     __block NSString *baseURL = @"";
     
-    baseURL = [NSString stringWithFormat:@"http://api.face.com/tags/save.%@", (object.format == FORMAT_TYPE_XML) ? @"xml?" : @"json?"];
+    baseURL = [NSString stringWithFormat:@"http://api.skybiometry.com/fc/tags/save.%@", (object.format == FORMAT_TYPE_XML) ? @"xml?" : @"json?"];
     
     baseURL = [baseURL stringByAppendingFormat:@"api_key=%@", [FWKeysHelper faceAPI]];
     baseURL = [baseURL stringByAppendingFormat:@"&api_secret=%@", [FWKeysHelper faceSecretAPI]];
@@ -214,7 +214,7 @@ static Block myBlock;
     
     __block NSString *baseURL = @"";
     
-    baseURL = [NSString stringWithFormat:@"http://api.face.com/tags/add.%@", (object.format == FORMAT_TYPE_XML) ? @"xml?" : @"json?"];
+    baseURL = [NSString stringWithFormat:@"http://api.skybiometry.com/fc/tags/add.%@", (object.format == FORMAT_TYPE_XML) ? @"xml?" : @"json?"];
     
     baseURL = [baseURL stringByAppendingFormat:@"api_key=%@", [FWKeysHelper faceAPI]];
     baseURL = [baseURL stringByAppendingFormat:@"&api_secret=%@", [FWKeysHelper faceSecretAPI]];

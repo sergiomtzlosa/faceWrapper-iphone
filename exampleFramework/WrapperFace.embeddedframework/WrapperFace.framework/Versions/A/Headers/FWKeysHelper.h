@@ -12,17 +12,17 @@
 
 @interface FWKeysHelper : NSObject
 {
-    //Define your API from faces.com --> http://developers.face.com/account/
+    //Define your API from skybiometry.com --> https://www.skybiometry.com/Account
     
     NSString *kFaceAPI;
     NSString *kFaceSecretAPI;
     
-    //Define your xAuth Tokens at developer.twitter.com and set them in your face.com account
+    //Define your xAuth Tokens at developer.twitter.com and set them in your skybiometry.com account
     
     NSString *kTwitterConsumerKey;
     NSString *kTwitterConsumerSecret;
     
-    //Define your Facebook Tokens at https://developers.facebook.com and set them in your face.com account
+    //Define your Facebook Tokens at https://developers.facebook.com and set them in your skybiometry.com account
 
     NSString *kFacebookAppID;
     

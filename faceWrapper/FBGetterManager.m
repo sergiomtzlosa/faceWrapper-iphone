@@ -45,7 +45,7 @@
     [FBGetterManager checkAPIKeys:[FWKeysHelper faceAPI] 
                            secret:[FWKeysHelper faceSecretAPI]];
     
-    __block NSString *baseURL = [NSString stringWithFormat:@"http://api.face.com/facebook/get.%@", (object.format == FORMAT_TYPE_XML) ? @"xml?" : @"json?"];
+    __block NSString *baseURL = [NSString stringWithFormat:@"http://api.skybiometry.com/fc/facebook/get.%@", (object.format == FORMAT_TYPE_XML) ? @"xml?" : @"json?"];
     
     baseURL = [baseURL stringByAppendingFormat:@"api_key=%@", [FWKeysHelper faceAPI]];
     baseURL = [baseURL stringByAppendingFormat:@"&api_secret=%@", [FWKeysHelper faceSecretAPI]];
