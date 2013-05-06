@@ -28,7 +28,7 @@
 
 + (NSDictionary *)serviceManager:(NSString *)url
 {
-    __block NSDictionary *dictionary = nil;
+    __block NSDictionary *dictionary = [NSDictionary dictionary];
     void (^execution)(NSString *url);
     
     execution = ^(NSString *url) {

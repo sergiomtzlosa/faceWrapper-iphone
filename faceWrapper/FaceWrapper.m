@@ -302,7 +302,7 @@
         }];
         
         if (![object.accountNamespace isEqualToString:@""])
-            baseURL = [baseURL stringByAppendingFormat:[NSString stringWithFormat:@"&namespace=%@", object.accountNamespace]];
+            baseURL = [baseURL stringByAppendingFormat:@"&namespace=%@", object.accountNamespace];
         
         baseURL = [baseURL stringByAppendingFormat:@"&user_auth="];
         
@@ -327,9 +327,9 @@
                         object.twitter_oauth_token = oauth_token;
                         
                         //Check tokens
-                        if ((object.twitter_oauth_user != @"") &&
-                            (object.twitter_oauth_secret != @"") && 
-                            (object.twitter_oauth_token != @""))
+                        if ((![object.twitter_oauth_user isEqualToString:@""]) &&
+                            (![object.twitter_oauth_secret isEqualToString:@""]) &&
+                            (![object.twitter_oauth_token isEqualToString:@""]))
                         {
                             //assign to URL
                             
@@ -352,7 +352,7 @@
             
             twitterBlock();
         }
-        else if (([FWKeysHelper facebookAppID] != @"") && (object.useFacebook == YES))
+        else if ((![[FWKeysHelper facebookAppID] isEqualToString:@""]) && (object.useFacebook == YES))
         {
             //Generate tokens
             [[FacebookManager instance] requestTokenWithcompletion:^(NSString *access_token, NSString *userID) {
@@ -361,7 +361,7 @@
                 object.fb_user = userID;
                 
                 //Check tokens
-                if ((object.fb_user != @"") || (object.fb_oauth_token != @""))
+                if ((![object.fb_user isEqualToString:@""]) || (![object.fb_oauth_token isEqualToString:@""]))
                 {
                     //assign to URL
                     if ((![baseURL containsString:[@"fb_user:" stringByAppendingFormat:@"%@", object.fb_user]]) && 
@@ -442,7 +442,7 @@
     }];
     
     if (![object.accountNamespace isEqualToString:@""])
-        baseURL = [baseURL stringByAppendingFormat:[NSString stringWithFormat:@"&namespace=%@", object.accountNamespace]];
+        baseURL = [baseURL stringByAppendingFormat:@"&namespace=%@", object.accountNamespace];
     
     NSString *callback = object.callback;
     
@@ -507,9 +507,9 @@
                     object.twitter_oauth_token = oauth_token;
                     
                     //Check tokens
-                    if ((object.twitter_oauth_user != @"") &&
-                        (object.twitter_oauth_secret != @"") && 
-                        (object.twitter_oauth_token != @""))
+                    if ((![object.twitter_oauth_user isEqual: @""]) &&
+                        (![object.twitter_oauth_secret isEqual: @""]) &&
+                        (![object.twitter_oauth_token isEqual: @""]))
                     {
                         //assign to URL
                         
@@ -532,7 +532,7 @@
         
         twitterBlock();
     }
-    else if (([FWKeysHelper facebookAppID] != @"") && (object.useFacebook == YES))
+    else if ((![[FWKeysHelper facebookAppID] isEqualToString: @""]) && (object.useFacebook == YES))
     {
         //Generate tokens
         [[FacebookManager instance] responseBlockForTrain:^(NSString *access_token, NSString *userID) {
@@ -541,7 +541,7 @@
             object.fb_user = userID;
             
             //Check tokens
-            if ((object.fb_user != @"") || (object.fb_oauth_token != @""))
+            if ((![object.fb_user isEqual: @""]) || (![object.fb_oauth_token isEqual: @""]))
             {
                 //assign to URL
                 
@@ -619,7 +619,7 @@
     }];
     
     if (![object.accountNamespace isEqualToString:@""])
-        baseURL = [baseURL stringByAppendingFormat:[NSString stringWithFormat:@"&namespace=%@", object.accountNamespace]];
+        baseURL = [baseURL stringByAppendingFormat:@"&namespace=%@", object.accountNamespace];
     
     NSString *callback = object.callback;
     
@@ -655,9 +655,9 @@
                 object.twitter_oauth_token = oauth_token;
                 
                 //Check tokens
-                if ((object.twitter_oauth_user != @"") &&
-                    (object.twitter_oauth_secret != @"") && 
-                    (object.twitter_oauth_token != @""))
+                if ((![object.twitter_oauth_user isEqual: @""]) &&
+                    (![object.twitter_oauth_secret isEqual: @""]) &&
+                    (![object.twitter_oauth_token isEqual: @""]))
                 {
                     //assign to URL
                     
@@ -679,7 +679,7 @@
         
         twitterBlock();
     }
-    else if (([FWKeysHelper facebookAppID] != @"") && (object.useFacebook == YES))
+    else if ((![[FWKeysHelper facebookAppID] isEqualToString:@""]) && (object.useFacebook == YES))
     {
         //Generate tokens
         [[FacebookManager instance] responseBlockForStatus:^(NSString *access_token, NSString *userID) {
@@ -688,7 +688,7 @@
             object.fb_user = userID;
             
             //Check tokens
-            if ((object.fb_user != @"") || (object.fb_oauth_token != @""))
+            if ((![object.fb_user isEqualToString:@""]) || (![object.fb_oauth_token isEqualToString:@""]))
             {
                 //assign to URL
                 

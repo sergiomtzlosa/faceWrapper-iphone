@@ -90,16 +90,20 @@ static const char sBase64Digits[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopq
 
 + (NSString *)formEncodeString:(NSString *)string
 {
-    NSString *encoded = (__bridge NSString*) CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, (__bridge CFStringRef) string, NULL, CFSTR("!*'();:@&=+$,/?%#[]"), kCFStringEncodingUTF8);
+    CFStringRef decoded = CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, (CFStringRef) string, NULL, CFSTR("!*'();:@&=+$,/?%#[]"), kCFStringEncodingUTF8);
     
-    return encoded;
+    NSString *endcodedString = (NSString *)CFBridgingRelease(decoded);
+    
+    return endcodedString;
 }
 
 + (NSString *)formDecodeString: (NSString*) string
 {
-	NSString *decoded = (__bridge NSString*) CFURLCreateStringByReplacingPercentEscapes(kCFAllocatorDefault, (__bridge CFStringRef) string, NULL);
+	CFStringRef decoded = CFURLCreateStringByReplacingPercentEscapes(kCFAllocatorDefault, (CFStringRef) string, NULL);
+
+    NSString *endcodedString = (NSString *)CFBridgingRelease(decoded);
     
-	return decoded;
+	return endcodedString;
 }
 
 @end
@@ -141,17 +145,20 @@ static void (^errorBlock)(NSError *) = nil;
 
 - (NSString *)generateTimestamp
 {
-	return [NSString stringWithFormat: @"%d", time(NULL)];
+	return [NSString stringWithFormat: @"%ld", time(NULL)];
 }
 
 - (NSString *)generateNonce
 {
-	NSString *nonce = nil;
+	__autoreleasing NSString *nonce = nil;
     
 	CFUUIDRef uuid = CFUUIDCreate(nil);
 	if (uuid != NULL)
     {
-		nonce = (__bridge NSString*) CFUUIDCreateString(nil, uuid);
+        CFStringRef temp = CFUUIDCreateString(nil, uuid);
+
+        nonce = (NSString *)CFBridgingRelease(temp);
+        
 		CFRelease(uuid);
 	}
     
@@ -160,7 +167,7 @@ static void (^errorBlock)(NSError *) = nil;
 
 - (NSString *)formEncodeString: (NSString*) string
 {
-	NSString *encoded = (__bridge NSString*) CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
+	NSString *encoded = (__bridge_transfer NSString*) CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
                                                                                      (__bridge CFStringRef) string, NULL, CFSTR("!*'();:@&=+$,/?%#[]"), kCFStringEncodingUTF8);
 	return encoded;
 }

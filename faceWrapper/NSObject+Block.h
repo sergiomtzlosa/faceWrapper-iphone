@@ -18,8 +18,4 @@
 
 + (id)performBlockOnMainThreadReturningValue:(void (^)(void))block;
 
-+ (id)performBlockInBackgroundReturningValue:(void (^)(void))block;
-
-+ (id)performBlockOnMainThreadReturningValue:(void (^)(void))block;
-
 @end

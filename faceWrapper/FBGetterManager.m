@@ -69,7 +69,7 @@
     
     baseURL = [baseURL stringByAppendingFormat:@"&limit=%d", limit];
     
-    baseURL = [baseURL stringByAppendingFormat:@"&together=%d", (object.together) ? @"true" : @"false"];
+    baseURL = [baseURL stringByAppendingFormat:@"&together=%@", (object.together) ? @"true" : @"false"];
     
     NSString *callback_url = [object.callback_url absoluteString];
     
@@ -191,7 +191,7 @@
      
      */
     
-    if ([FWKeysHelper facebookAppID] != @"")
+    if (![[FWKeysHelper facebookAppID] isEqualToString:@""])
     {
         baseURL = [baseURL stringByAppendingFormat:@"&user_auth="];
         
@@ -202,7 +202,7 @@
             object.fb_user = userID;
             
             //Check tokens
-            if ((object.fb_user != @"") || (object.fb_oauth_token != @""))
+            if ((![object.fb_user isEqualToString:@""]) || (![object.fb_oauth_token isEqualToString:@""]))
             {
                 //assign to URL
                 if ((![baseURL containsString:[@"fb_user:" stringByAppendingFormat:@"%@", object.fb_user]]) && 

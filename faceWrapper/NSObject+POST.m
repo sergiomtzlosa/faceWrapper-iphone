@@ -60,7 +60,7 @@
         [self utfAppendBody:body
                        data:[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"; filename=\"%@.%@\"\r\n", fwImage.imageName, fwImage.imageName, [fwImage.extension uppercaseString]]];
         [self utfAppendBody:body
-                       data:[NSString stringWithString:@"Content-Type: image/jpg\r\n\r\n"]];
+                       data:@"Content-Type: image/jpg\r\n\r\n"];
         //[self utfAppendBody:body
         //               data:[NSString stringWithString:@"Content-Transfer-Encoding: binary\r\n\r\n"]];
         

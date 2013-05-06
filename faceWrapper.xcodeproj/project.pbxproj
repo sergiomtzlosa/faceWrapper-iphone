@@ -7,14 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F4674C817383F9000A18C83 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F4674C717383F9000A18C83 /* Default-568h@2x.png */; };
 		1F63E264149A4A8A002BD730 /* FBGetterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F63E263149A4A8A002BD730 /* FBGetterManager.m */; };
 		1F63E268149A53D3002BD730 /* FBGetterObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F63E267149A53D3002BD730 /* FBGetterObject.m */; };
 		1F74FA67148E1493005643D1 /* XAuthAutenticator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F74FA66148E1493005643D1 /* XAuthAutenticator.m */; };
-		1F8FB34C148E78C8000719A5 /* FbGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8FB347148E78C8000719A5 /* FbGraph.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1F8FB34C148E78C8000719A5 /* FbGraph.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8FB347148E78C8000719A5 /* FbGraph.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -Xanalyzer -analyzer-disable-checker"; }; };
 		1F8FB34D148E78C8000719A5 /* FbGraphFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8FB349148E78C8000719A5 /* FbGraphFile.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1F8FB34E148E78C8000719A5 /* FbGraphResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8FB34B148E78C8000719A5 /* FbGraphResponse.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		1F8FB377148E7DDB000719A5 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8FB36C148E7DDB000719A5 /* NSObject+SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		1F8FB378148E7DDB000719A5 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8FB36E148E7DDB000719A5 /* NSString+SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		1F8FB377148E7DDB000719A5 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8FB36C148E7DDB000719A5 /* NSObject+SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -Xanalyzer -analyzer-disable-checker"; }; };
+		1F8FB378148E7DDB000719A5 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8FB36E148E7DDB000719A5 /* NSString+SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -Xanalyzer -analyzer-disable-checker"; }; };
 		1F8FB379148E7DDB000719A5 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8FB370148E7DDB000719A5 /* SBJSON.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1F8FB37A148E7DDB000719A5 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8FB372148E7DDB000719A5 /* SBJsonBase.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1F8FB37B148E7DDB000719A5 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F8FB374148E7DDB000719A5 /* SBJsonParser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -128,6 +129,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F4674C717383F9000A18C83 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		1F63E262149A4A8A002BD730 /* FBGetterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBGetterManager.h; sourceTree = "<group>"; };
 		1F63E263149A4A8A002BD730 /* FBGetterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBGetterManager.m; sourceTree = "<group>"; };
 		1F63E266149A53D3002BD730 /* FBGetterObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBGetterObject.h; sourceTree = "<group>"; };
@@ -311,6 +313,7 @@
 		B52E6F101483B8AE00428A74 = {
 			isa = PBXGroup;
 			children = (
+				1F4674C717383F9000A18C83 /* Default-568h@2x.png */,
 				B52E6F251483B8AF00428A74 /* faceWrapper */,
 				B5F8A6FC149B46660008C6E3 /* WrapperFace */,
 				B52E6F1E1483B8AF00428A74 /* Frameworks */,
@@ -551,7 +554,7 @@
 		B52E6F121483B8AE00428A74 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0460;
 			};
 			buildConfigurationList = B52E6F151483B8AE00428A74 /* Build configuration list for PBXProject "faceWrapper" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -581,6 +584,7 @@
 				B58BFAB114850BBD00B37B19 /* face.jpg in Resources */,
 				B5D20AAB14860BBC0015CA61 /* FWImageController.xib in Resources */,
 				B5A14CE214865C2B002EFDF7 /* girls.jpg in Resources */,
+				1F4674C817383F9000A18C83 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -745,6 +749,10 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPILE_FRAMEWORK = "";
 				COPY_PHASE_STRIP = NO;
@@ -759,6 +767,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$SDKROOT/usr/include/libxml2/**";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
@@ -772,6 +781,10 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPILE_FRAMEWORK = "";
 				COPY_PHASE_STRIP = YES;
@@ -779,6 +792,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$SDKROOT/usr/include/libxml2/**";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;

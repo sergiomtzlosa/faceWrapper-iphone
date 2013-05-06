@@ -126,9 +126,9 @@ static Block myBlock;
                     object.twitter_oauth_token = oauth_token;
                     
                     //Check tokens
-                    if ((object.twitter_oauth_user != @"") &&
-                        (object.twitter_oauth_secret != @"") && 
-                        (object.twitter_oauth_token != @""))
+                    if ((![object.twitter_oauth_user isEqualToString:@""]) &&
+                        (![object.twitter_oauth_secret isEqualToString:@""]) &&
+                        (![object.twitter_oauth_token isEqualToString:@""]))
                     {
                         //assign to URL
                         
@@ -151,7 +151,7 @@ static Block myBlock;
         
         twitterBlock();
     }
-    else if (([FWKeysHelper facebookAppID] != @"") && (object.useFacebook == YES))
+    else if ((![[FWKeysHelper facebookAppID] isEqualToString:@""]) && (object.useFacebook == YES))
     {
         //Generate tokens
         [[FacebookManager instance] responseBlockForTrain:^(NSString *access_token, NSString *userID) {
@@ -160,7 +160,7 @@ static Block myBlock;
             object.fb_user = userID;
             
             //Check tokens
-            if ((object.fb_user != @"") || (object.fb_oauth_token != @""))
+            if ((![object.fb_user isEqualToString:@""]) || (![object.fb_oauth_token isEqualToString:@""]))
             {
                 //assign to URL
                 
@@ -259,9 +259,9 @@ static Block myBlock;
                     object.twitter_oauth_token = oauth_token;
                     
                     //Check tokens
-                    if ((object.twitter_oauth_user != @"") &&
-                        (object.twitter_oauth_secret != @"") && 
-                        (object.twitter_oauth_token != @""))
+                    if ((![object.twitter_oauth_user isEqual: @""]) &&
+                        (![object.twitter_oauth_secret isEqual:@""]) &&
+                        (![object.twitter_oauth_token isEqual: @""]))
                     {
                         //assign to URL
                         
@@ -284,7 +284,7 @@ static Block myBlock;
         
         twitterBlock();
     }
-    else if (([FWKeysHelper facebookAppID] != @"") && (object.useFacebook == YES))
+    else if ((![[FWKeysHelper facebookAppID] isEqual: @""]) && (object.useFacebook == YES))
     {
         //Generate tokens
         [[FacebookManager instance] responseBlockForTrain:^(NSString *access_token, NSString *userID) {
@@ -293,7 +293,7 @@ static Block myBlock;
             object.fb_user = userID;
             
             //Check tokens
-            if ((object.fb_user != @"") || (object.fb_oauth_token != @""))
+            if ((![object.fb_user isEqual: @""]) || (![object.fb_oauth_token isEqual: @""]))
             {
                 //assign to URL
                 
